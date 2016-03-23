@@ -3,7 +3,6 @@
 let Promise = require('bluebird');
 let Util = require('./util.js');
 let Exception = require('./exception.js');
-let moment = require('moment');
 
 const TABLE_NAME = 'shop';
 const DEFAULT_PAGE = 10;
@@ -23,7 +22,8 @@ class Shop {
         page_start = page_start || 0;
         page_count = page_count || DEFAULT_PAGE;
 
-        this.db(TABLE_NAME).orderBy('id').where('id', '>', page_start).where('valid', 1).limit(page_count)
+        this.db(TABLE_NAME).select('id', 'name', 'photo', 'address')
+            .orderBy('id').where('id', '>', page_start).where('valid', 1).limit(page_count)
             .catch((err) => {
                 console.log(err);
                 return Promise.reject(new Exception(-1, 'Database Error'));
@@ -36,8 +36,8 @@ class Shop {
      * @return Promise, resolve to a single shop
      */
     queryShop(sid) {
-        this.db(TABLE_NAME).where('id', sid)
-            .then((shops) => shops.length && shops[0].valid
+        this.db(TABLE_NAME).where({id: sid, valid: 1})
+            .then((shops) => shops.length
                   ? (Promise.resolve(shops[0])) 
                   : Promise.reject(new Exception(-2, 'Shop not found')))
             .catch((err) => {
