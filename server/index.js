@@ -271,7 +271,7 @@ app.delete('/item/:id', (req, res) => {
     item.deleteItem(req.params.id)
         .then(() => res.send({code: 0}))
         .catch((e) => res.send(e));
-})
+});
 
 app.listen(config.port, (err) => {
     console.log(`Listenning on port ${config.port}`);
