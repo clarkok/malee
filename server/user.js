@@ -38,6 +38,16 @@ class User {
             .then((users) => (users.length ? Promise.resolve(users[0]) : Promise.reject(new Exception(-1, 'User not found'))));
     }
 
+    queryUser(uid) {
+        return this.getUser(uid)
+            .then((user) => {
+                delete user.salt;
+                delete user.password;
+
+                return Promise.resolve(user);
+            });
+    }
+
     /**
      * @param username
      * @param password
@@ -45,7 +55,7 @@ class User {
      * @return Promise resolve to user
      */
     checkPassword(username, password) {
-        return findUser(username)
+        return this.findUser(username)
             .then((user) => {
                 let hash = this.passwordHash(username, password, user.salt);
                 if (hash == user.password) {
@@ -69,7 +79,7 @@ class User {
      * @return Promise, resolve to user
      */
     register(user) {
-        return findUser(user.name)
+        return this.findUser(user.name)
             .then((user) => Promise.reject(new Exception(-1, 'User exists')))
             .catch(() => {
                 user.salt = this.generateSalt();
@@ -77,8 +87,7 @@ class User {
 
                 return this.db(TABLE_NAME).insert(user)
                     .then((id) => {
-                        user.id = id;
-                        return Promise.resolve(user);
+                        return this.queryUser(id[0]);
                     })
                     .catch((err) => {
                         console.log(err);
@@ -94,7 +103,7 @@ class User {
      */
     update(new_user) {
         return this.db(TABLE_NAME).where(new_user.id).update(new_user)
-            .then(() => Promise.resolve(new_user))
+            .then(() => this.queryUser(new_user.id))
             .catch((err) => {
                 console.log(err);
                 return Promise.reject(new Exception(-11, 'Database Error'));
@@ -135,10 +144,11 @@ class User {
                 if (!token.length) {
                     return Promise.reject(new Exception(-5, 'Invalid token'));
                 }
+                token = token[0];
                 if (moment().isAfter(token.expire)) {
                     return Promise.reject(new Exception(-6, 'Login expired'));
                 }
-                return this.getUser(token.uid);
+                return this.queryUser(token.uid);
             })
             .catch((err) => {
                 console.log(err);
