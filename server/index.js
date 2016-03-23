@@ -92,7 +92,7 @@ app.get('/user/:uid', (req, res) => {
 app.get('/shop', (req, res) => {
     shop.listShop(
         req.query && req.query.page_start,
-        req.query && req.query.page_count,
+        req.query && req.query.page_count
     )
         .then((shops) => res.send({code: 0, shops}))
         .catch((e) => res.send(e));
@@ -108,7 +108,7 @@ app.get('/shop/:id/items', (req, res) => {
     item.listInShop(
         req.params.id,
         req.query && req.query.page_start,
-        req.query && req.query.page_count,
+        req.query && req.query.page_count
     )
         .then((items) => res.send({code: 0, items}))
         .catch((e) => res.send(e));
