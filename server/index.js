@@ -120,12 +120,11 @@ app.get('/item/:id', (req, res) => {
         .catch((e) => res.send(e));
 });
 
-app.use('/static', Express.static('public'));
-app.get('/', (req, res) => res.sendFile(__dirname + '/public/index.html'));
+app.use('/', Express.static('public'));
 
 /* ======= NEED LOGIN ======= */
 
-app.use((req, res, next) => {
+function checkUser (req, res, next) {
     let token =
         (req.body && req.body.token) ||
         (req.query && req.query.token) ||
@@ -145,22 +144,22 @@ app.use((req, res, next) => {
             return next();
         })
         .catch((e) => res.send(e));
-});
+}
 
-app.post('/user/logout', (req, res) => {
+app.post('/user/logout', checkUser, (req, res) => {
     user.logout(req.token)
         .then(() => res.send({code: 0}))
         .catch((e) => res.send(e));
 });
 
-app.get('/user', (req, res) => {
+app.get('/user', checkUser, (req, res) => {
     res.send({
         code: 0,
         user: req.user
     });
 });
 
-app.put('/user', (req, res) => {
+app.put('/user', checkUser, (req, res) => {
     let new_user = req.body;
 
     delete new_user.balance;
@@ -172,7 +171,7 @@ app.put('/user', (req, res) => {
         .catch((e) => res.send(e));
 });
 
-app.post('/shop', (req, res) => {
+app.post('/shop', checkUser, (req, res) => {
     if (req.user.role !== 'seller') {
         return res.send({
             code: -1,
@@ -195,7 +194,7 @@ app.post('/shop', (req, res) => {
         .catch((e) => res.send(e));
 });
 
-app.use('/shop/:id', (req, res, next) => {
+function checkShop(req, res, next) {
     shop.queryShop(req.params.id)
         .then((shop) => {
             if (shop.owner != req.user.id) {
@@ -205,9 +204,9 @@ app.use('/shop/:id', (req, res, next) => {
             next();
         })
         .catch((e) => res.send(e));
-});
+}
 
-app.put('/shop/:id', (req, res) => {
+app.put('/shop/:id', checkUser, checkShop, (req, res) => {
     let new_shop = req.body;
     new_shop.id = req.params.id;
     new_shop.owner = req.user.id;
@@ -217,7 +216,7 @@ app.put('/shop/:id', (req, res) => {
         .catch((e) => res.send(e));
 });
 
-app.delete('/shop/:id', (req, res) => {
+app.delete('/shop/:id', checkUser, checkShop, (req, res) => {
     Promise.all([
         shop.deleteShop(req.params.id),
         item.deleteInShop(req.params.id)
@@ -226,7 +225,7 @@ app.delete('/shop/:id', (req, res) => {
         .catch((e) => res.send(e));
 });
 
-app.post('/shop/:id/item', (req, res) => {
+app.post('/shop/:id/item', checkUser, checkShop, (req, res) => {
     let new_item = req.body;
 
     if (!new_item || !new_item.name) {
@@ -244,7 +243,7 @@ app.post('/shop/:id/item', (req, res) => {
         .catch((e) => res.send(e));
 });
 
-app.use('/item/:id', (req, res, next) => {
+function checkItem(req, res, next) {
     item.queryItem(req.params.id)
         .then((item) => {
             if (item.owner != req.user.id) {
@@ -254,9 +253,9 @@ app.use('/item/:id', (req, res, next) => {
             next();
         })
         .catch((e) => res.send(e));
-});
+}
 
-app.put('/item/:id', (req, res) => {
+app.put('/item/:id', checkUser, checkItem, (req, res) => {
     let new_item = req.body;
     new_item.id = req.params.id;
     new_item.owner = req.user.id;
@@ -267,7 +266,7 @@ app.put('/item/:id', (req, res) => {
         .catch((e) => res.send(e));
 });
 
-app.delete('/item/:id', (req, res) => {
+app.delete('/item/:id', checkUser, checkItem, (req, res) => {
     item.deleteItem(req.params.id)
         .then(() => res.send({code: 0}))
         .catch((e) => res.send(e));

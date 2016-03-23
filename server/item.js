@@ -24,7 +24,7 @@ class Item {
         page_start = page_start || 0;
         page_count = page_count || DEFAULT_PAGE;
 
-        this.db(TABLE_NAME).select('id', 'name', 'photo', 'price')
+        return this.db(TABLE_NAME).select('id', 'name', 'photo', 'price')
             .orderBy('id').where('id', '>', page_start).where({valid: 1, shop: shop_id}).limit(page_count)
             .catch((err) => {
                 console.log(err);
@@ -38,7 +38,7 @@ class Item {
      * @return Promise, resolve to a single item
      */
     queryItem(iid) {
-        this.db(TABLE_NAME).where({id: iid, valid: 1})
+        return this.db(TABLE_NAME).where({id: iid, valid: 1})
             .then((items) => items.length
                   ? (Promise.resolve(items[0]))
                   : Promise.reject(new Exception(-2, 'Item not found')))
@@ -54,7 +54,7 @@ class Item {
      * @return Promise, resolve to the new item
      */
     newItem(item) {
-        this.db(TABLE_NAME).insert(item)
+        return this.db(TABLE_NAME).insert(item)
             .then((id) => id.length ? this.queryItem(id[0]) : Promise.reject(new Exception(-4, 'Database Error')))
             .catch((err) => {
                 console.log(err);
@@ -69,7 +69,7 @@ class Item {
      */
     updateItem(new_item) {
         new_item.valid = 1;
-        this.db(TABLE_NAME).where('id', new_item.id).update(new_item)
+        return this.db(TABLE_NAME).where('id', new_item.id).update(new_item)
             .then(() => this.queryItem(new_item.id))
             .catch((err) => {
                 console.log(err);
@@ -81,7 +81,7 @@ class Item {
      * @param id
      */
     deleteItem(id) {
-        this.db(TABLE_NAME).where('id', id).update({valid: 0})
+        return this.db(TABLE_NAME).where('id', id).update({valid: 0})
             .then(() => Promise.resolve())
             .catch((err) => {
                 console.log(err);
@@ -93,7 +93,7 @@ class Item {
      * @param shop_id
      */
     deleteInShop(shop_id) {
-        this.db(TABLE_NAME).where('shop', shop_id).update({valid: 0})
+        return this.db(TABLE_NAME).where('shop', shop_id).update({valid: 0})
             .then(() => Promise.resolve())
             .catch((err) => {
                 console.log(err);
