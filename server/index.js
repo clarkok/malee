@@ -8,11 +8,17 @@ let db = require('knex')({
     connection: config.database
 });
 
+let Promise = require('bluebird');
+let Exception = require('./exception.js');
+
 let bodyParser = require('body-parser');
 let cookieParser = require('cookie-parser');
 
 let User = require('./user.js');
 let user = new User(db);
+
+let Shop = require('./shop.js');
+let shop = new Shop(db);
 
 app.use((req, res, next) => {
     console.log((new Date()), req.method, req.url);
@@ -80,6 +86,21 @@ app.get('/user/:uid', (req, res) => {
         .catch((e) => res.send(e));
 });
 
+app.get('/shop', (req, res) => {
+    shop.listShop(
+        req.query && req.query.page_start,
+        req.query && req.query.page_count,
+    )
+        .then((shops) => res.send({code: 0, shops}))
+        .catch((e) => res.send(e));
+});
+
+app.get('/shop/:id', (req, res) => {
+    shop.queryShop(req.params.id)
+        .then((shop) => res.send({code: 0, shop}))
+        .catch((e) => res.send(e));
+});
+
 app.use('/static', Express.static('public'));
 app.get('/', (req, res) => res.sendFile(__dirname + '/public/index.html'));
 
@@ -129,6 +150,48 @@ app.put('/user', (req, res) => {
 
     user.update(new_user)
         .then((user) => res.send({code: 0, user}))
+        .catch((e) => res.send(e));
+});
+
+app.use('/shop/:id', (req, res, next) => {
+    shop.queryShop(req.params.id)
+        .then((shop) => {
+            if (shop.owner != req.user.id) {
+                return Promise.reject(new Exception(-1, 'Not the owner'));
+            }
+            req.shop = shop;
+            next();
+        })
+        .catch((e) => res.send(e));
+});
+
+app.put('/shop/:id', (req, res) => {
+    let new_shop = req.body;
+    new_shop.id = req.params.id;
+    new_shop.owner = req.user.id;
+
+    shop.updateShop(new_shop)
+        .then((shop) => res.send({code: 0, shop}))
+        .catch((e) => res.send(e));
+});
+
+app.delete('/shop/:id', (req, res) => {
+    shop.deleteShop(req.params.id);
+});
+
+app.post('/shop', (req, res) => {
+    let new_shop = req.body;
+    if (!new_shop || !new_shop.name) {
+        res.send({
+            code: -1,
+            msg: 'No shop name'
+        });
+    }
+
+    delete new_shop.id;
+    new_shop.owner = req.user.id;
+    shop.newShop(new_shop)
+        .then((shop) => res.send({code: 0, shop}))
         .catch((e) => res.send(e));
 });
 
