@@ -472,7 +472,7 @@
 
 
 	// module
-	exports.push([module.id, "html,\nbody {\n  margin: 0;\n  padding: 0;\n  background: #eee;\n  width: 100%;\n  position: relative;\n}\nh3,\nh4 {\n  margin: 0;\n}\nbody {\n  padding-top: 75px;\n}\nheader {\n  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);\n  background: #e67e22;\n  height: 75px;\n  left: 0;\n  line-height: 75px;\n  position: fixed;\n  top: 0;\n  width: 100%;\n  z-index: 10;\n}\nheader #header-back {\n  border-radius: 1em;\n  color: #808080;\n  cursor: pointer;\n  display: block;\n  font-size: 2rem;\n  height: 2em;\n  left: -2em;\n  line-height: 2em;\n  position: absolute;\n  text-align: center;\n  top: calc(100% + 1em);\n  transition: all 500ms cubic-bezier(0.215, 0.61, 0.355, 1);\n  width: 2em;\n}\nheader #header-back:hover {\n  transition-duration: 300ms;\n  background: #fff;\n}\nheader #header-back:active {\n  transition-duration: 0;\n  background: #808080;\n}\nheader.subheader #header-back {\n  left: 1em;\n}\nheader .header-item {\n  margin: 0;\n  position: relative;\n  height: 75px;\n  line-height: 75px;\n}\nheader .header-item#header-title {\n  color: #fff;\n  position: absolute;\n  left: 0;\n  font-size: 2rem;\n  font-weight: 700;\n  margin-left: 1em;\n}\nheader .header-item#search-bar {\n  display: block;\n  margin: 0 auto;\n  min-width: 300px;\n  position: relative;\n  width: 50%;\n}\nheader .header-item#search-bar .search-input {\n  background: #f39c12;\n  border: 0;\n  border-radius: 1rem;\n  box-sizing: border-box;\n  color: #fff;\n  display: block;\n  font-size: 1rem;\n  height: 2rem;\n  margin: 0;\n  outline: 0;\n  padding: 1em;\n  position: absolute;\n  top: calc((75px - 2rem) / 2);\n  width: 100%;\n}\nheader .header-item#search-bar .search-button {\n  background: transparent;\n  border: 0;\n  border-radius: 1rem;\n  color: #fff;\n  display: block;\n  height: 2rem;\n  line-height: 2rem;\n  margin: 0;\n  outline: 0;\n  padding: 0;\n  position: absolute;\n  right: 0;\n  text-align: center;\n  top: calc((75px - 2rem) / 2);\n  transition: all 0.3s;\n  width: 2rem;\n}\nheader .header-item#search-bar .search-button:hover {\n  background: #fff;\n  color: #e67e22;\n}\n.container {\n  width: 960px;\n  margin: auto;\n  position: relative;\n}\n.scene {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n}\nol.scene {\n  list-style: none;\n  padding: 0;\n  margin: 0;\n}\n#shops {\n  z-index: 1;\n}\n#shops.scene-enter {\n  opacity: 0;\n}\n#shops.scene-enter.scene-enter-active {\n  opacity: 1;\n  transition: all 500ms cubic-bezier(0.55, 0.055, 0.675, 0.19);\n}\n#shops.scene-leave {\n  opacity: 1;\n}\n#shops.scene-leave.scene-leave-active {\n  opacity: 0;\n  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);\n}\n.shop-card {\n  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);\n  background: #fff;\n  border-radius: 3px;\n  box-sizing: border-box;\n  cursor: pointer;\n  display: inline-block;\n  height: 200px;\n  margin: 20px;\n  overflow: hidden;\n  padding: 20px;\n  padding-left: 220px;\n  position: relative;\n  transition-property: all;\n  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);\n  transition-duration: 300ms;\n  user-select: none;\n  width: 440px;\n}\n.shop-card:hover {\n  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.25);\n}\n.shop-card:active {\n  background: #eee;\n}\n.shop-card.shop-card-enter {\n  top: 100px;\n  opacity: 0;\n}\n.shop-card.shop-card-enter.shop-card-enter-active {\n  top: 0;\n  opacity: 1;\n}\n.shop-card.shop-card-enter.shop-card-enter-active.delay-1 {\n  transition-delay: 100ms;\n}\n.shop-card.shop-card-enter.shop-card-enter-active.delay-2 {\n  transition-delay: 200ms;\n}\n.shop-card.shop-card-enter.shop-card-enter-active.delay-3 {\n  transition-delay: 300ms;\n}\n.shop-card.shop-card-enter.shop-card-enter-active.delay-4 {\n  transition-delay: 400ms;\n}\n.shop-card.shop-card-enter.shop-card-enter-active.delay-5 {\n  transition-delay: 500ms;\n}\n.shop-card.shop-card-enter.shop-card-enter-active.delay-6 {\n  transition-delay: 600ms;\n}\n.shop-card.shop-card-enter.shop-card-enter-active.delay-7 {\n  transition-delay: 700ms;\n}\n.shop-card.shop-card-enter.shop-card-enter-active.delay-8 {\n  transition-delay: 800ms;\n}\n.shop-card.shop-card-enter.shop-card-enter-active.delay-9 {\n  transition-delay: 900ms;\n}\n.shop-card .shop-photo {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 200px;\n  height: 200px;\n}\n.shop-info {\n  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);\n  position: relative;\n  margin: 0 20px 20px 20px;\n  background: #fff;\n  height: 300px;\n  padding: 20px;\n  padding-left: 320px;\n  box-sizing: border-box;\n}\n.shop-info .shop-photo {\n  position: absolute;\n  top: 0;\n  left: 0;\n  height: 300px;\n  width: 300px;\n}\nol.item-list {\n  list-style: 0;\n  padding: 0;\n  margin: 40px 10px;\n  user-select: none;\n  -webkit-user-select: none;\n  position: relative;\n}\nol.item-list .item-card {\n  display: inline-block;\n  width: 215px;\n  height: 322.5px;\n  margin: 0 10px 40px 10px;\n  position: relative;\n  box-sizing: border-box;\n  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);\n}\nol.item-list .item-card .item-card-inner {\n  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);\n  background: #f8f8f8;\n  position: absolute;\n  top: 0;\n  width: 100%;\n  height: 322.5px;\n  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);\n  padding: 20px;\n  padding-top: 235px;\n  box-sizing: border-box;\n  overflow: hidden;\n}\nol.item-list .item-card .item-card-inner .item-photo {\n  position: absolute;\n  width: 215px;\n  height: 215px;\n  top: 0;\n  left: 0;\n}\nol.item-list .item-card .item-card-inner .item-number {\n  display: block;\n  position: absolute;\n  width: 100%;\n  height: 30px;\n  left: 0;\n  bottom: -30px;\n  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);\n}\nol.item-list .item-card .item-card-inner .item-number .item-number-button,\nol.item-list .item-card .item-card-inner .item-number .item-number-input {\n  display: inline-block;\n  height: 30px;\n  box-sizing: border-box;\n  font-size: 1.5rem;\n  text-align: center;\n  background: #f39c12;\n  color: #fff;\n}\nol.item-list .item-card .item-card-inner .item-number .item-number-button {\n  width: 30%;\n  line-height: 30px;\n  cursor: pointer;\n}\nol.item-list .item-card .item-card-inner .item-number .item-number-input {\n  width: 40%;\n  border: none;\n  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);\n  padding: 2px;\n}\nol.item-list .item-card .item-card-inner .item-number .item-number-input:hover,\nol.item-list .item-card .item-card-inner .item-number .item-number-input:focus,\nol.item-list .item-card .item-card-inner .item-number .item-number-input:active {\n  box-shadow: inset 0 2px 2px rgba(0,0,0,0.5);\n  outline: 0;\n}\nol.item-list .item-card .item-card-inner:hover,\nol.item-list .item-card .item-card-inner:focus,\nol.item-list .item-card .item-card-inner.selected {\n  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);\n  background: #fff;\n  top: -15px;\n  height: 352.5px;\n}\nol.item-list .item-card .item-card-inner:hover .item-number,\nol.item-list .item-card .item-card-inner:focus .item-number,\nol.item-list .item-card .item-card-inner.selected .item-number {\n  bottom: 0;\n}\nol.item-list .item-card.item-card-enter {\n  top: 300px;\n  opacity: 0;\n}\nol.item-list .item-card.item-card-enter.item-card-enter-active {\n  top: 0;\n  opacity: 1;\n}\nol.item-list .item-card.item-card-enter.item-card-enter-active.delay-1 {\n  transition-delay: 100ms;\n}\nol.item-list .item-card.item-card-enter.item-card-enter-active.delay-2 {\n  transition-delay: 200ms;\n}\nol.item-list .item-card.item-card-enter.item-card-enter-active.delay-3 {\n  transition-delay: 300ms;\n}\nol.item-list .item-card.item-card-enter.item-card-enter-active.delay-4 {\n  transition-delay: 400ms;\n}\nol.item-list .item-card.item-card-enter.item-card-enter-active.delay-5 {\n  transition-delay: 500ms;\n}\nol.item-list .item-card.item-card-enter.item-card-enter-active.delay-6 {\n  transition-delay: 600ms;\n}\nol.item-list .item-card.item-card-enter.item-card-enter-active.delay-7 {\n  transition-delay: 700ms;\n}\n#shop {\n  z-index: 2;\n}\n#shop.scene-enter .shop-info {\n  top: -300px;\n  opacity: 0;\n}\n#shop.scene-enter.scene-enter-active .shop-info {\n  top: 0;\n  opacity: 1;\n  transition: all 500ms cubic-bezier(0.215, 0.61, 0.355, 1);\n}\n#shop.scene-leave .shop-info {\n  top: 0;\n  opacity: 1;\n}\n#shop.scene-leave .item-list {\n  top: 0;\n  opacity: 1;\n}\n#shop.scene-leave.scene-leave-active .shop-info {\n  top: -300px;\n  opacity: 0;\n  transition: all 300ms cubic-bezier(0.55, 0.055, 0.675, 0.19);\n}\n#shop.scene-leave.scene-leave-active .item-list {\n  top: 300px;\n  opacity: 0;\n  transition: all 300ms cubic-bezier(0.55, 0.055, 0.675, 0.19);\n}\n", ""]);
+	exports.push([module.id, "html,\nbody {\n  margin: 0;\n  padding: 0;\n  background: #eee;\n  width: 100%;\n  height: 100%;\n  position: relative;\n  overflow: hidden;\n}\nh3,\nh4 {\n  margin: 0;\n}\nheader {\n  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);\n  background: #e67e22;\n  height: 75px;\n  left: 0;\n  line-height: 75px;\n  position: fixed;\n  top: 0;\n  width: 100%;\n  z-index: 10;\n}\nheader #header-back {\n  border-radius: 1em;\n  color: #808080;\n  cursor: pointer;\n  display: block;\n  font-size: 2rem;\n  height: 2em;\n  left: -2em;\n  line-height: 2em;\n  position: absolute;\n  text-align: center;\n  top: calc(100% + 1em);\n  transition: all 500ms cubic-bezier(0.215, 0.61, 0.355, 1);\n  width: 2em;\n}\nheader #header-back:hover {\n  transition-duration: 300ms;\n  background: #fff;\n}\nheader #header-back:active {\n  transition-duration: 0;\n  background: #808080;\n}\nheader.subheader #header-back {\n  left: 1em;\n}\nheader .header-item {\n  margin: 0;\n  position: relative;\n  height: 75px;\n  line-height: 75px;\n}\nheader .header-item#header-title {\n  color: #fff;\n  position: absolute;\n  left: 0;\n  font-size: 2rem;\n  font-weight: 700;\n  margin-left: 1em;\n}\nheader .header-item#search-bar {\n  display: block;\n  margin: 0 auto;\n  min-width: 300px;\n  position: relative;\n  width: 50%;\n}\nheader .header-item#search-bar .search-input {\n  background: #f39c12;\n  border: 0;\n  border-radius: 1rem;\n  box-sizing: border-box;\n  color: #fff;\n  display: block;\n  font-size: 1rem;\n  height: 2rem;\n  margin: 0;\n  outline: 0;\n  padding: 1em;\n  position: absolute;\n  top: calc((75px - 2rem) / 2);\n  width: 100%;\n}\nheader .header-item#search-bar .search-button {\n  background: transparent;\n  border: 0;\n  border-radius: 1rem;\n  color: #fff;\n  display: block;\n  height: 2rem;\n  line-height: 2rem;\n  margin: 0;\n  outline: 0;\n  padding: 0;\n  position: absolute;\n  right: 0;\n  text-align: center;\n  top: calc((75px - 2rem) / 2);\n  transition: all 0.3s;\n  width: 2rem;\n}\nheader .header-item#search-bar .search-button:hover {\n  background: #fff;\n  color: #e67e22;\n}\n.scroller {\n  margin-top: 75px;\n  height: calc(100vh - 75px);\n  width: 100vw;\n  overflow: auto;\n  position: absolute;\n  top: 0;\n  left: 0;\n}\n.scene {\n  width: 960px;\n  margin: auto;\n  position: relative;\n}\nol.scene {\n  list-style: none;\n  padding: 0;\n}\n.scroller.scene-enter #shops {\n  opacity: 0;\n}\n.scroller.scene-enter-active #shops {\n  opacity: 1;\n  transition: all 500ms cubic-bezier(0.55, 0.055, 0.675, 0.19);\n}\n.scroller.scene-leave #shops {\n  opacity: 1;\n}\n.scroller.scene-leave-active #shops {\n  opacity: 0;\n  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);\n}\n.list-footer {\n  width: 50%;\n  height: 3em;\n  line-height: 3em;\n  text-align: center;\n  position: absolute;\n  left: 50%;\n  bottom: 40px;\n  margin-left: -25%;\n  transition: all 500ms cubic-bezier(0.215, 0.61, 0.355, 1);\n}\n.list-footer.list-footer-enter {\n  margin-top: 3em;\n  opacity: 0;\n}\n.list-footer.list-footer-enter-active {\n  margin-top: 0;\n  opacity: 1;\n  transition: all 500ms cubic-bezier(0.215, 0.61, 0.355, 1);\n}\n.list-footer.list-footer-leave {\n  margin-top: 0;\n  opacity: 1;\n}\n.list-footer.list-footer-leave-active {\n  margin-top: -3em;\n  opacity: 0;\n  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);\n}\n.list-fetching {\n  color: rgba(0,0,0,0.3);\n  animation: 3s linear spin;\n}\n.list-ended {\n  background: rgba(0,0,0,0.3);\n  color: #eee;\n  border-radius: 3px;\n}\n.list-ended:after {\n  content: \"\\4E0B\\9762\\6CA1\\6709\\4E86\";\n}\n#shops {\n  z-index: 1;\n  padding-bottom: calc(3em + 60px);\n}\n.shop-card {\n  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);\n  background: #f8f8f8;\n  border-radius: 3px;\n  box-sizing: border-box;\n  cursor: pointer;\n  display: inline-block;\n  height: 200px;\n  margin: 20px;\n  overflow: hidden;\n  padding: 20px;\n  padding-left: 220px;\n  position: relative;\n  transition-property: all;\n  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);\n  transition-duration: 300ms;\n  user-select: none;\n  width: 440px;\n}\n.shop-card:hover {\n  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);\n  background: #fff;\n}\n.shop-card:active {\n  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.25);\n  background: #eee;\n}\n.shop-card.shop-card-enter {\n  top: 100px;\n  opacity: 0;\n}\n.shop-card.shop-card-enter.shop-card-enter-active {\n  top: 0;\n  opacity: 1;\n}\n.shop-card.shop-card-enter.shop-card-enter-active.delay-1 {\n  transition-delay: 50ms;\n}\n.shop-card.shop-card-enter.shop-card-enter-active.delay-2 {\n  transition-delay: 100ms;\n}\n.shop-card.shop-card-enter.shop-card-enter-active.delay-3 {\n  transition-delay: 150ms;\n}\n.shop-card.shop-card-enter.shop-card-enter-active.delay-4 {\n  transition-delay: 200ms;\n}\n.shop-card.shop-card-enter.shop-card-enter-active.delay-5 {\n  transition-delay: 250ms;\n}\n.shop-card.shop-card-enter.shop-card-enter-active.delay-6 {\n  transition-delay: 300ms;\n}\n.shop-card.shop-card-enter.shop-card-enter-active.delay-7 {\n  transition-delay: 350ms;\n}\n.shop-card.shop-card-enter.shop-card-enter-active.delay-8 {\n  transition-delay: 400ms;\n}\n.shop-card.shop-card-enter.shop-card-enter-active.delay-9 {\n  transition-delay: 450ms;\n}\n.shop-card .shop-photo {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 200px;\n  height: 200px;\n}\n.shop-info {\n  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);\n  position: relative;\n  margin: 0 20px 20px 20px;\n  background: #fff;\n  height: 300px;\n  padding: 20px;\n  padding-left: 320px;\n  box-sizing: border-box;\n}\n.shop-info .shop-photo {\n  position: absolute;\n  top: 0;\n  left: 0;\n  height: 300px;\n  width: 300px;\n}\nol.item-list {\n  list-style: 0;\n  padding: 0;\n  padding-bottom: calc(3em + 60px);\n  margin: 40px 10px;\n  user-select: none;\n  -webkit-user-select: none;\n  position: relative;\n  transition: all 500ms cubic-bezier(0.215, 0.61, 0.355, 1);\n}\nol.item-list.item-reserve-for-cart {\n  padding-bottom: calc(3em + 13em);\n}\nol.item-list.item-reserve-for-cart .list-footer {\n  bottom: calc(20px + 13em);\n}\nol.item-list .item-card {\n  display: inline-block;\n  width: 215px;\n  height: 322.5px;\n  margin: 0 10px 40px 10px;\n  position: relative;\n  box-sizing: border-box;\n  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);\n}\nol.item-list .item-card .item-card-inner {\n  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);\n  background: #f8f8f8;\n  position: absolute;\n  top: 0;\n  width: 100%;\n  height: 322.5px;\n  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);\n  padding: 20px;\n  padding-top: 235px;\n  box-sizing: border-box;\n  overflow: hidden;\n}\nol.item-list .item-card .item-card-inner .item-photo {\n  position: absolute;\n  width: 215px;\n  height: 215px;\n  top: 0;\n  left: 0;\n}\nol.item-list .item-card .item-card-inner .item-number {\n  display: block;\n  position: absolute;\n  width: 100%;\n  height: 30px;\n  left: 0;\n  bottom: -30px;\n  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);\n}\nol.item-list .item-card .item-card-inner .item-number .item-number-button,\nol.item-list .item-card .item-card-inner .item-number .item-number-input {\n  display: inline-block;\n  height: 30px;\n  box-sizing: border-box;\n  font-size: 1.5rem;\n  text-align: center;\n  background: #f39c12;\n  color: #fff;\n}\nol.item-list .item-card .item-card-inner .item-number .item-number-button {\n  width: 30%;\n  line-height: 30px;\n  cursor: pointer;\n}\nol.item-list .item-card .item-card-inner .item-number .item-number-input {\n  width: 40%;\n  border: none;\n  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);\n  font-size: 1em;\n  padding: 0;\n  vertical-align: bottom;\n}\nol.item-list .item-card .item-card-inner .item-number .item-number-input:hover,\nol.item-list .item-card .item-card-inner .item-number .item-number-input:focus,\nol.item-list .item-card .item-card-inner .item-number .item-number-input:active {\n  box-shadow: inset 0 2px 2px rgba(0,0,0,0.5);\n  outline: 0;\n}\nol.item-list .item-card .item-card-inner:hover,\nol.item-list .item-card .item-card-inner:focus,\nol.item-list .item-card .item-card-inner.selected {\n  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.25);\n  background: #fff;\n  top: -15px;\n  height: 352.5px;\n}\nol.item-list .item-card .item-card-inner:hover .item-number,\nol.item-list .item-card .item-card-inner:focus .item-number,\nol.item-list .item-card .item-card-inner.selected .item-number {\n  bottom: 0;\n}\nol.item-list .item-card .item-card-inner:hover {\n  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);\n}\nol.item-list .item-card.item-card-enter {\n  top: 300px;\n  opacity: 0;\n}\nol.item-list .item-card.item-card-enter.item-card-enter-active {\n  top: 0;\n  opacity: 1;\n}\nol.item-list .item-card.item-card-enter.item-card-enter-active.delay-1 {\n  transition-delay: 100ms;\n}\nol.item-list .item-card.item-card-enter.item-card-enter-active.delay-2 {\n  transition-delay: 200ms;\n}\nol.item-list .item-card.item-card-enter.item-card-enter-active.delay-3 {\n  transition-delay: 300ms;\n}\nol.item-list .item-card.item-card-enter.item-card-enter-active.delay-4 {\n  transition-delay: 400ms;\n}\nol.item-list .item-card.item-card-enter.item-card-enter-active.delay-5 {\n  transition-delay: 500ms;\n}\nol.item-list .item-card.item-card-enter.item-card-enter-active.delay-6 {\n  transition-delay: 600ms;\n}\nol.item-list .item-card.item-card-enter.item-card-enter-active.delay-7 {\n  transition-delay: 700ms;\n}\n.scroller.scene-enter .shop-info {\n  top: -300px;\n  opacity: 0;\n}\n.scroller.scene-enter-active .shop-info {\n  top: 0;\n  opacity: 1;\n  transition: all 500ms cubic-bezier(0.215, 0.61, 0.355, 1);\n}\n.scroller.scene-leave .shop-info {\n  top: 0;\n  opacity: 1;\n}\n.scroller.scene-leave .item-list {\n  top: 0;\n  opacity: 1;\n}\n.scroller.scene-leave-active .shop-info {\n  top: -300px;\n  opacity: 0;\n  transition: all 300ms cubic-bezier(0.55, 0.055, 0.675, 0.19);\n}\n.scroller.scene-leave-active .item-list {\n  top: 300px;\n  opacity: 0;\n  transition: all 300ms cubic-bezier(0.55, 0.055, 0.675, 0.19);\n}\n#shop {\n  z-index: 2;\n}\n#cart {\n  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.25);\n  position: absolute;\n  width: 920px;\n  height: 13em;\n  background: #fff;\n  z-index: 8;\n  box-sizing: border-box;\n  padding: 20px;\n  left: 50%;\n  margin-left: -460px;\n  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);\n  overflow: hidden;\n}\n#cart.hidden-cart {\n  opacity: 0;\n  top: 110vh;\n  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);\n}\n#cart.show-cart {\n  opacity: 1;\n  top: calc(100vh - 13em);\n}\n#cart.show-cart:hover,\n#cart.promote-cart {\n  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);\n  height: 16em;\n  top: calc(100vh - 16em);\n}\n#cart h3 {\n  color: #e67e22;\n}\n#cart .cart-total {\n  float: right;\n}\n#cart .cart-total:before {\n  content: \"\\603B\\8BA1\\FF1A\";\n  color: #808080;\n}\n#cart .cart-bottom-line {\n  height: 3em;\n  width: 100%;\n  line-height: 3em;\n  padding: 0 1em;\n  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);\n  position: absolute;\n  bottom: -3em;\n  left: 0;\n  box-sizing: border-box;\n  background: #f39c12;\n  color: #fff;\n  overflow: hidden;\n}\n#cart .cart-bottom-line .cart-button {\n  display: inline-block;\n  float: right;\n  margin-left: 1em;\n  cursor: pointer;\n  line-height: 1em;\n  height: 1em;\n  margin-top: 0.5em;\n  padding: 0.5em;\n}\n#cart .cart-bottom-line .cart-button:hover {\n  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);\n  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);\n}\n#cart .cart-bottom-line .cart-button:active {\n  box-shadow: inset 0 2px 2px rgba(0,0,0,0.5);\n}\n#cart .cart-bottom-line.cart-bottom-line-enter {\n  height: 0;\n  bottom: 0;\n}\n#cart .cart-bottom-line.cart-bottom-line-enter-active {\n  height: 3em;\n}\n#cart .cart-bottom-line.cart-bottom-line-leave {\n  height: 3em;\n  bottom: 0;\n}\n#cart .cart-bottom-line.cart-bottom-line-leave-active {\n  height: 0;\n  bottom: 3em;\n}\n#cart.show-cart:hover .cart-bottom-line,\n#cart.promote-cart .cart-bottom-line {\n  bottom: 0;\n}\n#cart.show-cart:hover .cart-list,\n#cart.promote-cart .cart-list {\n  height: calc(100% - 5em);\n}\n.cart-list {\n  list-style: none;\n  padding: 0;\n  height: calc(100% - 2em);\n  overflow: auto;\n  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);\n}\n.cart-list .cart-item {\n  display: block;\n  height: 2em;\n  line-height: 2em;\n  position: relative;\n  overflow: hidden;\n}\n.cart-list .cart-item.cart-list-enter {\n  height: 0;\n  opacity: 0;\n}\n.cart-list .cart-item.cart-list-enter-active {\n  height: 2em;\n  opacity: 1;\n  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);\n}\n.cart-list .cart-item.cart-list-leave {\n  height: 2em;\n  opacity: 1;\n}\n.cart-list .cart-item.cart-list-leave-active {\n  height: 0;\n  opacity: 0;\n  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);\n}\n.cart-list .cart-item-column {\n  display: inline-block;\n}\n.cart-list .cart-item-column:before,\n.cart-list .cart-item-column:after {\n  color: #808080;\n}\n.cart-list .cart-item-name {\n  width: 50%;\n}\n.cart-list .cart-item-price {\n  width: 20%;\n  text-align: right;\n}\n.cart-list .cart-item-price:after {\n  content: \" \\8F6F\\59B9\\5E01   \";\n}\n.cart-list .cart-item-number {\n  width: 10%;\n}\n.cart-list .cart-item-number:before {\n  content: \" x \";\n}\n.cart-list .cart-item-equal {\n  width: 5%;\n  text-align: right;\n}\n.cart-list .cart-item-total {\n  width: 15%;\n  text-align: right;\n}\n.cart-list .cart-item-total:after {\n  content: \" \\8F6F\\59B9\\5E01\";\n}\n@-moz-keyframes spin {\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n}\n@-webkit-keyframes spin {\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n}\n@-o-keyframes spin {\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n}\n@keyframes spin {\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n}\n", ""]);
 
 	// exports
 
@@ -815,13 +815,17 @@
 
 	var _navigation2 = _interopRequireDefault(_navigation);
 
-	var _store = __webpack_require__(226);
+	var _cart = __webpack_require__(227);
+
+	var _cart2 = _interopRequireDefault(_cart);
+
+	var _store = __webpack_require__(228);
 
 	var _store2 = _interopRequireDefault(_store);
 
 	var _actions = __webpack_require__(212);
 
-	var _api = __webpack_require__(223);
+	var _api = __webpack_require__(222);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -835,8 +839,8 @@
 	            'div',
 	            null,
 	            _react2.default.createElement(_header2.default, null),
-	            _react2.default.createElement(_aside2.default, null),
-	            _react2.default.createElement(_navigation2.default, null)
+	            _react2.default.createElement(_navigation2.default, null),
+	            _react2.default.createElement(_cart2.default, null)
 	        );
 	    }
 	});
@@ -21972,12 +21976,15 @@
 	        );
 	    },
 	    handleBack: function handleBack() {
-	        this.props.dispatch((0, _actions.exitShop)());
+	        this.props.dispatch(this.props.safeBack ? (0, _actions.exitShopInsist)() : (0, _actions.exitShop)());
 	    }
 	});
 
 	var mapStateToProps = function mapStateToProps(state) {
-	    return { presenting: state.presenting };
+	    return {
+	        presenting: state.presenting,
+	        safeBack: !state.cart.shop_id
+	    };
 	};
 
 	exports.default = (0, _reactRedux.connect)(mapStateToProps)(Header);
@@ -22032,6 +22039,9 @@
 	exports.pullItemListPage = pullItemListPage;
 	exports.selectShop = selectShop;
 	exports.exitShop = exitShop;
+	exports.exitShopInsist = exitShopInsist;
+	exports.exitShopCancel = exitShopCancel;
+	exports.selectItem = selectItem;
 	var VALIDATE_LOGIN = exports.VALIDATE_LOGIN = 'VALIDATE_LOGIN';
 	function validateLogin(promise) {
 	    return {
@@ -22079,6 +22089,28 @@
 	    };
 	}
 
+	var EXIT_SHOP_INSIST = exports.EXIT_SHOP_INSIST = 'EXIT_SHOP_INSIST';
+	function exitShopInsist() {
+	    return {
+	        type: EXIT_SHOP_INSIST
+	    };
+	}
+
+	var EXIT_SHOP_CANCEL = exports.EXIT_SHOP_CANCEL = 'EXIT_SHOP_CANCEL';
+	function exitShopCancel() {
+	    return {
+	        type: EXIT_SHOP_CANCEL
+	    };
+	}
+
+	var SELECT_ITEM = exports.SELECT_ITEM = 'SELECT_ITEM';
+	function selectItem(shop_id, item_id, number) {
+	    return {
+	        type: SELECT_ITEM,
+	        shop_id: shop_id, item_id: item_id, number: number
+	    };
+	}
+
 /***/ },
 /* 213 */
 /***/ function(module, exports, __webpack_require__) {
@@ -22103,42 +22135,84 @@
 
 	var _shopList2 = _interopRequireDefault(_shopList);
 
-	var _shop = __webpack_require__(222);
+	var _shop = __webpack_require__(225);
 
 	var _shop2 = _interopRequireDefault(_shop);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var TRANSITION_DURATION = 500;
+	var TRANSITION_DURATION = 800;
+
+	var Scroller = _react2.default.createClass({
+	    displayName: 'Scroller',
+
+	    render: function render() {
+	        return _react2.default.createElement(
+	            'div',
+	            { className: 'scroller' },
+	            children
+	        );
+	    }
+	});
 
 	var Navigation = _react2.default.createClass({
 	    displayName: 'Navigation',
 
 	    render: function render() {
 	        var scene = void 0;
+	        var key = void 0;
 
 	        switch (this.props.presenting) {
 	            case 'ITEMS':
-	                scene = _react2.default.createElement(_shop2.default, { key: 'ITEMS-' + this.props.currentShop });
+	                key = 'ITEMS-' + this.props.currentShop;
+	                scene = _react2.default.createElement(_shop2.default, {
+	                    key: key,
+	                    addScrollListener: this.addScrollListener,
+	                    removeScrollListener: this.removeScrollListener
+	                });
 	                break;
 	            case 'SHOPS':
 	            default:
-	                scene = _react2.default.createElement(_shopList2.default, { key: 'SHOPS' });
+	                key = 'SHOPS';
+	                scene = _react2.default.createElement(_shopList2.default, {
+	                    key: key,
+	                    addScrollListener: this.addScrollListener,
+	                    removeScrollListener: this.removeScrollListener
+	                });
 	        };
 
 	        return _react2.default.createElement(
-	            'div',
-	            { className: 'container' },
+	            _reactAddonsCssTransitionGroup2.default,
+	            {
+	                transitionName: 'scene',
+	                transitionEnterTimeout: TRANSITION_DURATION,
+	                transitionLeaveTimeout: TRANSITION_DURATION
+	            },
 	            _react2.default.createElement(
-	                _reactAddonsCssTransitionGroup2.default,
-	                {
-	                    transitionName: 'scene',
-	                    transitionEnterTimeout: TRANSITION_DURATION,
-	                    transitionLeaveTimeout: TRANSITION_DURATION
-	                },
+	                'div',
+	                { className: 'scroller', onScroll: this.handleScroll, key: key },
 	                scene
 	            )
 	        );
+	    },
+	    getInitialState: function getInitialState() {
+	        return {
+	            _scroll_handlers: []
+	        };
+	    },
+	    addScrollListener: function addScrollListener(listener) {
+	        this.state._scroll_handlers.push(listener);
+	    },
+	    removeScrollListener: function removeScrollListener(listener) {
+	        this.state._scroll_handlers = this.state._scroll_handlers.filter(function (handlers) {
+	            return handlers != listener;
+	        });
+	    },
+	    handleScroll: function handleScroll(evt) {
+	        var scrollTop = evt.target.scrollTop;
+	        this.state._scroll_handlers.forEach(function (handler) {
+	            handler(scrollTop);
+	        });
 	    }
 	});
 
@@ -22967,9 +23041,15 @@
 
 	var _actions = __webpack_require__(212);
 
+	var _api = __webpack_require__(222);
+
+	var _listFooter = __webpack_require__(224);
+
+	var _listFooter2 = _interopRequireDefault(_listFooter);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var DELAY_BETWEEN_CARD = 100;
+	var DELAY_BETWEEN_CARD = 50;
 	var CARDS_PER_PAGE = 10;
 	var TRANSITION_DURATION = 300;
 
@@ -23011,7 +23091,7 @@
 
 	        return _react2.default.createElement(
 	            'ol',
-	            { id: 'shops', className: 'scene' },
+	            { id: 'shops', className: 'scene', ref: 'shops' },
 	            _react2.default.createElement(
 	                _reactAddonsCssTransitionGroup2.default,
 	                {
@@ -23027,7 +23107,8 @@
 	                        onClick: _this.handleCardClick.bind(_this, shop.id)
 	                    });
 	                })
-	            )
+	            ),
+	            _react2.default.createElement(_listFooter2.default, { fetching: this.props.shops.fetching, ended: this.props.shops.ended })
 	        );
 	    },
 	    getInitialState: function getInitialState() {
@@ -23052,19 +23133,146 @@
 	            delayBase: this.state.shops.length
 	        });
 	    },
+	    componentDidMount: function componentDidMount() {
+	        this.props.addScrollListener(this.handleScroll);
+	    },
+	    componentWillUnmount: function componentWillUnmount() {
+	        this.props.removeScrollListener(this.handleScroll);
+	    },
 	    handleCardClick: function handleCardClick(shop_id) {
 	        this.props.dispatch((0, _actions.selectShop)(shop_id));
+	    },
+	    handleScroll: function handleScroll(scrollTop) {
+	        if (scrollTop + window.innerHeight > this.refs.shops.clientHeight) {
+	            if (!this.props.shops.fetching && !this.props.shops.ended) {
+	                this.props.dispatch((0, _actions.pullShopListPage)((0, _api.fetchShopListPage)(this.props.shopLastId)));
+	            }
+	        }
 	    }
 	});
 
 	var mapStateToProps = function mapStateToProps(state) {
-	    return { shops: state.shops };
+	    return {
+	        shops: state.shops,
+	        shopLastId: state.shopLastId
+	    };
 	};
 
 	exports.default = (0, _reactRedux.connect)(mapStateToProps)(ShopList);
 
 /***/ },
 /* 222 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.fetchShopListPage = fetchShopListPage;
+	exports.fetchItemListPage = fetchItemListPage;
+	exports.fetchShopDetail = fetchShopDetail;
+
+	var _utils = __webpack_require__(223);
+
+	function fetchShopListPage(page_start, page_count) {
+	    page_start = page_start || 0;
+	    page_count = page_count || 10;
+
+	    return fetch((0, _utils.queryUrl)('/shop', { page_start: page_start, page_count: page_count })).then(function (result) {
+	        return result.json();
+	    });
+	}
+
+	function fetchItemListPage(shop_id, page_start, page_count) {
+	    page_start = page_start || 0;
+	    page_count = page_count || 8;
+
+	    return fetch((0, _utils.queryUrl)('/shop/' + shop_id + '/items', { page_start: page_start, page_count: page_count })).then(function (result) {
+	        return result.json();
+	    });
+	}
+
+	function fetchShopDetail(shop_id) {
+	    return fetch('/shop/' + shop_id).then(function (result) {
+	        return result.json();
+	    });
+	}
+
+/***/ },
+/* 223 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.obj2form = obj2form;
+	exports.obj2query = obj2query;
+	exports.queryUrl = queryUrl;
+	function obj2form(obj) {
+	    return Object.getOwnPropertyNames(obj).reduce(function (form, key) {
+	        form.append(key, obj[key]);return form;
+	    }, new FormData());
+	}
+
+	function obj2query(obj) {
+	    return Object.getOwnPropertyNames(obj).map(function (key) {
+	        return key + '=' + encodeURIComponent(obj[key]);
+	    }).join('&');
+	}
+
+	function queryUrl(base, queries) {
+	    return base + '?' + obj2query(queries);
+	}
+
+/***/ },
+/* 224 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _react = __webpack_require__(30);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactAddonsCssTransitionGroup = __webpack_require__(214);
+
+	var _reactAddonsCssTransitionGroup2 = _interopRequireDefault(_reactAddonsCssTransitionGroup);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var TRANSITION_DURATION = 1000;
+
+	var ListFooter = _react2.default.createClass({
+	    displayName: 'ListFooter',
+
+	    render: function render() {
+	        return _react2.default.createElement(
+	            _reactAddonsCssTransitionGroup2.default,
+	            {
+	                transitionName: 'list-footer',
+	                transitionEnterTimeout: TRANSITION_DURATION,
+	                transitionLeaveTimeout: TRANSITION_DURATION
+	            },
+	            this.props.fetching ? _react2.default.createElement(
+	                'div',
+	                { className: 'list-footer list-fetching', key: 'fetching' },
+	                _react2.default.createElement('i', { className: 'fa fa-circle-o-notch' })
+	            ) : this.props.ended ? _react2.default.createElement('div', { className: 'list-footer list-ended', key: 'ended' }) : []
+	        );
+	    }
+	});
+
+	exports.default = ListFooter;
+
+/***/ },
+/* 225 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23079,11 +23287,11 @@
 
 	var _reactRedux = __webpack_require__(188);
 
-	var _api = __webpack_require__(223);
+	var _api = __webpack_require__(222);
 
 	var _actions = __webpack_require__(212);
 
-	var _itemList = __webpack_require__(225);
+	var _itemList = __webpack_require__(226);
 
 	var _itemList2 = _interopRequireDefault(_itemList);
 
@@ -23129,7 +23337,11 @@
 	            'div',
 	            { id: 'shop', className: 'scene' },
 	            _react2.default.createElement(ShopInfo, { fetching: this.props.shop.detailFetching, shop: this.props.shop.detail || {} }),
-	            _react2.default.createElement(_itemList2.default, { items: this.props.items })
+	            _react2.default.createElement(_itemList2.default, {
+	                items: this.props.items,
+	                addScrollListener: this.props.addScrollListener,
+	                removeScrollListener: this.props.removeScrollListener
+	            })
 	        );
 	    },
 	    componentDidMount: function componentDidMount() {
@@ -23149,74 +23361,7 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps)(Shop);
 
 /***/ },
-/* 223 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	exports.fetchShopListPage = fetchShopListPage;
-	exports.fetchItemListPage = fetchItemListPage;
-	exports.fetchShopDetail = fetchShopDetail;
-
-	var _utils = __webpack_require__(224);
-
-	function fetchShopListPage(page_start, page_count) {
-	    page_start = page_start || 0;
-	    page_count = page_count || 10;
-
-	    return fetch((0, _utils.queryUrl)('/shop', { page_start: page_start, page_count: page_count })).then(function (result) {
-	        return result.json();
-	    });
-	}
-
-	function fetchItemListPage(shop_id, page_start, page_count) {
-	    page_start = page_start || 0;
-	    page_count = page_count || 8;
-
-	    return fetch((0, _utils.queryUrl)('/shop/' + shop_id + '/items', { page_start: page_start, page_count: page_count })).then(function (result) {
-	        return result.json();
-	    });
-	}
-
-	function fetchShopDetail(shop_id) {
-	    return fetch('/shop/' + shop_id).then(function (result) {
-	        return result.json();
-	    });
-	}
-
-/***/ },
-/* 224 */
-/***/ function(module, exports) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	exports.obj2form = obj2form;
-	exports.obj2query = obj2query;
-	exports.queryUrl = queryUrl;
-	function obj2form(obj) {
-	    return Object.getOwnPropertyNames(obj).reduce(function (form, key) {
-	        form.append(key, obj[key]);return form;
-	    }, new FormData());
-	}
-
-	function obj2query(obj) {
-	    return Object.getOwnPropertyNames(obj).map(function (key) {
-	        return key + '=' + encodeURIComponent(obj[key]);
-	    }).join('&');
-	}
-
-	function queryUrl(base, queries) {
-	    return base + '?' + obj2query(queries);
-	}
-
-/***/ },
-/* 225 */
+/* 226 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23235,9 +23380,13 @@
 
 	var _reactRedux = __webpack_require__(188);
 
-	var _api = __webpack_require__(223);
+	var _api = __webpack_require__(222);
 
 	var _actions = __webpack_require__(212);
+
+	var _listFooter = __webpack_require__(224);
+
+	var _listFooter2 = _interopRequireDefault(_listFooter);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -23316,6 +23465,8 @@
 	            number: new_number,
 	            selected: !!new_number
 	        });
+
+	        this.props.onNumberChange(this.props.item.id, new_number);
 	    },
 
 	    handleNumberChange: function handleNumberChange(event) {
@@ -23352,7 +23503,7 @@
 
 	        var ret = _react2.default.createElement(
 	            'ol',
-	            { className: 'item-list' },
+	            { className: 'item-list ' + (this.props.cartFloat ? 'item-reserve-for-cart' : ''), ref: 'items' },
 	            _react2.default.createElement(
 	                _reactAddonsCssTransitionGroup2.default,
 	                {
@@ -23365,10 +23516,12 @@
 	                }).map(function (item, index) {
 	                    return _react2.default.createElement(Item, {
 	                        key: item.id,
-	                        item: item
+	                        item: item,
+	                        onNumberChange: _this.handleNumberChange
 	                    });
 	                })
-	            )
+	            ),
+	            _react2.default.createElement(_listFooter2.default, { fetching: this.props.fetching, ended: this.props.ended })
 	        );
 
 	        return ret;
@@ -23385,6 +23538,11 @@
 	        } else {
 	            setTimeout(this.showNext, DELAY_BETWEEN_CARD);
 	        }
+
+	        this.props.addScrollListener(this.handleScroll);
+	    },
+	    componentWillUnmount: function componentWillUnmount() {
+	        this.props.removeScrollListener(this.handleScroll);
 	    },
 	    componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
 	        if (!this.state.showing) {
@@ -23399,6 +23557,16 @@
 	            this.setState({ showing: true, rendered: rendered });
 	            setTimeout(this.showNext, DELAY_BETWEEN_CARD);
 	        }
+	    },
+	    handleScroll: function handleScroll(scrollTop) {
+	        if (scrollTop + window.innerHeight > this.refs.items.clientHeight) {
+	            if (!this.props.fetching && !this.props.ended) {
+	                this.props.dispatch((0, _actions.pullItemListPage)(this.props.shopId, (0, _api.fetchItemListPage)(this.props.shopId, this.props.itemLastId)));
+	            }
+	        }
+	    },
+	    handleNumberChange: function handleNumberChange(item_id, number) {
+	        this.props.dispatch((0, _actions.selectItem)(this.props.shopId, item_id, number));
 	    }
 	});
 
@@ -23407,7 +23575,9 @@
 	        itemLastId: state.shops[state.currentShop].itemLastId,
 	        fetching: state.shops[state.currentShop].itemFetching,
 	        error: state.shops[state.currentShop].itemError,
+	        ended: state.shops[state.currentShop].itemEnded,
 	        shopId: state.currentShop,
+	        cartFloat: !!state.cart.shop_id,
 	        items: Object.getOwnPropertyNames(state.items).filter(function (name) {
 	            return !isNaN(parseInt(name, 10));
 	        }).map(function (name) {
@@ -23421,7 +23591,175 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps)(ItemList);
 
 /***/ },
-/* 226 */
+/* 227 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _react = __webpack_require__(30);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactAddonsCssTransitionGroup = __webpack_require__(214);
+
+	var _reactAddonsCssTransitionGroup2 = _interopRequireDefault(_reactAddonsCssTransitionGroup);
+
+	var _reactRedux = __webpack_require__(188);
+
+	var _actions = __webpack_require__(212);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var TRANSITION_DURATION = 300;
+
+	var CartListItem = _react2.default.createClass({
+	    displayName: 'CartListItem',
+
+	    render: function render() {
+	        return _react2.default.createElement(
+	            'li',
+	            { className: 'cart-item' },
+	            _react2.default.createElement(
+	                'span',
+	                { className: 'cart-item-column cart-item-name' },
+	                this.props.item.name
+	            ),
+	            _react2.default.createElement(
+	                'span',
+	                { className: 'cart-item-column cart-item-price' },
+	                this.props.item.price
+	            ),
+	            _react2.default.createElement(
+	                'span',
+	                { className: 'cart-item-column cart-item-number' },
+	                this.props.number
+	            ),
+	            _react2.default.createElement(
+	                'span',
+	                { className: 'cart-item-column cart-item-equal' },
+	                '='
+	            ),
+	            _react2.default.createElement(
+	                'span',
+	                { className: 'cart-item-column cart-item-total' },
+	                this.props.item.price * this.props.number
+	            )
+	        );
+	    }
+	});
+
+	var CartList = _react2.default.createClass({
+	    displayName: 'CartList',
+
+	    render: function render() {
+	        return _react2.default.createElement(
+	            'ol',
+	            { className: 'cart-list' },
+	            _react2.default.createElement(
+	                _reactAddonsCssTransitionGroup2.default,
+	                {
+	                    transitionName: 'cart-list',
+	                    transitionEnterTimeout: TRANSITION_DURATION,
+	                    transitionLeaveTimeout: TRANSITION_DURATION
+	                },
+	                this.props.itemsList.map(function (itemList) {
+	                    return _react2.default.createElement(CartListItem, { key: itemList.item.id, item: itemList.item, number: itemList.number });
+	                })
+	            )
+	        );
+	    }
+	});
+
+	var Cart = _react2.default.createClass({
+	    displayName: 'Cart',
+
+	    render: function render() {
+	        var extra_state = this.props.promote ? 'promote' : this.props.shop_id ? 'show' : 'hidden';
+	        return _react2.default.createElement(
+	            'div',
+	            { id: 'cart', className: extra_state + '-cart' },
+	            _react2.default.createElement(
+	                'h3',
+	                null,
+	                this.props.shop.name || " ",
+	                _react2.default.createElement(
+	                    'span',
+	                    { className: 'cart-total' },
+	                    this.props.total
+	                )
+	            ),
+	            _react2.default.createElement(CartList, { itemsList: this.props.itemsList }),
+	            _react2.default.createElement(
+	                _reactAddonsCssTransitionGroup2.default,
+	                {
+	                    transitionName: 'cart-bottom-line',
+	                    transitionEnterTimeout: TRANSITION_DURATION,
+	                    transitionLeaveTimeout: TRANSITION_DURATION
+	                },
+	                this.props.promote ? _react2.default.createElement(
+	                    'div',
+	                    { className: 'cart-bottom-line', key: 'promote' },
+	                    _react2.default.createElement(
+	                        'span',
+	                        null,
+	                        '返回后订单会被重置，确认返回？'
+	                    ),
+	                    _react2.default.createElement(
+	                        'span',
+	                        { onClick: this.handleInsist, className: 'cart-button' },
+	                        '确认'
+	                    ),
+	                    _react2.default.createElement(
+	                        'span',
+	                        { onClick: this.handleCancel, className: 'cart-button' },
+	                        '取消'
+	                    )
+	                ) : _react2.default.createElement(
+	                    'div',
+	                    { className: 'cart-bottom-line', key: 'confirm' },
+	                    _react2.default.createElement(
+	                        'span',
+	                        { onClick: this.handleSubmit, className: 'cart-button' },
+	                        '立即下单'
+	                    )
+	                )
+	            )
+	        );
+	    },
+	    handleCancel: function handleCancel() {
+	        this.props.dispatch((0, _actions.exitShopCancel)());
+	    },
+	    handleInsist: function handleInsist() {
+	        this.props.dispatch((0, _actions.exitShopInsist)());
+	    },
+	    handleSubmit: function handleSubmit() {}
+	});
+
+	var mapStateToProps = function mapStateToProps(state) {
+	    var itemsList = Object.getOwnPropertyNames(state.cart).filter(function (name) {
+	        return !isNaN(parseInt(name, 10));
+	    }).map(function (name) {
+	        return { item: state.items[name], number: state.cart[name] };
+	    });
+	    var total = itemsList.reduce(function (total, itemList) {
+	        return total + itemList.number * itemList.item.price;
+	    }, 0);
+	    return {
+	        shop_id: state.cart.shop_id,
+	        shop: state.cart.shop_id ? state.shops[state.cart.shop_id] : {},
+	        promote: state.cart.promote,
+	        itemsList: itemsList, total: total
+	    };
+	};
+
+	exports.default = (0, _reactRedux.connect)(mapStateToProps)(Cart);
+
+/***/ },
+/* 228 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23438,6 +23776,8 @@
 
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 	/**
 	 *  state {
 	 *      presenting: 'SHOPS' | 'ITEMS' | 'SEARCH_RESULTS',
@@ -23446,6 +23786,7 @@
 	 *      shops: {
 	 *          fetching,
 	 *          error,
+	 *          ended,
 	 *          [id]: {
 	 *              id,
 	 *              name,
@@ -23459,6 +23800,7 @@
 	 *              }
 	 *              itemFetching,
 	 *              itemError,
+	 *              itemEnded,
 	 *              itemLastId,
 	 *          },
 	 *          ...
@@ -23473,6 +23815,11 @@
 	 *              photo
 	 *          },
 	 *          ...
+	 *      },
+	 *      cart: {
+	 *          shop_id,
+	 *          promote,
+	 *          [item_id]: [number]
 	 *      },
 	 *      user: {
 	 *          validating,
@@ -23489,7 +23836,7 @@
 	    switch (action.type) {
 	        case Actions.SELECT_SHOP:
 	            return 'ITEMS';
-	        case Actions.EXIT_SHOP:
+	        case Actions.EXIT_SHOP_INSIST:
 	            return 'SHOPS';
 	        default:
 	            return state;
@@ -23529,7 +23876,7 @@
 	    switch (action.type) {
 	        case Actions.PULL_SHOP_LIST_PAGE:
 	            {
-	                return Object.assign({}, state, { fetching: !action.ready }, { error: action.error || false }, action.ready ? action.error ? { error: action.error } : action.result.shops.reduce(function (map, shop) {
+	                return Object.assign({}, state, { fetching: !action.ready }, { error: action.error || false }, { ended: action.ready ? !action.result.shops.length : state.ended }, action.ready ? action.error ? { error: action.error } : action.result.shops.reduce(function (map, shop) {
 	                    shop.detailFetching = false;
 	                    shop.detail = undefined;
 	                    shop.itemLastId = 0;
@@ -23553,9 +23900,12 @@
 	            {
 	                var _new_state = Object.assign({}, state);
 	                _new_state[action.shop_id].itemFetching = !action.ready;
+	                if (action.ready) {
+	                    _new_state[action.shop_id].itemEnded = !action.result.items.length;
+	                }
 	                _new_state[action.shop_id].itemError = action.error;
 	                if (action.ready && !action.error && action.result.items.length) {
-	                    _new_state[action.shop_id].itemLastId = action.result.items[action.result.items.length - 1] + 1;
+	                    _new_state[action.shop_id].itemLastId = action.result.items[action.result.items.length - 1].id + 1;
 	                }
 
 	                return _new_state;
@@ -23582,12 +23932,54 @@
 	    }
 	}
 
+	function cart() {
+	    var state = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+	    var action = arguments[1];
+
+	    switch (action.type) {
+	        case Actions.SELECT_ITEM:
+	            {
+	                var new_state = Object.assign({}, state, _defineProperty({}, action.item_id, action.number));
+
+	                if (!new_state[action.item_id]) {
+	                    delete new_state[action.item_id];
+
+	                    if (Object.getOwnPropertyNames(new_state).length == 2) {
+	                        new_state.shop_id = 0;
+	                    }
+	                } else {
+	                    new_state.shop_id = action.shop_id;
+	                }
+
+	                return new_state;
+	            }
+	        case Actions.EXIT_SHOP:
+	            {
+	                return Object.assign({}, state, { promote: true });
+	            }
+	        case Actions.EXIT_SHOP_INSIST:
+	            {
+	                return {
+	                    shop_id: 0,
+	                    promote: false
+	                };
+	            }
+	        case Actions.EXIT_SHOP_CANCEL:
+	            {
+	                return Object.assign({}, state, { promote: false });
+	            }
+	        default:
+	            return state;
+	    }
+	}
+
 	var rootReducer = (0, _redux.combineReducers)({
 	    presenting: presenting,
 	    currentShop: currentShop,
 	    shopLastId: shopLastId,
 	    shops: shops,
-	    items: items
+	    items: items,
+	    cart: cart
 	});
 
 	var logger = function logger(store) {
@@ -23626,7 +24018,10 @@
 	    };
 	};
 
-	var store = (0, _redux.createStore)(rootReducer, (0, _redux.applyMiddleware)(readyStatePromise, logger));
+	var store = (0, _redux.createStore)(rootReducer, {
+	    presenting: 'SHOPS',
+	    cart: { shop_id: 0, promote: false }
+	}, (0, _redux.applyMiddleware)(readyStatePromise, logger));
 
 	exports.default = store;
 

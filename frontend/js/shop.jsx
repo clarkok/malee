@@ -28,7 +28,11 @@ let Shop = React.createClass({
         return (
             <div id="shop" className="scene">
                 <ShopInfo fetching={this.props.shop.detailFetching} shop={this.props.shop.detail || {}} />
-                <ItemList items={this.props.items} />
+                <ItemList
+                    items={this.props.items}
+                    addScrollListener={this.props.addScrollListener}
+                    removeScrollListener={this.props.removeScrollListener}
+                />
             </div>
         );
     },

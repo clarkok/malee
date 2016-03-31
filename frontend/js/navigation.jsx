@@ -8,32 +8,64 @@ import { connect } from 'react-redux';
 import ShopList from './shop-list.jsx';
 import Shop from './shop.jsx';
 
-const TRANSITION_DURATION = 500;
+const TRANSITION_DURATION = 800;
+
+let Scroller = React.createClass({
+    render: function () {
+        return <div className="scroller">{children}</div>
+    }
+});
 
 let Navigation = React.createClass({
     render: function () {
         let scene;
+        let key;
 
         switch (this.props.presenting) {
             case 'ITEMS':
-                scene = <Shop key={`ITEMS-${this.props.currentShop}`} />;
+                key = `ITEMS-${this.props.currentShop}`;
+                scene = <Shop
+                            key={key}
+                            addScrollListener={this.addScrollListener}
+                            removeScrollListener={this.removeScrollListener}
+                         />;
                 break;
             case 'SHOPS':
             default:
-                scene = <ShopList key="SHOPS" />;
+                key = 'SHOPS';
+                scene = <ShopList
+                            key={key}
+                            addScrollListener={this.addScrollListener}
+                            removeScrollListener={this.removeScrollListener}
+                        />;
         };
 
         return (
-            <div className="container">
-                <ReactCSSTransitionGroup
-                    transitionName="scene"
-                    transitionEnterTimeout={TRANSITION_DURATION}
-                    transitionLeaveTimeout={TRANSITION_DURATION}
-                >
-                    {scene}
-                </ReactCSSTransitionGroup>
-            </div>
+            <ReactCSSTransitionGroup
+                transitionName="scene"
+                transitionEnterTimeout={TRANSITION_DURATION}
+                transitionLeaveTimeout={TRANSITION_DURATION}
+            >
+                <div className="scroller" onScroll={this.handleScroll} key={key}>{scene}</div>
+            </ReactCSSTransitionGroup>
         );
+    },
+    getInitialState: function () {
+        return {
+            _scroll_handlers: []
+        };
+    },
+    addScrollListener: function (listener) {
+        this.state._scroll_handlers.push(listener);
+    },
+    removeScrollListener: function (listener) {
+        this.state._scroll_handlers = this.state._scroll_handlers.filter((handlers) => handlers != listener);
+    },
+    handleScroll: function (evt) {
+        let scrollTop = evt.target.scrollTop;
+        this.state._scroll_handlers.forEach((handler) => {
+            handler(scrollTop);
+        });
     }
 });
 

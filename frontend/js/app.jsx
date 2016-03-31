@@ -7,6 +7,7 @@ import { Provider } from 'react-redux';
 import Aside from './aside.jsx';
 import Header from './header.jsx';
 import Navigation from './navigation.jsx';
+import Cart from './cart.jsx';
 
 import store from './store.js';
 import { pullShopListPage } from './actions.js';
@@ -19,8 +20,8 @@ let App = React.createClass({
         return (
             <div>
                 <Header />
-                <Aside />
                 <Navigation />
+                <Cart />
             </div>
         );
     }

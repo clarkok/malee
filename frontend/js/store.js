@@ -11,6 +11,7 @@ import { combineReducers, createStore, applyMiddleware } from 'redux';
  *      shops: {
  *          fetching,
  *          error,
+ *          ended,
  *          [id]: {
  *              id,
  *              name,
@@ -24,6 +25,7 @@ import { combineReducers, createStore, applyMiddleware } from 'redux';
  *              }
  *              itemFetching,
  *              itemError,
+ *              itemEnded,
  *              itemLastId,
  *          },
  *          ...
@@ -39,6 +41,11 @@ import { combineReducers, createStore, applyMiddleware } from 'redux';
  *          },
  *          ...
  *      },
+ *      cart: {
+ *          shop_id,
+ *          promote,
+ *          [item_id]: [number]
+ *      },
  *      user: {
  *          validating,
  *          logined,
@@ -51,7 +58,7 @@ function presenting(state = 'SHOPS', action) {
     switch (action.type) {
         case Actions.SELECT_SHOP:
             return 'ITEMS';
-        case Actions.EXIT_SHOP:
+        case Actions.EXIT_SHOP_INSIST:
             return 'SHOPS';
         default:
             return state;
@@ -89,6 +96,7 @@ function shops(state = {}, action) {
                     state,
                     { fetching: !action.ready },
                     { error: action.error || false },
+                    { ended: action.ready ? !action.result.shops.length : state.ended },
                     action.ready 
                         ? ( 
                             action.error 
@@ -123,9 +131,12 @@ function shops(state = {}, action) {
             {
                 let new_state = Object.assign({}, state);
                 new_state[action.shop_id].itemFetching = !action.ready;
+                if (action.ready) {
+                    new_state[action.shop_id].itemEnded = !action.result.items.length;
+                }
                 new_state[action.shop_id].itemError = action.error;
                 if (action.ready && !action.error && action.result.items.length) {
-                    new_state[action.shop_id].itemLastId = action.result.items[action.result.items.length - 1] + 1;
+                    new_state[action.shop_id].itemLastId = action.result.items[action.result.items.length - 1].id + 1;
                 }
 
                 return new_state;
@@ -161,12 +172,64 @@ function items(state = {}, action) {
     }
 }
 
+function cart(state={}, action) {
+    switch (action.type) {
+        case Actions.SELECT_ITEM:
+            {
+                let new_state = Object.assign(
+                    {},
+                    state,
+                    { [action.item_id]: action.number }
+                );
+
+                if (!new_state[action.item_id]) {
+                    delete new_state[action.item_id];
+
+                    if (Object.getOwnPropertyNames(new_state).length == 2) {
+                        new_state.shop_id = 0;
+                    }
+                }
+                else {
+                    new_state.shop_id = action.shop_id;
+                }
+
+                return new_state;
+            }
+        case Actions.EXIT_SHOP:
+            {
+                return Object.assign(
+                    {},
+                    state,
+                    { promote: true }
+                );
+            }
+        case Actions.EXIT_SHOP_INSIST:
+            {
+                return {
+                    shop_id: 0,
+                    promote: false
+                }
+            }
+        case Actions.EXIT_SHOP_CANCEL:
+            {
+                return Object.assign(
+                    {},
+                    state,
+                    { promote: false }
+                );
+            }
+        default:
+            return state;
+    }
+}
+
 const rootReducer = combineReducers({
     presenting,
     currentShop,
     shopLastId,
     shops,
-    items
+    items,
+    cart
 });
 
 const logger = store => next => action => {
@@ -197,6 +260,10 @@ const readyStatePromise = store => next => action => {
 
 let store = createStore(
     rootReducer,
+    {
+        presenting: 'SHOPS',
+        cart: { shop_id: 0, promote: false }
+    },
     applyMiddleware(
         readyStatePromise,
         logger

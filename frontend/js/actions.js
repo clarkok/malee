@@ -46,3 +46,25 @@ export function exitShop() {
         type: EXIT_SHOP
     };
 }
+
+export const EXIT_SHOP_INSIST       = 'EXIT_SHOP_INSIST';
+export function exitShopInsist() {
+    return {
+        type: EXIT_SHOP_INSIST
+    };
+}
+
+export const EXIT_SHOP_CANCEL       = 'EXIT_SHOP_CANCEL';
+export function exitShopCancel() {
+    return {
+        type: EXIT_SHOP_CANCEL
+    };
+}
+
+export const SELECT_ITEM            = 'SELECT_ITEM';
+export function selectItem(shop_id, item_id, number) {
+    return {
+        type: SELECT_ITEM,
+        shop_id, item_id, number
+    };
+}

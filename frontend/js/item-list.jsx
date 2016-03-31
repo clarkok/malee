@@ -6,7 +6,9 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import { connect } from 'react-redux';
 
 import { fetchItemListPage } from './api.js';
-import { pullItemListPage } from './actions.js';
+import { pullItemListPage, selectItem } from './actions.js';
+
+import ListFooter from './list-footer.jsx';
 
 const TRANSITION_DURATION = 300;
 const DELAY_BETWEEN_CARD = 50;
@@ -57,6 +59,8 @@ let Item = React.createClass({
             number: new_number,
             selected: !!new_number
         });
+
+        this.props.onNumberChange(this.props.item.id, new_number);
     },
 
     handleNumberChange: function (event) {
@@ -84,7 +88,7 @@ let Item = React.createClass({
 let ItemList = React.createClass({
     render: function () {
         let ret = (
-            <ol className="item-list">
+            <ol className={`item-list ${this.props.cartFloat ? 'item-reserve-for-cart' : ''}`} ref="items">
                 <ReactCSSTransitionGroup
                     transitionName="item-card"
                     transitionEnterTimeout={TRANSITION_DURATION}
@@ -98,10 +102,12 @@ let ItemList = React.createClass({
                                     <Item
                                         key={item.id}
                                         item={item}
+                                        onNumberChange={this.handleNumberChange}
                                     />
                             )
                     }
                 </ReactCSSTransitionGroup>
+                <ListFooter fetching={this.props.fetching} ended={this.props.ended} />
             </ol>
         );
 
@@ -123,6 +129,11 @@ let ItemList = React.createClass({
         else {
             setTimeout(this.showNext, DELAY_BETWEEN_CARD);
         }
+
+        this.props.addScrollListener(this.handleScroll);
+    },
+    componentWillUnmount: function () {
+        this.props.removeScrollListener(this.handleScroll);
     },
     componentWillReceiveProps: function (nextProps) {
         if (!this.state.showing) {
@@ -138,6 +149,24 @@ let ItemList = React.createClass({
             this.setState({ showing: true, rendered });
             setTimeout(this.showNext, DELAY_BETWEEN_CARD);
         }
+    },
+    handleScroll: function (scrollTop) {
+        if (scrollTop + window.innerHeight > this.refs.items.clientHeight) {
+            if (!this.props.fetching && !this.props.ended) {
+                this.props.dispatch(
+                    pullItemListPage(
+                        this.props.shopId,
+                        fetchItemListPage(
+                            this.props.shopId,
+                            this.props.itemLastId
+                        )
+                    )
+                );
+            }
+        }
+    },
+    handleNumberChange: function (item_id, number) {
+        this.props.dispatch(selectItem(this.props.shopId, item_id, number));
     }
 });
 
@@ -146,7 +175,9 @@ const mapStateToProps = (state) => {
         itemLastId: state.shops[state.currentShop].itemLastId,
         fetching: state.shops[state.currentShop].itemFetching,
         error: state.shops[state.currentShop].itemError,
+        ended: state.shops[state.currentShop].itemEnded,
         shopId: state.currentShop,
+        cartFloat: !!state.cart.shop_id,
         items: Object.getOwnPropertyNames(state.items)
                     .filter((name) => !isNaN(parseInt(name, 10)))
                     .map((name) => state.items[name])

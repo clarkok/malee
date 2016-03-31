@@ -8,6 +8,11 @@ $global_easing_leave = cubic-bezier(0.55, 0.055, 0.675, 0.19)
 
 $header_height = 75px
 $shop_info_height = 300px
+$cart_normal_height = 13em
+
+press-shadow-1() {
+    box-shadow inset 0 2px 2px rgba(0, 0, 0, 0.5)
+}
 
 hover-shadow-1() {
     box-shadow 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24)
@@ -34,15 +39,13 @@ html, body {
     padding 0
     background #eee
     width 100%
+    height 100%
     position relative
+    overflow hidden
 }
 
 h3, h4 {
     margin 0
-}
-
-body {
-    padding-top $header_height
 }
 
 header {
@@ -160,45 +163,116 @@ header {
     }
 }
 
-.container {
+.scroller {
+    margin-top $header_height
+    height "calc(100vh - %s)" % $header_height
+    width 100vw
+    overflow auto
+    position absolute
+    top 0
+    left 0
+}
+
+.scene {
     width $container_width
     margin auto
     position relative
 }
 
-.scene {
-    position absolute
-    top 0
-    left 0
-    width 100%
-}
-
 ol.scene {
     list-style none
     padding 0
-    margin 0
 }
 
-#shops {
-    z-index 1
-
+.scroller {
     &.scene-enter {
-        opacity 0
+        #shops {
+            opacity 0
+        }
+    }
 
-        &.scene-enter-active {
+    &.scene-enter-active {
+        #shops {
             opacity 1
             transition all 500ms $global_easing_leave
         }
     }
 
     &.scene-leave {
-        opacity 1
+        #shops {
+            opacity 1
+        }
+    }
 
-        &.scene-leave-active {
+    &.scene-leave-active {
+        #shops {
             opacity 0
             transition all 300ms $global_easing_enter
         }
     }
+}
+
+@keyframes spin {
+    from {
+        transform rotate(0deg)
+    }
+    to {
+        transform rotate(360deg)
+    }
+}
+
+.list-footer {
+    width 50%
+    height 3em
+    line-height 3em
+    text-align center
+    position absolute
+    left 50%
+    bottom (2 * $global_margin)
+    margin-left -25%
+    transition all 500ms $global_easing_enter
+
+    &.list-footer-enter {
+        margin-top 3em
+        opacity 0
+    }
+
+    &.list-footer-enter-active {
+        margin-top 0
+        opacity 1
+        transition all 500ms $global_easing_enter
+    }
+
+    &.list-footer-leave {
+        margin-top 0
+        opacity 1
+    }
+
+    &.list-footer-leave-active {
+        margin-top -3em
+        opacity 0
+        transition all 300ms $global_easing_enter
+    }
+}
+
+.list-fetching {
+    color rgba(0, 0, 0, 0.3)
+    animation 3s linear spin
+}
+
+.list-ended {
+    background rgba(0, 0, 0, 0.3)
+    color #eee
+    border-radius 3px
+}
+
+.list-ended:after {
+    content "下面没有了"
+}
+
+#shops {
+    z-index 1
+    padding-bottom calc(3em + 60px)
 }
 
 .shop-card {
@@ -208,7 +282,7 @@ ol.scene {
 
     hover-shadow-1()
 
-    background white
+    background #F8F8F8
     border-radius 3px
     box-sizing border-box
     cursor pointer
@@ -226,10 +300,14 @@ ol.scene {
     width ($container_width / 2 - 2 * $shop_card_margin)
 
     &:hover {
-        hover-shadow-2()
+        hover-shadow-3()
+
+        background white
     }
 
     &:active {
+        hover-shadow-2()
+
         background #eee
     }
 
@@ -241,15 +319,15 @@ ol.scene {
             top 0
             opacity 1
 
-            &.delay-1 { transition-delay: 100ms }
-            &.delay-2 { transition-delay: 200ms }
-            &.delay-3 { transition-delay: 300ms }
-            &.delay-4 { transition-delay: 400ms }
-            &.delay-5 { transition-delay: 500ms }
-            &.delay-6 { transition-delay: 600ms }
-            &.delay-7 { transition-delay: 700ms }
-            &.delay-8 { transition-delay: 800ms }
-            &.delay-9 { transition-delay: 900ms }
+            &.delay-1 { transition-delay: 50ms }
+            &.delay-2 { transition-delay: 100ms }
+            &.delay-3 { transition-delay: 150ms }
+            &.delay-4 { transition-delay: 200ms }
+            &.delay-5 { transition-delay: 250ms }
+            &.delay-6 { transition-delay: 300ms }
+            &.delay-7 { transition-delay: 350ms }
+            &.delay-8 { transition-delay: 400ms }
+            &.delay-9 { transition-delay: 450ms }
         }
     }
 
@@ -289,10 +367,20 @@ ol.item-list {
 
     list-style 0
     padding 0
+    padding-bottom calc(3em + 60px)
     margin ($global_margin * 2) ($global_margin / 2)
     user-select none
     -webkit-user-select none
     position relative
+    transition all 500ms $global_easing_enter
+
+    &.item-reserve-for-cart {
+        padding-bottom "calc(3em + %s)" % $cart_normal_height
+
+        .list-footer {
+            bottom "calc(%s + %s)" % ($global_margin $cart_normal_height)
+        }
+    }
 
     .item-card {
         display inline-block
@@ -354,17 +442,19 @@ ol.item-list {
                     width 40%
                     border none
                     transition all 300ms $global_easing_enter
-                    padding 2px
+                    font-size 1em
+                    padding 0
+                    vertical-align bottom
 
                     &:hover, &:focus, &:active {
-                        box-shadow inset 0 2px 2px rgba(0, 0, 0, 0.5)
+                        press-shadow-1()
                         outline 0
                     }
                 }
             }
 
             &:hover, &:focus, &.selected {
-                hover-shadow-3()
+                hover-shadow-2()
 
                 background white
                 top (- $item_number_height / 2)
@@ -373,6 +463,10 @@ ol.item-list {
                 .item-number {
                     bottom 0
                 }
+            }
+
+            &:hover {
+                hover-shadow-3()
             }
         }
 
@@ -396,21 +490,19 @@ ol.item-list {
     }
 }
 
-#shop {
-    z-index 2
-
+.scroller {
     &.scene-enter {
         .shop-info {
             top - $shop_info_height
             opacity 0
         }
+    }
 
-        &.scene-enter-active {
-            .shop-info {
-                top 0
-                opacity 1
-                transition all 500ms $global_easing_enter
-            }
+    &.scene-enter-active {
+        .shop-info {
+            top 0
+            opacity 1
+            transition all 500ms $global_easing_enter
         }
     }
 
@@ -424,20 +516,218 @@ ol.item-list {
             top 0
             opacity 1
         }
+    }
 
-        &.scene-leave-active {
-            .shop-info {
-                top - $shop_info_height
-                opacity 0
-                transition all 300ms $global_easing_leave
-            }
+    &.scene-leave-active {
+        .shop-info {
+            top - $shop_info_height
+            opacity 0
+            transition all 300ms $global_easing_leave
+        }
 
-            .item-list {
-                top 300px
-                opacity 0
-                transition all 300ms $global_easing_leave
-            }
+        .item-list {
+            top 300px
+            opacity 0
+            transition all 300ms $global_easing_leave
         }
     }
 }
 
+#shop {
+    z-index 2
+}
+
+#cart {
+    $cart_width = ($container_width - 2 * $global_margin)
+    $cart_hover_height = $cart_normal_height + 3em
+
+    hover-shadow-2();
+
+    position absolute
+    width $cart_width
+    height $cart_normal_height
+    background white
+    z-index 8
+    box-sizing border-box
+    padding $global_margin
+    left 50%
+    margin-left (- $cart_width / 2)
+    transition all 300ms $global_easing_enter
+    overflow hidden
+
+    &.hidden-cart {
+        opacity 0
+        top 110vh
+        transition-timing-function $global_easing_leave
+    }
+
+    &.show-cart {
+        opacity 1
+        top "calc(100vh - %s)" % $cart_normal_height
+    }
+
+    &.show-cart:hover, &.promote-cart {
+        hover-shadow-3()
+
+        height $cart_hover_height
+        top "calc(100vh - %s)" % $cart_hover_height
+    }
+
+    h3 {
+        color $theme_color
+    }
+
+    .cart-total {
+        float right
+
+        &:before {
+            content "总计："
+            color grey
+        }
+    }
+
+    .cart-bottom-line {
+        height 3em
+        width 100%
+        line-height 3em
+        padding 0 1em
+        transition all 300ms $global_easing_enter
+        position absolute
+        bottom -3em
+        left 0
+        box-sizing border-box
+        background $theme_light_color
+        color white
+        overflow hidden
+
+        .cart-button {
+            display inline-block
+            float right
+            margin-left 1em
+            cursor pointer
+            line-height 1em
+            height 1em
+            margin-top .5em
+            padding .5em
+
+            &:hover {
+                hover-shadow-1()
+                transition all 300ms $global_easing_enter
+            }
+
+            &:active {
+                press-shadow-1()
+            }
+        }
+
+        &.cart-bottom-line-enter {
+            height 0
+            bottom 0
+        }
+
+        &.cart-bottom-line-enter-active {
+            height 3em
+        }
+
+        &.cart-bottom-line-leave {
+            height 3em
+            bottom 0
+        }
+
+        &.cart-bottom-line-leave-active {
+            height 0
+            bottom 3em
+        }
+    }
+
+    &.show-cart:hover, &.promote-cart {
+        .cart-bottom-line {
+            bottom 0
+        }
+
+        .cart-list {
+            height calc(100% - 5em)
+        }
+    }
+}
+
+.cart-list {
+    list-style none
+    padding 0
+    height calc(100% - 2em)
+    overflow auto
+    transition all 300ms $global_easing_enter
+
+    .cart-item {
+        display block
+        height 2em
+        line-height 2em
+        position relative
+        overflow hidden
+
+        &.cart-list-enter {
+            height 0
+            opacity 0
+        }
+
+        &.cart-list-enter-active {
+            height 2em
+            opacity 1
+            transition all 300ms $global_easing_enter
+        }
+
+        &.cart-list-leave {
+            height 2em
+            opacity 1
+        }
+
+        &.cart-list-leave-active {
+            height 0
+            opacity 0
+            transition all 300ms $global_easing_enter
+        }
+    }
+
+    .cart-item-column {
+        display inline-block
+
+        &:before, &:after {
+            color grey
+        }
+    }
+
+    .cart-item-name {
+        width 50%
+    }
+
+    .cart-item-price {
+        width 20%
+        text-align right
+
+        &:after {
+            content " 软妹币 "
+        }
+    }
+
+    .cart-item-number {
+        width 10%
+
+        &:before {
+            content " x "
+        }
+    }
+
+    .cart-item-equal {
+        width 5%
+        text-align right
+    }
+
+    .cart-item-total {
+        width 15%
+        text-align right
+
+        &:after {
+            content " 软妹币"
+        }
+    }
+}

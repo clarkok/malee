@@ -5,9 +5,12 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 import { connect } from 'react-redux';
 
-import { selectShop } from './actions.js';
+import { selectShop, pullShopListPage } from './actions.js';
+import { fetchShopListPage } from './api.js';
 
-const DELAY_BETWEEN_CARD    = 100;
+import ListFooter from './list-footer.jsx';
+
+const DELAY_BETWEEN_CARD    = 50;
 const CARDS_PER_PAGE        = 10;
 const TRANSITION_DURATION   = 300;
 
@@ -30,7 +33,7 @@ let ShopCard = React.createClass({
 let ShopList = React.createClass({
     render: function () {
         return (
-            <ol id="shops" className="scene">
+            <ol id="shops" className="scene" ref="shops">
                 <ReactCSSTransitionGroup 
                     transitionName="shop-card"
                     transitionEnterTimeout={TRANSITION_DURATION + DELAY_BETWEEN_CARD * CARDS_PER_PAGE}
@@ -49,6 +52,7 @@ let ShopList = React.createClass({
                             )
                     }
                 </ReactCSSTransitionGroup>
+                <ListFooter fetching={this.props.shops.fetching} ended={this.props.shops.ended} />
             </ol>
         );
     },
@@ -68,13 +72,29 @@ let ShopList = React.createClass({
             delayBase: this.state.shops.length
         });
     },
+    componentDidMount: function () {
+        this.props.addScrollListener(this.handleScroll);
+    },
+    componentWillUnmount: function () {
+        this.props.removeScrollListener(this.handleScroll);
+    },
     handleCardClick: function (shop_id) {
         this.props.dispatch(selectShop(shop_id));
+    },
+    handleScroll: function (scrollTop) {
+        if (scrollTop + window.innerHeight > this.refs.shops.clientHeight) {
+            if (!this.props.shops.fetching && !this.props.shops.ended) {
+                this.props.dispatch(pullShopListPage(fetchShopListPage(this.props.shopLastId)));
+            }
+        }
     }
 });
 
 const mapStateToProps = (state) => {
-    return { shops: state.shops }
+    return {
+        shops: state.shops,
+        shopLastId: state.shopLastId
+    }
 }
 
 export default connect(mapStateToProps)(ShopList);

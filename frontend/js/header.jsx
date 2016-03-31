@@ -5,7 +5,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import SearchBox from './search-bar.jsx';
-import { exitShop } from './actions.js';
+import { exitShop, exitShopInsist } from './actions.js';
 
 let Header = React.createClass({
     render: function () {
@@ -22,12 +22,15 @@ let Header = React.createClass({
         )
     },
     handleBack: function () {
-        this.props.dispatch(exitShop());
+        this.props.dispatch( this.props.safeBack ? exitShopInsist() : exitShop() );
     }
 });
 
 const mapStateToProps = (state) => {
-    return { presenting: state.presenting }
+    return {
+        presenting: state.presenting,
+        safeBack: !state.cart.shop_id
+    }
 }
 
 export default connect(mapStateToProps)(Header);
