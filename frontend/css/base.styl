@@ -1,0 +1,63 @@
+$theme_color = #e67e22
+$theme_light_color = #f39c12
+
+html, body {
+    margin 0
+    padding 0
+    background #eee
+    width 100%
+}
+
+header {
+    $header_height = 75px
+    $header_title_size = 2rem
+
+    background $theme_color
+    height $header_height
+    width 100%
+    line-height $header_height
+
+    .header-item {
+        margin 0
+        position relative
+        height $header_height
+        line-height $header_height
+
+        &#header-title {
+            color white
+            position absolute
+            left 0
+            font-size $header_title_size
+            font-weight 700
+            margin-left 1em
+        }
+
+        &#search-bar {
+            $search_bar_width_min = 300px
+            $search_input_height = $header_title_size
+
+            display block
+            margin 0 auto
+            min-width $search_bar_width_min
+            position relative
+            width 50%
+
+            .search-input {
+                background $theme_light_color
+                border 0
+                border-radius ($search_input_height / 2)
+                box-sizing border-box
+                color white
+                display block
+                font-size 1rem
+                height $search_input_height
+                margin 0
+                outline 0
+                padding 1em
+                position absolute
+                top "calc((%s - %s) / 2)" % ($header_height $search_input_height)
+                width 100%
+            }
+        }
+    }
+}

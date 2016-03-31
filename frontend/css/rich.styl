@@ -1,0 +1,443 @@
+$theme_color = #e67e22
+$theme_light_color = #f39c12
+
+$container_width = 960px
+$global_margin = 20px
+$global_easing_enter = cubic-bezier(0.215, 0.61, 0.355, 1)
+$global_easing_leave = cubic-bezier(0.55, 0.055, 0.675, 0.19)
+
+$header_height = 75px
+$shop_info_height = 300px
+
+hover-shadow-1() {
+    box-shadow 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24)
+}
+
+hover-shadow-2() {
+    box-shadow 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.25)
+}
+
+hover-shadow-3() {
+    box-shadow 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23)
+}
+
+hover-shadow-4() {
+    box-shadow 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22)
+}
+
+hover-shadow-5() {
+    box-shadow 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22)
+}
+
+html, body {
+    margin 0
+    padding 0
+    background #eee
+    width 100%
+    position relative
+}
+
+h3, h4 {
+    margin 0
+}
+
+body {
+    padding-top $header_height
+}
+
+header {
+    $header_title_size = 2rem
+
+    hover-shadow-3()
+
+    background $theme_color
+    height $header_height
+    left 0
+    line-height $header_height
+    position fixed
+    top 0
+    width 100%
+    z-index 10
+
+    #header-back {
+        border-radius 1em
+        color grey
+        cursor pointer
+        display block
+        font-size $header_title_size
+        height 2em
+        left -2em
+        line-height 2em
+        position absolute
+        text-align center
+        top calc(100% + 1em)
+        transition all 500ms $global_easing_enter
+        width 2em
+
+        &:hover {
+            transition-duration 300ms
+            background white
+        }
+
+        &:active {
+            transition-duration 0
+            background grey
+        }
+    }
+
+    &.subheader {
+        #header-back {
+            left 1em
+        }
+    }
+
+    .header-item {
+        margin 0
+        position relative
+        height $header_height
+        line-height $header_height
+
+        &#header-title {
+            color white
+            position absolute
+            left 0
+            font-size $header_title_size
+            font-weight 700
+            margin-left 1em
+        }
+
+        &#search-bar {
+            $search_bar_width_min = 300px
+            $search_input_height = $header_title_size
+
+            display block
+            margin 0 auto
+            min-width $search_bar_width_min
+            position relative
+            width 50%
+
+            .search-input {
+                background $theme_light_color
+                border 0
+                border-radius ($search_input_height / 2)
+                box-sizing border-box
+                color white
+                display block
+                font-size 1rem
+                height $search_input_height
+                margin 0
+                outline 0
+                padding 1em
+                position absolute
+                top "calc((%s - %s) / 2)" % ($header_height $search_input_height)
+                width 100%
+            }
+
+            .search-button {
+                background transparent
+                border 0
+                border-radius ($search_input_height / 2)
+                color white
+                display block
+                height $search_input_height
+                line-height $search_input_height
+                margin 0
+                outline 0
+                padding 0
+                position absolute
+                right 0
+                text-align center
+                top "calc((%s - %s) / 2)" % ($header_height $search_input_height)
+                transition all .3s
+                width $search_input_height
+
+                &:hover {
+                    background white
+                    color $theme_color
+                }
+            }
+        }
+    }
+}
+
+.container {
+    width $container_width
+    margin auto
+    position relative
+}
+
+.scene {
+    position absolute
+    top 0
+    left 0
+    width 100%
+}
+
+ol.scene {
+    list-style none
+    padding 0
+    margin 0
+}
+
+#shops {
+    z-index 1
+
+    &.scene-enter {
+        opacity 0
+
+        &.scene-enter-active {
+            opacity 1
+            transition all 500ms $global_easing_leave
+        }
+    }
+
+    &.scene-leave {
+        opacity 1
+
+        &.scene-leave-active {
+            opacity 0
+            transition all 300ms $global_easing_enter
+        }
+    }
+}
+
+.shop-card {
+    $shop_card_height = 200px
+    $shop_card_padding = 20px
+    $shop_card_margin = $global_margin
+
+    hover-shadow-1()
+
+    background white
+    border-radius 3px
+    box-sizing border-box
+    cursor pointer
+    display inline-block
+    height $shop_card_height
+    margin $shop_card_margin
+    overflow hidden
+    padding $shop_card_padding
+    padding-left ($shop_card_height + $shop_card_padding)
+    position relative
+    transition-property all
+    transition-timing-function $global_easing_enter
+    transition-duration 300ms
+    user-select none
+    width ($container_width / 2 - 2 * $shop_card_margin)
+
+    &:hover {
+        hover-shadow-2()
+    }
+
+    &:active {
+        background #eee
+    }
+
+    &.shop-card-enter {
+        top 100px
+        opacity 0
+
+        &.shop-card-enter-active {
+            top 0
+            opacity 1
+
+            &.delay-1 { transition-delay: 100ms }
+            &.delay-2 { transition-delay: 200ms }
+            &.delay-3 { transition-delay: 300ms }
+            &.delay-4 { transition-delay: 400ms }
+            &.delay-5 { transition-delay: 500ms }
+            &.delay-6 { transition-delay: 600ms }
+            &.delay-7 { transition-delay: 700ms }
+            &.delay-8 { transition-delay: 800ms }
+            &.delay-9 { transition-delay: 900ms }
+        }
+    }
+
+    .shop-photo {
+        position absolute
+        top 0
+        left 0
+        width $shop_card_height
+        height $shop_card_height
+    }
+}
+
+.shop-info {
+    hover-shadow-1()
+
+    position relative
+    margin 0 $global_margin $global_margin $global_margin
+    background white
+    height $shop_info_height
+    padding $global_margin
+    padding-left $shop_info_height + $global_margin
+    box-sizing border-box
+
+    .shop-photo {
+        position absolute
+        top 0
+        left 0
+        height $shop_info_height
+        width $shop_info_height
+    }
+}
+
+ol.item-list {
+    $item_card_margin = $global_margin
+    $item_card_width = (($container_width - $global_margin) / 4 - $item_card_margin)
+    $item_number_height = 30px
+
+    list-style 0
+    padding 0
+    margin ($global_margin * 2) ($global_margin / 2)
+    user-select none
+    -webkit-user-select none
+    position relative
+
+    .item-card {
+        display inline-block
+        width $item_card_width
+        height ($item_card_width * 1.5)
+        margin 0 ($item_card_margin / 2) ($item_card_margin * 2) ($item_card_margin / 2)
+        position relative
+        box-sizing border-box
+        transition all 300ms $global_easing_enter
+
+        .item-card-inner {
+            hover-shadow-1()
+
+            background #F8F8F8
+            position absolute
+            top 0
+            width 100%
+            height ($item_card_width * 1.5)
+            transition all 300ms $global_easing_enter
+            padding $global_margin
+            padding-top ($item_card_width + $global_margin)
+            box-sizing border-box
+            overflow hidden
+
+            .item-photo {
+                position absolute
+                width $item_card_width
+                height $item_card_width
+                top 0
+                left 0
+            }
+
+            .item-number {
+                display block
+                position absolute
+                width 100%
+                height $item_number_height
+                left 0
+                bottom (- $item_number_height)
+                transition all 300ms $global_easing_enter
+
+                .item-number-button, .item-number-input {
+                    display inline-block
+                    height $item_number_height
+                    box-sizing border-box
+                    font-size 1.5rem
+                    text-align center
+                    background $theme_light_color
+                    color white
+                }
+
+                .item-number-button {
+                    width 30%
+                    line-height $item_number_height
+                    cursor pointer
+                }
+
+                .item-number-input {
+                    width 40%
+                    border none
+                    transition all 300ms $global_easing_enter
+                    padding 2px
+
+                    &:hover, &:focus, &:active {
+                        box-shadow inset 0 2px 2px rgba(0, 0, 0, 0.5)
+                        outline 0
+                    }
+                }
+            }
+
+            &:hover, &:focus, &.selected {
+                hover-shadow-3()
+
+                background white
+                top (- $item_number_height / 2)
+                height ($item_card_width * 1.5 + $item_number_height)
+
+                .item-number {
+                    bottom 0
+                }
+            }
+        }
+
+        &.item-card-enter {
+            top 300px
+            opacity 0
+
+            &.item-card-enter-active {
+                top 0
+                opacity 1
+
+                &.delay-1 { transition-delay: 100ms }
+                &.delay-2 { transition-delay: 200ms }
+                &.delay-3 { transition-delay: 300ms }
+                &.delay-4 { transition-delay: 400ms }
+                &.delay-5 { transition-delay: 500ms }
+                &.delay-6 { transition-delay: 600ms }
+                &.delay-7 { transition-delay: 700ms }
+            }
+        }
+    }
+}
+
+#shop {
+    z-index 2
+
+    &.scene-enter {
+        .shop-info {
+            top - $shop_info_height
+            opacity 0
+        }
+
+        &.scene-enter-active {
+            .shop-info {
+                top 0
+                opacity 1
+                transition all 500ms $global_easing_enter
+            }
+        }
+    }
+
+    &.scene-leave {
+        .shop-info {
+            top 0
+            opacity 1
+        }
+
+        .item-list {
+            top 0
+            opacity 1
+        }
+
+        &.scene-leave-active {
+            .shop-info {
+                top - $shop_info_height
+                opacity 0
+                transition all 300ms $global_easing_leave
+            }
+
+            .item-list {
+                top 300px
+                opacity 0
+                transition all 300ms $global_easing_leave
+            }
+        }
+    }
+}
+
