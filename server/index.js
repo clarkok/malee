@@ -23,6 +23,10 @@ let shop = new Shop(db);
 let Item = require('./item.js');
 let item = new Item(db);
 
+let search = require('./search.js');
+
+let Util = require('./util.js');
+
 app.use((req, res, next) => {
     console.log((new Date()), req.method, req.url);
     return next();
@@ -120,6 +124,21 @@ app.get('/item/:id', (req, res) => {
         .catch((e) => res.send(e));
 });
 
+app.get('/search', (req, res) => {
+    let query = Util.chineseCut((req.query && req.query.q) || '', '+');
+    let words = query.split('+');
+    search.search(words)
+        .then((result) => {
+            return Promise.join(
+                Promise.map(result.shops, (shop_id) => shop.queryShop(shop_id)),
+                Promise.map(result.items, (item_id) => item.queryItem(item_id)),
+                (shops, items) => Promise.resolve({shops, items})
+            );
+        })
+        .then((result) => res.send(result))
+        .catch((e) => res.send(e));
+});
+
 app.use('/', Express.static('public'));
 
 /* ======= NEED LOGIN ======= */
@@ -190,7 +209,12 @@ app.post('/shop', checkUser, (req, res) => {
     delete new_shop.id;
     new_shop.owner = req.user.id;
     shop.newShop(new_shop)
-        .then((shop) => res.send({code: 0, shop}))
+        .then((shop) => {
+            search.addShop(shop).catch((err) => {
+                console.log('Add shop error', err);
+            });
+            res.send({code: 0, shop});
+        })
         .catch((e) => res.send(e));
 });
 
@@ -212,7 +236,12 @@ app.put('/shop/:id', checkUser, checkShop, (req, res) => {
     new_shop.owner = req.user.id;
 
     shop.updateShop(new_shop)
-        .then((shop) => res.send({code: 0, shop}))
+        .then((shop) => {
+            res.send({code: 0, shop});
+            search.updateShop(shop).catch((err) => {
+                console.log('Update shop error', err);
+            });
+        })
         .catch((e) => res.send(e));
 });
 
@@ -221,7 +250,12 @@ app.delete('/shop/:id', checkUser, checkShop, (req, res) => {
         shop.deleteShop(req.params.id),
         item.deleteInShop(req.params.id)
     ])
-        .then(() => res.send({code: 0}))
+        .then(() => {
+            res.send({code: 0});
+            search.removeShop(req.params.id).catch((err) => {
+                console.log('Remove shop error', err);
+            });
+        })
         .catch((e) => res.send(e));
 });
 
@@ -239,7 +273,12 @@ app.post('/shop/:id/item', checkUser, checkShop, (req, res) => {
     new_item.shop = req.params.shop;
 
     item.newItem(new_item)
-        .then((item) => res.send({code: 0, item}))
+        .then((item) => {
+            res.send({code: 0, item});
+            search.addItem(item).catch((err) => {
+                console.log('Add item error', err);
+            });
+        })
         .catch((e) => res.send(e));
 });
 
@@ -262,13 +301,23 @@ app.put('/item/:id', checkUser, checkItem, (req, res) => {
     new_item.shop = req.item.shop;
 
     item.updateItem(new_item)
-        .then((item) => res.send({code: 0, item}))
+        .then((item) => {
+            res.send({code: 0, item});
+            search.updateItem(item).catch((err) => {
+                console.log('Update item error', err);
+            });
+        })
         .catch((e) => res.send(e));
 });
 
 app.delete('/item/:id', checkUser, checkItem, (req, res) => {
     item.deleteItem(req.params.id)
-        .then(() => res.send({code: 0}))
+        .then(() => {
+            res.send({code: 0});
+            search.removeItem(req.params.id).catch((err) => {
+                console.log('Remove item error', err);
+            });
+        })
         .catch((e) => res.send(e));
 });
 

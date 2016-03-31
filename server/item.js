@@ -24,8 +24,9 @@ class Item {
         page_start = page_start || 0;
         page_count = page_count || DEFAULT_PAGE;
 
-        return this.db(TABLE_NAME).select('id', 'name', 'photo', 'price')
+        return this.db(TABLE_NAME).select('id', 'name', 'photo', 'price', 'shop')
             .orderBy('id').where('id', '>', page_start).where({valid: 1, shop: shop_id}).limit(page_count)
+            .then((items) => Promise.resolve(items.map((item) => { item.price /= 100.0; return item; })))
             .catch((err) => {
                 console.log(err);
                 return Promise.reject(new Exception(-1, 'Database Error'));
@@ -42,6 +43,7 @@ class Item {
             .then((items) => items.length
                   ? (Promise.resolve(items[0]))
                   : Promise.reject(new Exception(-2, 'Item not found')))
+            .then((item) => { item.price /= 100.0; return Promise.resolve(item); })
             .catch((err) => {
                 console.log(err);
                 return Promsie.reject(new Exception(-3, 'Database Error'));
@@ -54,6 +56,7 @@ class Item {
      * @return Promise, resolve to the new item
      */
     newItem(item) {
+        item.price = (item.price * 100) | 0;
         return this.db(TABLE_NAME).insert(item)
             .then((id) => id.length ? this.queryItem(id[0]) : Promise.reject(new Exception(-4, 'Database Error')))
             .catch((err) => {
@@ -69,6 +72,9 @@ class Item {
      */
     updateItem(new_item) {
         new_item.valid = 1;
+        if ('price' in new_item) {
+            new_item.price = (new_item.price * 100) | 0;
+        }
         return this.db(TABLE_NAME).where('id', new_item.id).update(new_item)
             .then(() => this.queryItem(new_item.id))
             .catch((err) => {
