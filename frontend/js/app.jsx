@@ -10,10 +10,11 @@ import Navigation from './navigation.jsx';
 import Cart from './cart.jsx';
 
 import store from './store.js';
-import { pullShopListPage } from './actions.js';
-import { fetchShopListPage } from './api.js';
+import { pullShopListPage, verifyLogin } from './actions.js';
+import { fetchShopListPage, fetchUserInfo } from './api.js';
 
 store.dispatch(pullShopListPage(fetchShopListPage()));
+store.dispatch(verifyLogin(fetchUserInfo()));
 
 let App = React.createClass({
     render: function () {

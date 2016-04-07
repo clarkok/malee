@@ -44,10 +44,13 @@ import { combineReducers, createStore, applyMiddleware } from 'redux';
  *      cart: {
  *          shop_id,
  *          promote,
+ *          login,
  *          [item_id]: [number]
  *      },
  *      user: {
  *          validating,
+ *          validated,
+ *          logining,
  *          logined,
  *          ...
  *      }
@@ -185,7 +188,7 @@ function cart(state={}, action) {
                 if (!new_state[action.item_id]) {
                     delete new_state[action.item_id];
 
-                    if (Object.getOwnPropertyNames(new_state).length == 2) {
+                    if (Object.getOwnPropertyNames(new_state).filter((name) => !isNaN(parseInt(name, 10))) == 0) {
                         new_state.shop_id = 0;
                     }
                 }
@@ -218,6 +221,52 @@ function cart(state={}, action) {
                     { promote: false }
                 );
             }
+        case Actions.LOGIN_REQUEST:
+            {
+                return Object.assign(
+                    {},
+                    state,
+                    { login: true }
+                );
+            }
+        case Actions.LOGIN_CANCEL:
+            {
+                return Object.assign(
+                    {},
+                    state,
+                    { login: false }
+                );
+            }
+        default:
+            return state;
+    }
+}
+
+function user(state={}, action) {
+    switch (action.type) {
+        case Actions.VERIFY_LOGIN:
+            {
+                return Object.assign(
+                    {},
+                    state,
+                    {
+                        validating: !action.ready,
+                        validated: !action.error && action.ready && action.result.code == 0
+                    },
+                    (action.ready && action.result.code == 0) ? action.result.user : {}
+                );
+            }
+        case Actions.LOGIN:
+            {
+                return Object.assign(
+                    {},
+                    state,
+                    {
+                        loginning: !action.ready,
+                        logined: action.ready && !action.error && action.result.code == 0
+                    }
+                );
+            }
         default:
             return state;
     }
@@ -229,7 +278,8 @@ const rootReducer = combineReducers({
     shopLastId,
     shops,
     items,
-    cart
+    cart,
+    user
 });
 
 const logger = store => next => action => {
@@ -262,7 +312,8 @@ let store = createStore(
     rootReducer,
     {
         presenting: 'SHOPS',
-        cart: { shop_id: 0, promote: false }
+        cart: { shop_id: 0, promote: false, login: false },
+        user: { validating: false, validated: false, loginning: false, logined: false }
     },
     applyMiddleware(
         readyStatePromise,

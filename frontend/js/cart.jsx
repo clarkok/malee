@@ -5,7 +5,8 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 import { connect } from 'react-redux';
 
-import { exitShopInsist, exitShopCancel } from './actions.js';
+import { exitShopInsist, exitShopCancel, loginCancel, login } from './actions.js';
+import { doLogin } from './api.js';
 
 const TRANSITION_DURATION = 300;
 
@@ -44,9 +45,82 @@ let CartList = React.createClass({
     }
 });
 
+let CartBottomLinePromote = React.createClass({
+    render: function () {
+        return (
+            <div className="cart-bottom-line">
+                <span>返回后订单会被重置，确认返回？</span>
+                <span onClick={this.props.onInsistExit} className="cart-button">返回</span>
+                <span onClick={this.props.onCancelExit} className="cart-button">取消</span>
+            </div>
+        );
+    }
+});
+
+let CartBottomLineConfirm = React.createClass({
+    render: function () {
+        return (
+            <div className="cart-bottom-line">
+                <span onClick={this.props.onSubmit} className="cart-button">立即下单</span>
+            </div>
+        );
+    }
+});
+
+let CartBottomLineLogin = React.createClass({
+    render: function () {
+        return (
+            <div className="cart-bottom-line cart-bottom-line-login">
+                <form className="cart-bottom-line-login-form" action="javascript:void(0)">
+                    <div className="cart-bottom-line-login-line">
+                        <label htmlFor="login-username">用户名</label>
+                        <input
+                            className="cart-bottom-line-login-input"
+                            type="text"
+                            name="username"
+                            id="login-username"
+                            placeholder="用户名"
+                            onChange={(evt) => this.setState({username: evt.target.value})}
+                        />
+                    </div>
+                    <div className="cart-bottom-line-login-line">
+                        <label htmlFor="login-password">密码</label>
+                        <input
+                            className="cart-bottom-line-login-input"
+                            type="password"
+                            name="password"
+                            id="login-password"
+                            placeholder="密码"
+                            onChange={(evt) => this.setState({password: evt.target.value})}
+                        />
+                    </div>
+                    <div className="cart-bottom-line-login-line">
+                        <span className="cart-bottom-line-login-button left" onClick={this.props.onLoginCancel}>取消</span>
+                        <span className="cart-bottom-line-login-button" onClick={this.handleLogin}>登录</span>
+                        <span className="cart-bottom-line-login-button" onClick={this.handleRegister}>注册</span>
+                    </div>
+                </form>
+            </div>
+        )
+    },
+    getInitialState: function () {
+        return {
+            username: '',
+            password: ''
+        }
+    },
+    handleLogin: function () {
+        this.props.onLogin(this.state.username, this.state.password);
+    },
+    handleRegister: function () {
+        this.props.onRegister(this.state.username, this.state.password);
+    }
+});
+
 let Cart = React.createClass({
     render: function () {
         let extra_state = 
+                        this.props.login   ?    'login'     :
                         this.props.promote ?    'promote'   :
                         this.props.shop_id ?    'show'      :
                                                 'hidden';
@@ -63,19 +137,18 @@ let Cart = React.createClass({
                     transitionLeaveTimeout={TRANSITION_DURATION}
                 >
                     {
-                        this.props.promote
-                            ? (
-                                <div className="cart-bottom-line" key="promote">
-                                    <span>返回后订单会被重置，确认返回？</span>
-                                    <span onClick={this.handleInsist} className="cart-button">确认</span>
-                                    <span onClick={this.handleCancel} className="cart-button">取消</span>
-                                </div>
-                            )
-                            : (
-                                <div className="cart-bottom-line" key="confirm">
-                                    <span onClick={this.handleSubmit} className="cart-button">立即下单</span>
-                                </div>
-                            )
+                        this.props.login    ? <CartBottomLineLogin
+                                                key="login"
+                                                onLogin={this.handleLogin}
+                                                onRegister={this.handleRegister}
+                                                onLoginCancel={this.handleLoginCancel} /> :
+                        this.props.promote  ? <CartBottomLinePromote
+                                                key="promote"
+                                                onInsistExit={this.handleInsist}
+                                                onCancelExit={this.handleCancel} />
+                                            : <CartBottomLineConfirm
+                                                key="confirm"
+                                                onSubmit={this.handleSubmit} />
                     }
                 </ReactCSSTransitionGroup>
             </div>
@@ -88,6 +161,14 @@ let Cart = React.createClass({
         this.props.dispatch(exitShopInsist());
     },
     handleSubmit: function () {
+    },
+    handleLoginCancel: function () {
+        this.props.dispatch(loginCancel());
+    },
+    handleLogin: function (username, password) {
+        this.props.dispatch(login(doLogin(username, password)));
+    },
+    handleRegister: function (username, password) {
     }
 });
 
@@ -100,6 +181,8 @@ const mapStateToProps = (state) => {
         shop_id: state.cart.shop_id,
         shop: state.cart.shop_id ? state.shops[state.cart.shop_id] : {},
         promote: state.cart.promote,
+        login: state.cart.login,
+        loginning: state.user,
         itemsList, total
     };
 }

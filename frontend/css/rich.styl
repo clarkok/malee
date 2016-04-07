@@ -94,6 +94,17 @@ header {
         }
     }
 
+    .header-right {
+        color white
+        position absolute
+        right 1.5em
+        top 0
+
+        &.header-login {
+            cursor pointer
+        }
+    }
+
     .header-item {
         margin 0
         position relative
@@ -365,20 +376,20 @@ ol.item-list {
     $item_card_width = (($container_width - $global_margin) / 4 - $item_card_margin)
     $item_number_height = 30px
 
-    list-style 0
+    list-style none
     padding 0
-    padding-bottom calc(3em + 60px)
-    margin ($global_margin * 2) ($global_margin / 2)
+    padding-bottom calc(3em + 40px)
+    margin ($global_margin * 2) ($global_margin / 2) 0 ($global_margin / 2)
     user-select none
     -webkit-user-select none
     position relative
     transition all 500ms $global_easing_enter
 
     &.item-reserve-for-cart {
-        padding-bottom "calc(3em + %s)" % $cart_normal_height
+        padding-bottom "calc(%s * 3 + %s)" % ($global_margin $cart_normal_height)
 
         .list-footer {
-            bottom "calc(%s + %s)" % ($global_margin $cart_normal_height)
+            bottom "calc(%s * 1.5 + %s)" % ($global_margin $cart_normal_height)
         }
     }
 
@@ -566,7 +577,7 @@ ol.item-list {
         top "calc(100vh - %s)" % $cart_normal_height
     }
 
-    &.show-cart:hover, &.promote-cart {
+    &.show-cart:hover, &.promote-cart, &.login-cart {
         hover-shadow-3()
 
         height $cart_hover_height
@@ -617,6 +628,66 @@ ol.item-list {
 
             &:active {
                 press-shadow-1()
+            }
+        }
+
+        &.cart-bottom-line-login {
+            height $cart_hover_height
+            bottom 0
+            background $theme_color
+            color white
+            padding 2em
+
+            h3 {
+                color white
+            }
+
+            .cart-bottom-line-login-form {
+                display block
+                width 50%
+                margin auto
+                position relative
+                padding 1em
+            }
+
+            .cart-bottom-line-login-line {
+                display block
+                margin 0
+                margin-bottom .5em
+                width 100%
+                position relative
+            }
+
+            label {
+                display inline-block
+                width 20%
+
+                &:after {
+                    content "："
+                }
+            }
+
+            .cart-bottom-line-login-input {
+                display inline-block
+                border 0
+                padding 0.5em
+                background $theme_light_color
+                box-sizing border-box
+                color white
+                width 80%
+                font-size 1rem
+            }
+
+            .cart-bottom-line-login-button {
+                display inline-block
+                float right
+                margin-left 1em
+                cursor pointer
+
+                &.left {
+                    float left
+                    margin-left 0
+                }
             }
         }
 

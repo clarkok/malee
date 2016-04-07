@@ -68,3 +68,41 @@ export function selectItem(shop_id, item_id, number) {
         shop_id, item_id, number
     };
 }
+
+export const VERIFY_LOGIN           = 'VERIFY_LOGIN';
+export function verifyLogin(promise) {
+    return {
+        type: VERIFY_LOGIN,
+        promise
+    };
+}
+
+export const LOGIN_REQUEST          = 'LOGIN_REQUEST';
+export function loginRequest() {
+    return {
+        type: LOGIN_REQUEST
+    };
+}
+
+export const LOGIN_CANCEL           = 'LOGIN_CANCEL';
+export function loginCancel() {
+    return {
+        type: LOGIN_CANCEL
+    };
+}
+
+export const LOGIN                  = 'LOGIN';
+export function login(promise) {
+    return {
+        type: LOGIN,
+        promise
+    }
+}
+
+export const REGISTER               = 'REGISTER';
+export function register(promise) {
+    return {
+        type: REGISTER,
+        promise
+    }
+}
