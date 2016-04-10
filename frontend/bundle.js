@@ -29958,7 +29958,11 @@
 	    handleInsist: function handleInsist() {
 	        this.props.dispatch((0, _actions.exitShopInsist)());
 	    },
-	    handleSubmit: function handleSubmit() {},
+	    handleSubmit: function handleSubmit() {
+	        if (!this.props.logined) {
+	            this.props.dispatch((0, _actions.loginRequest)());
+	        } else {}
+	    },
 	    handleLoginCancel: function handleLoginCancel() {
 	        this.props.dispatch((0, _actions.loginCancel)());
 	    },
@@ -29983,6 +29987,7 @@
 	        promote: state.cart.promote,
 	        login: state.cart.login,
 	        login_error: state.user.login_error,
+	        logined: state.user.logined,
 	        itemsList: itemsList, total: total
 	    };
 	};
