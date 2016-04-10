@@ -50,3 +50,7 @@ export function doLogin(username, password) {
         return Promise.resolve(data);
     })
 }
+
+export function doSearch(q) {
+    return fetch(queryUrl('/search', { q })).then(result => result.json());
+}

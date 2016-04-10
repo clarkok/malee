@@ -2,6 +2,7 @@
 
 import * as Actions from './actions';
 import { combineReducers, createStore, applyMiddleware } from 'redux';
+import { fetchUserInfo } from './api.js';
 
 /**
  *  state {
@@ -53,6 +54,10 @@ import { combineReducers, createStore, applyMiddleware } from 'redux';
  *          logining,
  *          logined,
  *          ...
+ *      },
+ *      search {
+ *          query,
+ *          result
  *      }
  *  }
  */
@@ -62,6 +67,10 @@ function presenting(state = 'SHOPS', action) {
         case Actions.SELECT_SHOP:
             return 'ITEMS';
         case Actions.EXIT_SHOP_INSIST:
+            return 'SHOPS';
+        case Actions.SEARCH:
+            return 'SEARCH';
+        case Actions.EXIT_SEARCH:
             return 'SHOPS';
         default:
             return state;
@@ -143,6 +152,24 @@ function shops(state = {}, action) {
                 }
 
                 return new_state;
+            }
+        case Actions.SELECT_SHOP:
+            {
+                if (!state[action.shop_id]) {
+                    return Object.assign(
+                        {},
+                        state,
+                        {
+                            [action.shop_id]: {
+                                detailFeching : false,
+                                itemFetching : false,
+                                itemError : false,
+                                itemEnded : false,
+                                itemLastId : 0
+                            }
+                        }
+                    );
+                }
             }
         default:
             return state;
@@ -237,6 +264,19 @@ function cart(state={}, action) {
                     { login: false }
                 );
             }
+        case Actions.VERIFY_LOGIN:
+            {
+                if (action.ready && action.result.code == 0) {
+                    return Object.assign(
+                        {},
+                        state,
+                        { login: false }
+                    );
+                }
+                else {
+                    return state;
+                }
+            }
         default:
             return state;
     }
@@ -251,7 +291,10 @@ function user(state={}, action) {
                     state,
                     {
                         validating: !action.ready,
-                        validated: !action.error && action.ready && action.result.code == 0
+                        validated: !action.error && action.ready && action.result.code == 0,
+                        loginning: false,
+                        logined: action.ready && action.result.code == 0,
+                        login_error: false
                     },
                     (action.ready && action.result.code == 0) ? action.result.user : {}
                 );
@@ -262,9 +305,28 @@ function user(state={}, action) {
                     {},
                     state,
                     {
+                        validating: false,
+                        validated: false,
                         loginning: !action.ready,
-                        logined: action.ready && !action.error && action.result.code == 0
+                        logined: action.ready && !action.error && action.result.code == 0,
+                        login_error: action.ready && action.result.code != 0
                     }
+                );
+            }
+        default:
+            return state;
+    }
+}
+
+function search(state={}, action) {
+    switch (action.type) {
+        case Actions.SEARCH:
+            {
+                return Object.assign(
+                    {},
+                    state,
+                    { query: action.query },
+                    action.ready ? { result: action.result } : { result: { items: [], shops: [] } }
                 );
             }
         default:
@@ -279,7 +341,8 @@ const rootReducer = combineReducers({
     shops,
     items,
     cart,
-    user
+    user,
+    search
 });
 
 const logger = store => next => action => {
@@ -313,12 +376,30 @@ let store = createStore(
     {
         presenting: 'SHOPS',
         cart: { shop_id: 0, promote: false, login: false },
-        user: { validating: false, validated: false, loginning: false, logined: false }
+        user: { validating: false, validated: false, loginning: false, logined: false },
+        search: { query: '', result: { items: [], shops: [] } }
     },
     applyMiddleware(
         readyStatePromise,
         logger
     )
 );
+
+let logined = false;
+function handleVerify() {
+    console.log('handle verify');
+
+    let previousLogined = logined;
+
+    logined = store.getState().user.logined;
+
+    if (previousLogined != logined && !store.getState().user.validated && !store.getState().user.validating) {
+        setTimeout(() => {
+            store.dispatch(Actions.verifyLogin(fetchUserInfo()))
+        }, 100);
+    }
+}
+
+store.subscribe(handleVerify);
 
 export default store;

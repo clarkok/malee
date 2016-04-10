@@ -472,7 +472,7 @@
 
 
 	// module
-	exports.push([module.id, "html,\nbody {\n  margin: 0;\n  padding: 0;\n  background: #eee;\n  width: 100%;\n  height: 100%;\n  position: relative;\n  overflow: hidden;\n}\nh3,\nh4 {\n  margin: 0;\n}\nheader {\n  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);\n  background: #e67e22;\n  height: 75px;\n  left: 0;\n  line-height: 75px;\n  position: fixed;\n  top: 0;\n  width: 100%;\n  z-index: 10;\n}\nheader #header-back {\n  border-radius: 1em;\n  color: #808080;\n  cursor: pointer;\n  display: block;\n  font-size: 2rem;\n  height: 2em;\n  left: -2em;\n  line-height: 2em;\n  position: absolute;\n  text-align: center;\n  top: calc(100% + 1em);\n  transition: all 500ms cubic-bezier(0.215, 0.61, 0.355, 1);\n  width: 2em;\n}\nheader #header-back:hover {\n  transition-duration: 300ms;\n  background: #fff;\n}\nheader #header-back:active {\n  transition-duration: 0;\n  background: #808080;\n}\nheader.subheader #header-back {\n  left: 1em;\n}\nheader .header-right {\n  color: #fff;\n  position: absolute;\n  right: 1.5em;\n  top: 0;\n}\nheader .header-right.header-login {\n  cursor: pointer;\n}\nheader .header-item {\n  margin: 0;\n  position: relative;\n  height: 75px;\n  line-height: 75px;\n}\nheader .header-item#header-title {\n  color: #fff;\n  position: absolute;\n  left: 0;\n  font-size: 2rem;\n  font-weight: 700;\n  margin-left: 1em;\n}\nheader .header-item#search-bar {\n  display: block;\n  margin: 0 auto;\n  min-width: 300px;\n  position: relative;\n  width: 50%;\n}\nheader .header-item#search-bar .search-input {\n  background: #f39c12;\n  border: 0;\n  border-radius: 1rem;\n  box-sizing: border-box;\n  color: #fff;\n  display: block;\n  font-size: 1rem;\n  height: 2rem;\n  margin: 0;\n  outline: 0;\n  padding: 1em;\n  position: absolute;\n  top: calc((75px - 2rem) / 2);\n  width: 100%;\n}\nheader .header-item#search-bar .search-button {\n  background: transparent;\n  border: 0;\n  border-radius: 1rem;\n  color: #fff;\n  display: block;\n  height: 2rem;\n  line-height: 2rem;\n  margin: 0;\n  outline: 0;\n  padding: 0;\n  position: absolute;\n  right: 0;\n  text-align: center;\n  top: calc((75px - 2rem) / 2);\n  transition: all 0.3s;\n  width: 2rem;\n}\nheader .header-item#search-bar .search-button:hover {\n  background: #fff;\n  color: #e67e22;\n}\n.scroller {\n  margin-top: 75px;\n  height: calc(100vh - 75px);\n  width: 100vw;\n  overflow: auto;\n  position: absolute;\n  top: 0;\n  left: 0;\n}\n.scene {\n  width: 960px;\n  margin: auto;\n  position: relative;\n}\nol.scene {\n  list-style: none;\n  padding: 0;\n}\n.scroller.scene-enter #shops {\n  opacity: 0;\n}\n.scroller.scene-enter-active #shops {\n  opacity: 1;\n  transition: all 500ms cubic-bezier(0.55, 0.055, 0.675, 0.19);\n}\n.scroller.scene-leave #shops {\n  opacity: 1;\n}\n.scroller.scene-leave-active #shops {\n  opacity: 0;\n  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);\n}\n.list-footer {\n  width: 50%;\n  height: 3em;\n  line-height: 3em;\n  text-align: center;\n  position: absolute;\n  left: 50%;\n  bottom: 40px;\n  margin-left: -25%;\n  transition: all 500ms cubic-bezier(0.215, 0.61, 0.355, 1);\n}\n.list-footer.list-footer-enter {\n  margin-top: 3em;\n  opacity: 0;\n}\n.list-footer.list-footer-enter-active {\n  margin-top: 0;\n  opacity: 1;\n  transition: all 500ms cubic-bezier(0.215, 0.61, 0.355, 1);\n}\n.list-footer.list-footer-leave {\n  margin-top: 0;\n  opacity: 1;\n}\n.list-footer.list-footer-leave-active {\n  margin-top: -3em;\n  opacity: 0;\n  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);\n}\n.list-fetching {\n  color: rgba(0,0,0,0.3);\n  animation: 3s linear spin;\n}\n.list-ended {\n  background: rgba(0,0,0,0.3);\n  color: #eee;\n  border-radius: 3px;\n}\n.list-ended:after {\n  content: \"\\4E0B\\9762\\6CA1\\6709\\4E86\";\n}\n#shops {\n  z-index: 1;\n  padding-bottom: calc(3em + 60px);\n}\n.shop-card {\n  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);\n  background: #f8f8f8;\n  border-radius: 3px;\n  box-sizing: border-box;\n  cursor: pointer;\n  display: inline-block;\n  height: 200px;\n  margin: 20px;\n  overflow: hidden;\n  padding: 20px;\n  padding-left: 220px;\n  position: relative;\n  transition-property: all;\n  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);\n  transition-duration: 300ms;\n  user-select: none;\n  width: 440px;\n}\n.shop-card:hover {\n  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);\n  background: #fff;\n}\n.shop-card:active {\n  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.25);\n  background: #eee;\n}\n.shop-card.shop-card-enter {\n  top: 100px;\n  opacity: 0;\n}\n.shop-card.shop-card-enter.shop-card-enter-active {\n  top: 0;\n  opacity: 1;\n}\n.shop-card.shop-card-enter.shop-card-enter-active.delay-1 {\n  transition-delay: 50ms;\n}\n.shop-card.shop-card-enter.shop-card-enter-active.delay-2 {\n  transition-delay: 100ms;\n}\n.shop-card.shop-card-enter.shop-card-enter-active.delay-3 {\n  transition-delay: 150ms;\n}\n.shop-card.shop-card-enter.shop-card-enter-active.delay-4 {\n  transition-delay: 200ms;\n}\n.shop-card.shop-card-enter.shop-card-enter-active.delay-5 {\n  transition-delay: 250ms;\n}\n.shop-card.shop-card-enter.shop-card-enter-active.delay-6 {\n  transition-delay: 300ms;\n}\n.shop-card.shop-card-enter.shop-card-enter-active.delay-7 {\n  transition-delay: 350ms;\n}\n.shop-card.shop-card-enter.shop-card-enter-active.delay-8 {\n  transition-delay: 400ms;\n}\n.shop-card.shop-card-enter.shop-card-enter-active.delay-9 {\n  transition-delay: 450ms;\n}\n.shop-card .shop-photo {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 200px;\n  height: 200px;\n}\n.shop-info {\n  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);\n  position: relative;\n  margin: 0 20px 20px 20px;\n  background: #fff;\n  height: 300px;\n  padding: 20px;\n  padding-left: 320px;\n  box-sizing: border-box;\n}\n.shop-info .shop-photo {\n  position: absolute;\n  top: 0;\n  left: 0;\n  height: 300px;\n  width: 300px;\n}\nol.item-list {\n  list-style: none;\n  padding: 0;\n  padding-bottom: calc(3em + 40px);\n  margin: 40px 10px 0 10px;\n  user-select: none;\n  -webkit-user-select: none;\n  position: relative;\n  transition: all 500ms cubic-bezier(0.215, 0.61, 0.355, 1);\n}\nol.item-list.item-reserve-for-cart {\n  padding-bottom: calc(20px * 3 + 13em);\n}\nol.item-list.item-reserve-for-cart .list-footer {\n  bottom: calc(20px * 1.5 + 13em);\n}\nol.item-list .item-card {\n  display: inline-block;\n  width: 215px;\n  height: 322.5px;\n  margin: 0 10px 40px 10px;\n  position: relative;\n  box-sizing: border-box;\n  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);\n}\nol.item-list .item-card .item-card-inner {\n  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);\n  background: #f8f8f8;\n  position: absolute;\n  top: 0;\n  width: 100%;\n  height: 322.5px;\n  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);\n  padding: 20px;\n  padding-top: 235px;\n  box-sizing: border-box;\n  overflow: hidden;\n}\nol.item-list .item-card .item-card-inner .item-photo {\n  position: absolute;\n  width: 215px;\n  height: 215px;\n  top: 0;\n  left: 0;\n}\nol.item-list .item-card .item-card-inner .item-number {\n  display: block;\n  position: absolute;\n  width: 100%;\n  height: 30px;\n  left: 0;\n  bottom: -30px;\n  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);\n}\nol.item-list .item-card .item-card-inner .item-number .item-number-button,\nol.item-list .item-card .item-card-inner .item-number .item-number-input {\n  display: inline-block;\n  height: 30px;\n  box-sizing: border-box;\n  font-size: 1.5rem;\n  text-align: center;\n  background: #f39c12;\n  color: #fff;\n}\nol.item-list .item-card .item-card-inner .item-number .item-number-button {\n  width: 30%;\n  line-height: 30px;\n  cursor: pointer;\n}\nol.item-list .item-card .item-card-inner .item-number .item-number-input {\n  width: 40%;\n  border: none;\n  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);\n  font-size: 1em;\n  padding: 0;\n  vertical-align: bottom;\n}\nol.item-list .item-card .item-card-inner .item-number .item-number-input:hover,\nol.item-list .item-card .item-card-inner .item-number .item-number-input:focus,\nol.item-list .item-card .item-card-inner .item-number .item-number-input:active {\n  box-shadow: inset 0 2px 2px rgba(0,0,0,0.5);\n  outline: 0;\n}\nol.item-list .item-card .item-card-inner:hover,\nol.item-list .item-card .item-card-inner:focus,\nol.item-list .item-card .item-card-inner.selected {\n  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.25);\n  background: #fff;\n  top: -15px;\n  height: 352.5px;\n}\nol.item-list .item-card .item-card-inner:hover .item-number,\nol.item-list .item-card .item-card-inner:focus .item-number,\nol.item-list .item-card .item-card-inner.selected .item-number {\n  bottom: 0;\n}\nol.item-list .item-card .item-card-inner:hover {\n  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);\n}\nol.item-list .item-card.item-card-enter {\n  top: 300px;\n  opacity: 0;\n}\nol.item-list .item-card.item-card-enter.item-card-enter-active {\n  top: 0;\n  opacity: 1;\n}\nol.item-list .item-card.item-card-enter.item-card-enter-active.delay-1 {\n  transition-delay: 100ms;\n}\nol.item-list .item-card.item-card-enter.item-card-enter-active.delay-2 {\n  transition-delay: 200ms;\n}\nol.item-list .item-card.item-card-enter.item-card-enter-active.delay-3 {\n  transition-delay: 300ms;\n}\nol.item-list .item-card.item-card-enter.item-card-enter-active.delay-4 {\n  transition-delay: 400ms;\n}\nol.item-list .item-card.item-card-enter.item-card-enter-active.delay-5 {\n  transition-delay: 500ms;\n}\nol.item-list .item-card.item-card-enter.item-card-enter-active.delay-6 {\n  transition-delay: 600ms;\n}\nol.item-list .item-card.item-card-enter.item-card-enter-active.delay-7 {\n  transition-delay: 700ms;\n}\n.scroller.scene-enter .shop-info {\n  top: -300px;\n  opacity: 0;\n}\n.scroller.scene-enter-active .shop-info {\n  top: 0;\n  opacity: 1;\n  transition: all 500ms cubic-bezier(0.215, 0.61, 0.355, 1);\n}\n.scroller.scene-leave .shop-info {\n  top: 0;\n  opacity: 1;\n}\n.scroller.scene-leave .item-list {\n  top: 0;\n  opacity: 1;\n}\n.scroller.scene-leave-active .shop-info {\n  top: -300px;\n  opacity: 0;\n  transition: all 300ms cubic-bezier(0.55, 0.055, 0.675, 0.19);\n}\n.scroller.scene-leave-active .item-list {\n  top: 300px;\n  opacity: 0;\n  transition: all 300ms cubic-bezier(0.55, 0.055, 0.675, 0.19);\n}\n#shop {\n  z-index: 2;\n}\n#cart {\n  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.25);\n  position: absolute;\n  width: 920px;\n  height: 13em;\n  background: #fff;\n  z-index: 8;\n  box-sizing: border-box;\n  padding: 20px;\n  left: 50%;\n  margin-left: -460px;\n  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);\n  overflow: hidden;\n}\n#cart.hidden-cart {\n  opacity: 0;\n  top: 110vh;\n  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);\n}\n#cart.show-cart {\n  opacity: 1;\n  top: calc(100vh - 13em);\n}\n#cart.show-cart:hover,\n#cart.promote-cart,\n#cart.login-cart {\n  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);\n  height: 16em;\n  top: calc(100vh - 16em);\n}\n#cart h3 {\n  color: #e67e22;\n}\n#cart .cart-total {\n  float: right;\n}\n#cart .cart-total:before {\n  content: \"\\603B\\8BA1\\FF1A\";\n  color: #808080;\n}\n#cart .cart-bottom-line {\n  height: 3em;\n  width: 100%;\n  line-height: 3em;\n  padding: 0 1em;\n  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);\n  position: absolute;\n  bottom: -3em;\n  left: 0;\n  box-sizing: border-box;\n  background: #f39c12;\n  color: #fff;\n  overflow: hidden;\n}\n#cart .cart-bottom-line .cart-button {\n  display: inline-block;\n  float: right;\n  margin-left: 1em;\n  cursor: pointer;\n  line-height: 1em;\n  height: 1em;\n  margin-top: 0.5em;\n  padding: 0.5em;\n}\n#cart .cart-bottom-line .cart-button:hover {\n  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);\n  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);\n}\n#cart .cart-bottom-line .cart-button:active {\n  box-shadow: inset 0 2px 2px rgba(0,0,0,0.5);\n}\n#cart .cart-bottom-line.cart-bottom-line-login {\n  height: 16em;\n  bottom: 0;\n  background: #e67e22;\n  color: #fff;\n  padding: 2em;\n}\n#cart .cart-bottom-line.cart-bottom-line-login h3 {\n  color: #fff;\n}\n#cart .cart-bottom-line.cart-bottom-line-login .cart-bottom-line-login-form {\n  display: block;\n  width: 50%;\n  margin: auto;\n  position: relative;\n  padding: 1em;\n}\n#cart .cart-bottom-line.cart-bottom-line-login .cart-bottom-line-login-line {\n  display: block;\n  margin: 0;\n  margin-bottom: 0.5em;\n  width: 100%;\n  position: relative;\n}\n#cart .cart-bottom-line.cart-bottom-line-login label {\n  display: inline-block;\n  width: 20%;\n}\n#cart .cart-bottom-line.cart-bottom-line-login label:after {\n  content: \"\\FF1A\";\n}\n#cart .cart-bottom-line.cart-bottom-line-login .cart-bottom-line-login-input {\n  display: inline-block;\n  border: 0;\n  padding: 0.5em;\n  background: #f39c12;\n  box-sizing: border-box;\n  color: #fff;\n  width: 80%;\n  font-size: 1rem;\n}\n#cart .cart-bottom-line.cart-bottom-line-login .cart-bottom-line-login-button {\n  display: inline-block;\n  float: right;\n  margin-left: 1em;\n  cursor: pointer;\n}\n#cart .cart-bottom-line.cart-bottom-line-login .cart-bottom-line-login-button.left {\n  float: left;\n  margin-left: 0;\n}\n#cart .cart-bottom-line.cart-bottom-line-enter {\n  height: 0;\n  bottom: 0;\n}\n#cart .cart-bottom-line.cart-bottom-line-enter-active {\n  height: 3em;\n}\n#cart .cart-bottom-line.cart-bottom-line-leave {\n  height: 3em;\n  bottom: 0;\n}\n#cart .cart-bottom-line.cart-bottom-line-leave-active {\n  height: 0;\n  bottom: 3em;\n}\n#cart.show-cart:hover .cart-bottom-line,\n#cart.promote-cart .cart-bottom-line {\n  bottom: 0;\n}\n#cart.show-cart:hover .cart-list,\n#cart.promote-cart .cart-list {\n  height: calc(100% - 5em);\n}\n.cart-list {\n  list-style: none;\n  padding: 0;\n  height: calc(100% - 2em);\n  overflow: auto;\n  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);\n}\n.cart-list .cart-item {\n  display: block;\n  height: 2em;\n  line-height: 2em;\n  position: relative;\n  overflow: hidden;\n}\n.cart-list .cart-item.cart-list-enter {\n  height: 0;\n  opacity: 0;\n}\n.cart-list .cart-item.cart-list-enter-active {\n  height: 2em;\n  opacity: 1;\n  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);\n}\n.cart-list .cart-item.cart-list-leave {\n  height: 2em;\n  opacity: 1;\n}\n.cart-list .cart-item.cart-list-leave-active {\n  height: 0;\n  opacity: 0;\n  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);\n}\n.cart-list .cart-item-column {\n  display: inline-block;\n}\n.cart-list .cart-item-column:before,\n.cart-list .cart-item-column:after {\n  color: #808080;\n}\n.cart-list .cart-item-name {\n  width: 50%;\n}\n.cart-list .cart-item-price {\n  width: 20%;\n  text-align: right;\n}\n.cart-list .cart-item-price:after {\n  content: \" \\8F6F\\59B9\\5E01   \";\n}\n.cart-list .cart-item-number {\n  width: 10%;\n}\n.cart-list .cart-item-number:before {\n  content: \" x \";\n}\n.cart-list .cart-item-equal {\n  width: 5%;\n  text-align: right;\n}\n.cart-list .cart-item-total {\n  width: 15%;\n  text-align: right;\n}\n.cart-list .cart-item-total:after {\n  content: \" \\8F6F\\59B9\\5E01\";\n}\n@-moz-keyframes spin {\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n}\n@-webkit-keyframes spin {\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n}\n@-o-keyframes spin {\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n}\n@keyframes spin {\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n}\n", ""]);
+	exports.push([module.id, "html,\nbody {\n  margin: 0;\n  padding: 0;\n  background: #eee;\n  width: 100%;\n  height: 100%;\n  position: relative;\n  overflow: hidden;\n}\nh3,\nh4 {\n  margin: 0;\n}\nheader {\n  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);\n  background: #e67e22;\n  height: 75px;\n  left: 0;\n  line-height: 75px;\n  position: fixed;\n  top: 0;\n  width: 100%;\n  z-index: 10;\n}\nheader #header-back {\n  border-radius: 1em;\n  color: #808080;\n  cursor: pointer;\n  display: block;\n  font-size: 2rem;\n  height: 2em;\n  left: -2em;\n  line-height: 2em;\n  position: absolute;\n  text-align: center;\n  top: calc(100% + 1em);\n  transition: all 500ms cubic-bezier(0.215, 0.61, 0.355, 1);\n  width: 2em;\n}\nheader #header-back:hover {\n  transition-duration: 300ms;\n  background: #fff;\n}\nheader #header-back:active {\n  transition-duration: 0;\n  background: #808080;\n}\nheader.subheader #header-back {\n  left: 1em;\n}\nheader .header-right {\n  color: #fff;\n  position: absolute;\n  right: 1.5em;\n  top: 0;\n}\nheader .header-right.header-login {\n  cursor: pointer;\n}\nheader .header-right.header-loginning {\n  animation: 1s linear spin infinite;\n}\nheader .header-item {\n  margin: 0;\n  position: relative;\n  height: 75px;\n  line-height: 75px;\n}\nheader .header-item#header-title {\n  color: #fff;\n  position: absolute;\n  left: 0;\n  font-size: 2rem;\n  font-weight: 700;\n  margin-left: 1em;\n}\nheader .header-item#search-bar {\n  display: block;\n  margin: 0 auto;\n  min-width: 300px;\n  position: relative;\n  width: 50%;\n}\nheader .header-item#search-bar .search-input {\n  background: #f39c12;\n  border: 0;\n  border-radius: 1rem;\n  box-sizing: border-box;\n  color: #fff;\n  display: block;\n  font-size: 1rem;\n  height: 2rem;\n  margin: 0;\n  outline: 0;\n  padding: 1em;\n  position: absolute;\n  top: calc((75px - 2rem) / 2);\n  width: 100%;\n}\nheader .header-item#search-bar .search-button {\n  background: transparent;\n  border: 0;\n  border-radius: 1rem;\n  color: #fff;\n  display: block;\n  height: 2rem;\n  line-height: 2rem;\n  margin: 0;\n  outline: 0;\n  padding: 0;\n  position: absolute;\n  right: 0;\n  text-align: center;\n  top: calc((75px - 2rem) / 2);\n  transition: all 0.3s;\n  width: 2rem;\n}\nheader .header-item#search-bar .search-button:hover {\n  background: #fff;\n  color: #e67e22;\n}\n.scroller {\n  margin-top: 75px;\n  height: calc(100vh - 75px);\n  width: 100vw;\n  overflow: auto;\n  position: absolute;\n  top: 0;\n  left: 0;\n}\n.scene {\n  width: 960px;\n  margin: auto;\n  position: relative;\n}\nol.scene {\n  list-style: none;\n  padding: 0;\n}\n.scroller.scene-enter #shops,\n.scroller.scene-enter #search-result {\n  opacity: 0;\n}\n.scroller.scene-enter-active #shops,\n.scroller.scene-enter-active #search-result {\n  opacity: 1;\n  transition: all 500ms cubic-bezier(0.55, 0.055, 0.675, 0.19);\n}\n.scroller.scene-leave #shops,\n.scroller.scene-leave #search-result {\n  opacity: 1;\n}\n.scroller.scene-leave-active #shops,\n.scroller.scene-leave-active #search-result {\n  opacity: 0;\n  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);\n}\n.list-footer {\n  width: 50%;\n  height: 3em;\n  line-height: 3em;\n  text-align: center;\n  position: absolute;\n  left: 50%;\n  bottom: 40px;\n  margin-left: -25%;\n  transition: all 500ms cubic-bezier(0.215, 0.61, 0.355, 1);\n}\n.list-footer.list-footer-enter {\n  margin-top: 3em;\n  opacity: 0;\n}\n.list-footer.list-footer-enter-active {\n  margin-top: 0;\n  opacity: 1;\n  transition: all 500ms cubic-bezier(0.215, 0.61, 0.355, 1);\n}\n.list-footer.list-footer-leave {\n  margin-top: 0;\n  opacity: 1;\n}\n.list-footer.list-footer-leave-active {\n  margin-top: -3em;\n  opacity: 0;\n  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);\n}\n.list-fetching {\n  color: rgba(0,0,0,0.3);\n  animation: 1s linear spin infinite;\n}\n.list-ended {\n  background: rgba(0,0,0,0.3);\n  color: #eee;\n  border-radius: 3px;\n}\n.list-ended:after {\n  content: \"\\4E0B\\9762\\6CA1\\6709\\4E86\";\n}\n#shops {\n  z-index: 1;\n  padding-bottom: calc(3em + 60px);\n  margin-top: 20px;\n}\n.shop-card {\n  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);\n  background: #f8f8f8;\n  border-radius: 3px;\n  box-sizing: border-box;\n  cursor: pointer;\n  display: inline-block;\n  height: 200px;\n  margin: 0 20px 40px 20px;\n  overflow: hidden;\n  padding: 20px;\n  padding-left: 220px;\n  position: relative;\n  transition-property: all;\n  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);\n  transition-duration: 300ms;\n  user-select: none;\n  width: 440px;\n}\n.shop-card:hover {\n  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);\n  background: #fff;\n}\n.shop-card:active {\n  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.25);\n  background: #eee;\n}\n.shop-card.shop-card-enter {\n  top: 100px;\n  opacity: 0;\n}\n.shop-card.shop-card-enter.shop-card-enter-active {\n  top: 0;\n  opacity: 1;\n}\n.shop-card.shop-card-enter.shop-card-enter-active.delay-1 {\n  transition-delay: 50ms;\n}\n.shop-card.shop-card-enter.shop-card-enter-active.delay-2 {\n  transition-delay: 100ms;\n}\n.shop-card.shop-card-enter.shop-card-enter-active.delay-3 {\n  transition-delay: 150ms;\n}\n.shop-card.shop-card-enter.shop-card-enter-active.delay-4 {\n  transition-delay: 200ms;\n}\n.shop-card.shop-card-enter.shop-card-enter-active.delay-5 {\n  transition-delay: 250ms;\n}\n.shop-card.shop-card-enter.shop-card-enter-active.delay-6 {\n  transition-delay: 300ms;\n}\n.shop-card.shop-card-enter.shop-card-enter-active.delay-7 {\n  transition-delay: 350ms;\n}\n.shop-card.shop-card-enter.shop-card-enter-active.delay-8 {\n  transition-delay: 400ms;\n}\n.shop-card.shop-card-enter.shop-card-enter-active.delay-9 {\n  transition-delay: 450ms;\n}\n.shop-card .shop-photo {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 200px;\n  height: 200px;\n}\n.shop-info {\n  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);\n  position: relative;\n  margin: 0 20px 20px 20px;\n  background: #fff;\n  height: 300px;\n  padding: 20px;\n  padding-left: 320px;\n  box-sizing: border-box;\n}\n.shop-info .shop-photo {\n  position: absolute;\n  top: 0;\n  left: 0;\n  height: 300px;\n  width: 300px;\n}\nol.item-list {\n  list-style: none;\n  padding: 0;\n  padding-bottom: calc(3em + 40px);\n  margin-top: 40px;\n  user-select: none;\n  -webkit-user-select: none;\n  position: relative;\n  transition: all 500ms cubic-bezier(0.215, 0.61, 0.355, 1);\n}\nol.item-list.item-reserve-for-cart {\n  padding-bottom: calc(20px * 3 + 13em);\n}\nol.item-list.item-reserve-for-cart .list-footer {\n  bottom: calc(20px * 1.5 + 13em);\n}\nol.item-list .item-card-inner {\n  cursor: default;\n}\nol.item-list .item-card-inner:hover,\nol.item-list .item-card-inner:focus,\nol.item-list .item-card-inner.selected {\n  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.25);\n  background: #fff;\n  top: -15px;\n  height: 352.5px;\n}\nol.item-list .item-card-inner:hover .item-number,\nol.item-list .item-card-inner:focus .item-number,\nol.item-list .item-card-inner.selected .item-number {\n  bottom: 0;\n}\nol.item-list .item-card-inner:hover {\n  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);\n}\nol.item-list .item-card.item-card-enter {\n  top: 300px;\n  opacity: 0;\n}\nol.item-list .item-card.item-card-enter.item-card-enter-active {\n  top: 0;\n  opacity: 1;\n}\nol.item-list .item-card.item-card-enter.item-card-enter-active.delay-1 {\n  transition-delay: 100ms;\n}\nol.item-list .item-card.item-card-enter.item-card-enter-active.delay-2 {\n  transition-delay: 200ms;\n}\nol.item-list .item-card.item-card-enter.item-card-enter-active.delay-3 {\n  transition-delay: 300ms;\n}\nol.item-list .item-card.item-card-enter.item-card-enter-active.delay-4 {\n  transition-delay: 400ms;\n}\nol.item-list .item-card.item-card-enter.item-card-enter-active.delay-5 {\n  transition-delay: 500ms;\n}\nol.item-list .item-card.item-card-enter.item-card-enter-active.delay-6 {\n  transition-delay: 600ms;\n}\nol.item-list .item-card.item-card-enter.item-card-enter-active.delay-7 {\n  transition-delay: 700ms;\n}\n.item-card {\n  display: inline-block;\n  width: 215px;\n  height: 322.5px;\n  margin-left: 20px;\n  margin-bottom: 40px;\n  position: relative;\n  box-sizing: border-box;\n  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);\n}\n.item-card .item-card-inner {\n  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);\n  background: #f8f8f8;\n  position: absolute;\n  top: 0;\n  width: 100%;\n  height: 322.5px;\n  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);\n  padding: 20px;\n  padding-top: 235px;\n  box-sizing: border-box;\n  overflow: hidden;\n  cursor: pointer;\n}\n.item-card .item-card-inner .item-photo {\n  position: absolute;\n  width: 215px;\n  height: 215px;\n  top: 0;\n  left: 0;\n}\n.item-card .item-card-inner .item-number {\n  display: block;\n  position: absolute;\n  width: 100%;\n  height: 30px;\n  left: 0;\n  bottom: -30px;\n  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);\n}\n.item-card .item-card-inner .item-number .item-number-button,\n.item-card .item-card-inner .item-number .item-number-input {\n  display: inline-block;\n  height: 30px;\n  box-sizing: border-box;\n  font-size: 1.5rem;\n  text-align: center;\n  background: #f39c12;\n  color: #fff;\n}\n.item-card .item-card-inner .item-number .item-number-button {\n  width: 30%;\n  line-height: 30px;\n  cursor: pointer;\n}\n.item-card .item-card-inner .item-number .item-number-input {\n  width: 40%;\n  border: none;\n  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);\n  font-size: 1em;\n  padding: 0;\n  vertical-align: bottom;\n}\n.item-card .item-card-inner .item-number .item-number-input:hover,\n.item-card .item-card-inner .item-number .item-number-input:focus,\n.item-card .item-card-inner .item-number .item-number-input:active {\n  box-shadow: inset 0 2px 2px rgba(0,0,0,0.5);\n  outline: 0;\n}\n.item-card .item-card-inner:hover {\n  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);\n  background: #fff;\n}\n.scroller.scene-enter .shop-info {\n  top: -300px;\n  opacity: 0;\n}\n.scroller.scene-enter-active .shop-info {\n  top: 0;\n  opacity: 1;\n  transition: all 500ms cubic-bezier(0.215, 0.61, 0.355, 1);\n}\n.scroller.scene-leave .shop-info {\n  top: 0;\n  opacity: 1;\n}\n.scroller.scene-leave .item-list {\n  top: 0;\n  opacity: 1;\n}\n.scroller.scene-leave-active .shop-info {\n  top: -300px;\n  opacity: 0;\n  transition: all 300ms cubic-bezier(0.55, 0.055, 0.675, 0.19);\n}\n.scroller.scene-leave-active .item-list {\n  top: 300px;\n  opacity: 0;\n  transition: all 300ms cubic-bezier(0.55, 0.055, 0.675, 0.19);\n}\n#shop {\n  z-index: 2;\n}\n#cart {\n  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.25);\n  position: absolute;\n  width: 920px;\n  height: 13em;\n  background: #fff;\n  z-index: 8;\n  box-sizing: border-box;\n  padding: 20px;\n  left: 50%;\n  margin-left: -460px;\n  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);\n  overflow: hidden;\n}\n#cart.hidden-cart {\n  opacity: 0;\n  top: 110vh;\n  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);\n}\n#cart.show-cart {\n  opacity: 1;\n  top: calc(100vh - 13em);\n}\n#cart.show-cart:hover,\n#cart.promote-cart,\n#cart.login-cart {\n  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);\n  height: 16em;\n  top: calc(100vh - 16em);\n}\n#cart h3 {\n  color: #e67e22;\n}\n#cart .cart-total {\n  float: right;\n}\n#cart .cart-total:before {\n  content: \"\\603B\\8BA1\\FF1A\";\n  color: #808080;\n}\n#cart .cart-bottom-line {\n  height: 3em;\n  width: 100%;\n  line-height: 3em;\n  padding: 0 1em;\n  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);\n  position: absolute;\n  bottom: -3em;\n  left: 0;\n  box-sizing: border-box;\n  background: #f39c12;\n  color: #fff;\n  overflow: hidden;\n}\n#cart .cart-bottom-line .cart-button {\n  display: inline-block;\n  float: right;\n  margin-left: 1em;\n  cursor: pointer;\n  line-height: 1em;\n  height: 1em;\n  margin-top: 0.5em;\n  padding: 0.5em;\n}\n#cart .cart-bottom-line .cart-button:hover {\n  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);\n  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);\n}\n#cart .cart-bottom-line .cart-button:active {\n  box-shadow: inset 0 2px 2px rgba(0,0,0,0.5);\n}\n#cart .cart-bottom-line.cart-bottom-line-login {\n  height: 16em;\n  bottom: 0;\n  background: #e67e22;\n  color: #fff;\n  padding: 2em;\n}\n#cart .cart-bottom-line.cart-bottom-line-login h3 {\n  color: #fff;\n}\n#cart .cart-bottom-line.cart-bottom-line-login .cart-bottom-line-login-form {\n  display: block;\n  width: 50%;\n  margin: auto;\n  position: relative;\n  padding: 1em;\n}\n#cart .cart-bottom-line.cart-bottom-line-login .cart-bottom-line-login-line {\n  display: block;\n  margin: 0;\n  margin-bottom: 0.5em;\n  width: 100%;\n  position: relative;\n}\n#cart .cart-bottom-line.cart-bottom-line-login label {\n  display: inline-block;\n  width: 20%;\n}\n#cart .cart-bottom-line.cart-bottom-line-login label:after {\n  content: \"\\FF1A\";\n}\n#cart .cart-bottom-line.cart-bottom-line-login .cart-bottom-line-login-input {\n  display: inline-block;\n  border: 0;\n  padding: 0.5em;\n  background: #f39c12;\n  box-sizing: border-box;\n  color: #fff;\n  width: 80%;\n  font-size: 1rem;\n  transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);\n}\n#cart .cart-bottom-line.cart-bottom-line-login .cart-bottom-line-login-button {\n  background: transparent;\n  border: none;\n  color: inherit;\n  cursor: pointer;\n  display: inline-block;\n  float: right;\n  font-size: inherit;\n  height: inherit;\n  line-height: inherit;\n  margin-left: 1em;\n  padding: 0;\n}\n#cart .cart-bottom-line.cart-bottom-line-login .cart-bottom-line-login-button.left {\n  float: left;\n  margin-left: 0;\n}\n#cart .cart-bottom-line.cart-bottom-line-login.login-error .cart-bottom-line-login-input {\n  background: #f20;\n}\n#cart .cart-bottom-line.cart-bottom-line-enter {\n  height: 0;\n  bottom: 0;\n}\n#cart .cart-bottom-line.cart-bottom-line-enter-active {\n  height: 3em;\n}\n#cart .cart-bottom-line.cart-bottom-line-leave {\n  height: 3em;\n  bottom: 0;\n}\n#cart .cart-bottom-line.cart-bottom-line-leave-active {\n  height: 0;\n  bottom: 3em;\n}\n#cart.show-cart:hover .cart-bottom-line,\n#cart.promote-cart .cart-bottom-line {\n  bottom: 0;\n}\n#cart.show-cart:hover .cart-list,\n#cart.promote-cart .cart-list {\n  height: calc(100% - 5em);\n}\n.cart-list {\n  list-style: none;\n  padding: 0;\n  height: calc(100% - 2em);\n  overflow: auto;\n  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);\n}\n.cart-list .cart-item {\n  display: block;\n  height: 2em;\n  line-height: 2em;\n  position: relative;\n  overflow: hidden;\n}\n.cart-list .cart-item.cart-list-enter {\n  height: 0;\n  opacity: 0;\n}\n.cart-list .cart-item.cart-list-enter-active {\n  height: 2em;\n  opacity: 1;\n  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);\n}\n.cart-list .cart-item.cart-list-leave {\n  height: 2em;\n  opacity: 1;\n}\n.cart-list .cart-item.cart-list-leave-active {\n  height: 0;\n  opacity: 0;\n  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);\n}\n.cart-list .cart-item-column {\n  display: inline-block;\n}\n.cart-list .cart-item-column:before,\n.cart-list .cart-item-column:after {\n  color: #808080;\n}\n.cart-list .cart-item-name {\n  width: 50%;\n}\n.cart-list .cart-item-price {\n  width: 20%;\n  text-align: right;\n}\n.cart-list .cart-item-price:after {\n  content: \" \\8F6F\\59B9\\5E01   \";\n}\n.cart-list .cart-item-number {\n  width: 10%;\n}\n.cart-list .cart-item-number:before {\n  content: \" x \";\n}\n.cart-list .cart-item-equal {\n  width: 5%;\n  text-align: right;\n}\n.cart-list .cart-item-total {\n  width: 15%;\n  text-align: right;\n}\n.cart-list .cart-item-total:after {\n  content: \" \\8F6F\\59B9\\5E01\";\n}\n#search-result {\n  margin-top: 20px;\n  z-index: 9;\n}\n.gap {\n  display: block;\n  clear: both;\n  margin: 0 20px 20px 20px;\n  color: #808080;\n}\n@-moz-keyframes spin {\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n}\n@-webkit-keyframes spin {\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n}\n@-o-keyframes spin {\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n}\n@keyframes spin {\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n}\n", ""]);
 
 	// exports
 
@@ -811,21 +811,21 @@
 
 	var _header2 = _interopRequireDefault(_header);
 
-	var _navigation = __webpack_require__(213);
+	var _navigation = __webpack_require__(219);
 
 	var _navigation2 = _interopRequireDefault(_navigation);
 
-	var _cart = __webpack_require__(231);
+	var _cart = __webpack_require__(232);
 
 	var _cart2 = _interopRequireDefault(_cart);
 
-	var _store = __webpack_require__(232);
+	var _store = __webpack_require__(233);
 
 	var _store2 = _interopRequireDefault(_store);
 
 	var _actions = __webpack_require__(212);
 
-	var _api = __webpack_require__(222);
+	var _api = __webpack_require__(213);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -22014,11 +22014,16 @@
 	                'MALEE'
 	            ),
 	            _react2.default.createElement(_searchBar2.default, null),
-	            this.props.loginning || this.props.validating || this.props.loginned ? _react2.default.createElement(HeaderLoginning, null) : this.props.validated ? _react2.default.createElement(HeaderLogined, { nickname: this.props.nickname }) : _react2.default.createElement(HeaderLogin, { onClick: this.handleLogin })
+	            this.props.loginning || this.props.validating ? _react2.default.createElement(HeaderLoginning, null) : this.props.validated ? _react2.default.createElement(HeaderLogined, { nickname: this.props.nickname }) : _react2.default.createElement(HeaderLogin, { onClick: this.handleLogin })
 	        );
 	    },
 	    handleBack: function handleBack() {
-	        this.props.dispatch(this.props.safeBack ? (0, _actions.exitShopInsist)() : (0, _actions.exitShop)());
+	        if (this.props.presenting == 'ITEMS') {
+	            this.props.dispatch(this.props.safeBack ? (0, _actions.exitShopInsist)() : (0, _actions.exitShop)());
+	        } else if (this.props.presenting == 'SEARCH') {
+	            console.log("exit search");
+	            this.props.dispatch((0, _actions.exitSearch)());
+	        }
 	    },
 	    handleLogin: function handleLogin() {
 	        this.props.dispatch((0, _actions.loginRequest)());
@@ -22029,8 +22034,8 @@
 	    return {
 	        presenting: state.presenting,
 	        safeBack: !state.cart.shop_id,
-	        validating: !state.user.validating,
-	        validated: !state.user.validated,
+	        validating: state.user.validating,
+	        validated: state.user.validated,
 	        loginning: state.user.loginning,
 	        logined: state.user.logined,
 	        nickname: state.user.nickname || ''
@@ -22053,26 +22058,67 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _reactRedux = __webpack_require__(188);
+
+	var _actions = __webpack_require__(212);
+
+	var _api = __webpack_require__(213);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var SearchBox = _react2.default.createClass({
 	    displayName: 'SearchBox',
 
 	    render: function render() {
+	        var _this = this;
+
 	        return _react2.default.createElement(
 	            'form',
 	            { id: 'search-bar', className: 'header-item' },
-	            _react2.default.createElement('input', { className: 'search-input', name: 'q', type: 'text' }),
+	            _react2.default.createElement('input', {
+	                className: 'search-input',
+	                name: 'q',
+	                type: 'text',
+	                value: this.state.q,
+	                onChange: function onChange(evt) {
+	                    return _this.setState({ q: evt.target.value, changed: true });
+	                },
+	                onFocus: this.handleFocus,
+	                onBlur: this.handleBlur
+	            }),
 	            _react2.default.createElement(
 	                'button',
 	                { className: 'search-button' },
 	                _react2.default.createElement('i', { className: 'fa fa-search' })
 	            )
 	        );
+	    },
+	    getInitialState: function getInitialState() {
+	        return {
+	            q: '',
+	            changed: false
+	        };
+	    },
+	    handleFocus: function handleFocus() {
+	        this.state.interval = setInterval(this.fireSearch, 1000);
+	    },
+	    handleBlur: function handleBlur() {
+	        clearInterval(this.state.interval);
+	        this.fireSearch();
+	    },
+	    fireSearch: function fireSearch() {
+	        if (this.state.changed) {
+	            this.state.changed = false;
+	            this.props.dispatch((0, _actions.search)(this.state.q, (0, _api.doSearch)(this.state.q)));
+	        }
 	    }
 	});
 
-	exports.default = SearchBox;
+	var mapStateToProps = function mapStateToProps(state) {
+	    return {};
+	};
+
+	exports.default = (0, _reactRedux.connect)(mapStateToProps)(SearchBox);
 
 /***/ },
 /* 212 */
@@ -22097,6 +22143,8 @@
 	exports.loginCancel = loginCancel;
 	exports.login = login;
 	exports.register = register;
+	exports.search = search;
+	exports.exitSearch = exitSearch;
 	var VALIDATE_LOGIN = exports.VALIDATE_LOGIN = 'VALIDATE_LOGIN';
 	function validateLogin(promise) {
 	    return {
@@ -22204,1057 +22252,23 @@
 	    };
 	}
 
+	var SEARCH = exports.SEARCH = 'SEARCH';
+	function search(query, promise) {
+	    return {
+	        type: SEARCH,
+	        query: query, promise: promise
+	    };
+	}
+
+	var EXIT_SEARCH = exports.EXIT_SEARCH = 'EXIT_SEARCH';
+	function exitSearch() {
+	    return {
+	        type: EXIT_SEARCH
+	    };
+	}
+
 /***/ },
 /* 213 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-
-	var _react = __webpack_require__(30);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _reactAddonsCssTransitionGroup = __webpack_require__(214);
-
-	var _reactAddonsCssTransitionGroup2 = _interopRequireDefault(_reactAddonsCssTransitionGroup);
-
-	var _reactRedux = __webpack_require__(188);
-
-	var _shopList = __webpack_require__(221);
-
-	var _shopList2 = _interopRequireDefault(_shopList);
-
-	var _shop = __webpack_require__(229);
-
-	var _shop2 = _interopRequireDefault(_shop);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var TRANSITION_DURATION = 800;
-
-	var Scroller = _react2.default.createClass({
-	    displayName: 'Scroller',
-
-	    render: function render() {
-	        return _react2.default.createElement(
-	            'div',
-	            { className: 'scroller' },
-	            children
-	        );
-	    }
-	});
-
-	var Navigation = _react2.default.createClass({
-	    displayName: 'Navigation',
-
-	    render: function render() {
-	        var scene = void 0;
-	        var key = void 0;
-
-	        switch (this.props.presenting) {
-	            case 'ITEMS':
-	                key = 'ITEMS-' + this.props.currentShop;
-	                scene = _react2.default.createElement(_shop2.default, {
-	                    key: key,
-	                    addScrollListener: this.addScrollListener,
-	                    removeScrollListener: this.removeScrollListener
-	                });
-	                break;
-	            case 'SHOPS':
-	            default:
-	                key = 'SHOPS';
-	                scene = _react2.default.createElement(_shopList2.default, {
-	                    key: key,
-	                    addScrollListener: this.addScrollListener,
-	                    removeScrollListener: this.removeScrollListener
-	                });
-	        };
-
-	        return _react2.default.createElement(
-	            _reactAddonsCssTransitionGroup2.default,
-	            {
-	                transitionName: 'scene',
-	                transitionEnterTimeout: TRANSITION_DURATION,
-	                transitionLeaveTimeout: TRANSITION_DURATION
-	            },
-	            _react2.default.createElement(
-	                'div',
-	                { className: 'scroller', onScroll: this.handleScroll, key: key },
-	                scene
-	            )
-	        );
-	    },
-	    getInitialState: function getInitialState() {
-	        return {
-	            _scroll_handlers: []
-	        };
-	    },
-	    addScrollListener: function addScrollListener(listener) {
-	        this.state._scroll_handlers.push(listener);
-	    },
-	    removeScrollListener: function removeScrollListener(listener) {
-	        this.state._scroll_handlers = this.state._scroll_handlers.filter(function (handlers) {
-	            return handlers != listener;
-	        });
-	    },
-	    handleScroll: function handleScroll(evt) {
-	        var scrollTop = evt.target.scrollTop;
-	        this.state._scroll_handlers.forEach(function (handler) {
-	            handler(scrollTop);
-	        });
-	    }
-	});
-
-	var mapStateToProps = function mapStateToProps(state) {
-	    return {
-	        presenting: state.presenting,
-	        currentShop: state.currentShop
-	    };
-	};
-
-	exports.default = (0, _reactRedux.connect)(mapStateToProps)(Navigation);
-
-/***/ },
-/* 214 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__(215);
-
-/***/ },
-/* 215 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Copyright 2013-2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @typechecks
-	 * @providesModule ReactCSSTransitionGroup
-	 */
-
-	'use strict';
-
-	var React = __webpack_require__(31);
-
-	var assign = __webpack_require__(68);
-
-	var ReactTransitionGroup = __webpack_require__(216);
-	var ReactCSSTransitionGroupChild = __webpack_require__(218);
-
-	function createTransitionTimeoutPropValidator(transitionType) {
-	  var timeoutPropName = 'transition' + transitionType + 'Timeout';
-	  var enabledPropName = 'transition' + transitionType;
-
-	  return function (props) {
-	    // If the transition is enabled
-	    if (props[enabledPropName]) {
-	      // If no timeout duration is provided
-	      if (props[timeoutPropName] == null) {
-	        return new Error(timeoutPropName + ' wasn\'t supplied to ReactCSSTransitionGroup: ' + 'this can cause unreliable animations and won\'t be supported in ' + 'a future version of React. See ' + 'https://fb.me/react-animation-transition-group-timeout for more ' + 'information.');
-
-	        // If the duration isn't a number
-	      } else if (typeof props[timeoutPropName] !== 'number') {
-	          return new Error(timeoutPropName + ' must be a number (in milliseconds)');
-	        }
-	    }
-	  };
-	}
-
-	var ReactCSSTransitionGroup = React.createClass({
-	  displayName: 'ReactCSSTransitionGroup',
-
-	  propTypes: {
-	    transitionName: ReactCSSTransitionGroupChild.propTypes.name,
-
-	    transitionAppear: React.PropTypes.bool,
-	    transitionEnter: React.PropTypes.bool,
-	    transitionLeave: React.PropTypes.bool,
-	    transitionAppearTimeout: createTransitionTimeoutPropValidator('Appear'),
-	    transitionEnterTimeout: createTransitionTimeoutPropValidator('Enter'),
-	    transitionLeaveTimeout: createTransitionTimeoutPropValidator('Leave')
-	  },
-
-	  getDefaultProps: function () {
-	    return {
-	      transitionAppear: false,
-	      transitionEnter: true,
-	      transitionLeave: true
-	    };
-	  },
-
-	  _wrapChild: function (child) {
-	    // We need to provide this childFactory so that
-	    // ReactCSSTransitionGroupChild can receive updates to name, enter, and
-	    // leave while it is leaving.
-	    return React.createElement(ReactCSSTransitionGroupChild, {
-	      name: this.props.transitionName,
-	      appear: this.props.transitionAppear,
-	      enter: this.props.transitionEnter,
-	      leave: this.props.transitionLeave,
-	      appearTimeout: this.props.transitionAppearTimeout,
-	      enterTimeout: this.props.transitionEnterTimeout,
-	      leaveTimeout: this.props.transitionLeaveTimeout
-	    }, child);
-	  },
-
-	  render: function () {
-	    return React.createElement(ReactTransitionGroup, assign({}, this.props, { childFactory: this._wrapChild }));
-	  }
-	});
-
-	module.exports = ReactCSSTransitionGroup;
-
-/***/ },
-/* 216 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Copyright 2013-2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule ReactTransitionGroup
-	 */
-
-	'use strict';
-
-	var React = __webpack_require__(31);
-	var ReactTransitionChildMapping = __webpack_require__(217);
-
-	var assign = __webpack_require__(68);
-	var emptyFunction = __webpack_require__(44);
-
-	var ReactTransitionGroup = React.createClass({
-	  displayName: 'ReactTransitionGroup',
-
-	  propTypes: {
-	    component: React.PropTypes.any,
-	    childFactory: React.PropTypes.func
-	  },
-
-	  getDefaultProps: function () {
-	    return {
-	      component: 'span',
-	      childFactory: emptyFunction.thatReturnsArgument
-	    };
-	  },
-
-	  getInitialState: function () {
-	    return {
-	      children: ReactTransitionChildMapping.getChildMapping(this.props.children)
-	    };
-	  },
-
-	  componentWillMount: function () {
-	    this.currentlyTransitioningKeys = {};
-	    this.keysToEnter = [];
-	    this.keysToLeave = [];
-	  },
-
-	  componentDidMount: function () {
-	    var initialChildMapping = this.state.children;
-	    for (var key in initialChildMapping) {
-	      if (initialChildMapping[key]) {
-	        this.performAppear(key);
-	      }
-	    }
-	  },
-
-	  componentWillReceiveProps: function (nextProps) {
-	    var nextChildMapping = ReactTransitionChildMapping.getChildMapping(nextProps.children);
-	    var prevChildMapping = this.state.children;
-
-	    this.setState({
-	      children: ReactTransitionChildMapping.mergeChildMappings(prevChildMapping, nextChildMapping)
-	    });
-
-	    var key;
-
-	    for (key in nextChildMapping) {
-	      var hasPrev = prevChildMapping && prevChildMapping.hasOwnProperty(key);
-	      if (nextChildMapping[key] && !hasPrev && !this.currentlyTransitioningKeys[key]) {
-	        this.keysToEnter.push(key);
-	      }
-	    }
-
-	    for (key in prevChildMapping) {
-	      var hasNext = nextChildMapping && nextChildMapping.hasOwnProperty(key);
-	      if (prevChildMapping[key] && !hasNext && !this.currentlyTransitioningKeys[key]) {
-	        this.keysToLeave.push(key);
-	      }
-	    }
-
-	    // If we want to someday check for reordering, we could do it here.
-	  },
-
-	  componentDidUpdate: function () {
-	    var keysToEnter = this.keysToEnter;
-	    this.keysToEnter = [];
-	    keysToEnter.forEach(this.performEnter);
-
-	    var keysToLeave = this.keysToLeave;
-	    this.keysToLeave = [];
-	    keysToLeave.forEach(this.performLeave);
-	  },
-
-	  performAppear: function (key) {
-	    this.currentlyTransitioningKeys[key] = true;
-
-	    var component = this.refs[key];
-
-	    if (component.componentWillAppear) {
-	      component.componentWillAppear(this._handleDoneAppearing.bind(this, key));
-	    } else {
-	      this._handleDoneAppearing(key);
-	    }
-	  },
-
-	  _handleDoneAppearing: function (key) {
-	    var component = this.refs[key];
-	    if (component.componentDidAppear) {
-	      component.componentDidAppear();
-	    }
-
-	    delete this.currentlyTransitioningKeys[key];
-
-	    var currentChildMapping = ReactTransitionChildMapping.getChildMapping(this.props.children);
-
-	    if (!currentChildMapping || !currentChildMapping.hasOwnProperty(key)) {
-	      // This was removed before it had fully appeared. Remove it.
-	      this.performLeave(key);
-	    }
-	  },
-
-	  performEnter: function (key) {
-	    this.currentlyTransitioningKeys[key] = true;
-
-	    var component = this.refs[key];
-
-	    if (component.componentWillEnter) {
-	      component.componentWillEnter(this._handleDoneEntering.bind(this, key));
-	    } else {
-	      this._handleDoneEntering(key);
-	    }
-	  },
-
-	  _handleDoneEntering: function (key) {
-	    var component = this.refs[key];
-	    if (component.componentDidEnter) {
-	      component.componentDidEnter();
-	    }
-
-	    delete this.currentlyTransitioningKeys[key];
-
-	    var currentChildMapping = ReactTransitionChildMapping.getChildMapping(this.props.children);
-
-	    if (!currentChildMapping || !currentChildMapping.hasOwnProperty(key)) {
-	      // This was removed before it had fully entered. Remove it.
-	      this.performLeave(key);
-	    }
-	  },
-
-	  performLeave: function (key) {
-	    this.currentlyTransitioningKeys[key] = true;
-
-	    var component = this.refs[key];
-	    if (component.componentWillLeave) {
-	      component.componentWillLeave(this._handleDoneLeaving.bind(this, key));
-	    } else {
-	      // Note that this is somewhat dangerous b/c it calls setState()
-	      // again, effectively mutating the component before all the work
-	      // is done.
-	      this._handleDoneLeaving(key);
-	    }
-	  },
-
-	  _handleDoneLeaving: function (key) {
-	    var component = this.refs[key];
-
-	    if (component.componentDidLeave) {
-	      component.componentDidLeave();
-	    }
-
-	    delete this.currentlyTransitioningKeys[key];
-
-	    var currentChildMapping = ReactTransitionChildMapping.getChildMapping(this.props.children);
-
-	    if (currentChildMapping && currentChildMapping.hasOwnProperty(key)) {
-	      // This entered again before it fully left. Add it again.
-	      this.performEnter(key);
-	    } else {
-	      this.setState(function (state) {
-	        var newChildren = assign({}, state.children);
-	        delete newChildren[key];
-	        return { children: newChildren };
-	      });
-	    }
-	  },
-
-	  render: function () {
-	    // TODO: we could get rid of the need for the wrapper node
-	    // by cloning a single child
-	    var childrenToRender = [];
-	    for (var key in this.state.children) {
-	      var child = this.state.children[key];
-	      if (child) {
-	        // You may need to apply reactive updates to a child as it is leaving.
-	        // The normal React way to do it won't work since the child will have
-	        // already been removed. In case you need this behavior you can provide
-	        // a childFactory function to wrap every child, even the ones that are
-	        // leaving.
-	        childrenToRender.push(React.cloneElement(this.props.childFactory(child), { ref: key, key: key }));
-	      }
-	    }
-	    return React.createElement(this.props.component, this.props, childrenToRender);
-	  }
-	});
-
-	module.exports = ReactTransitionGroup;
-
-/***/ },
-/* 217 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Copyright 2013-2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @typechecks static-only
-	 * @providesModule ReactTransitionChildMapping
-	 */
-
-	'use strict';
-
-	var flattenChildren = __webpack_require__(145);
-
-	var ReactTransitionChildMapping = {
-	  /**
-	   * Given `this.props.children`, return an object mapping key to child. Just
-	   * simple syntactic sugar around flattenChildren().
-	   *
-	   * @param {*} children `this.props.children`
-	   * @return {object} Mapping of key to child
-	   */
-	  getChildMapping: function (children) {
-	    if (!children) {
-	      return children;
-	    }
-	    return flattenChildren(children);
-	  },
-
-	  /**
-	   * When you're adding or removing children some may be added or removed in the
-	   * same render pass. We want to show *both* since we want to simultaneously
-	   * animate elements in and out. This function takes a previous set of keys
-	   * and a new set of keys and merges them with its best guess of the correct
-	   * ordering. In the future we may expose some of the utilities in
-	   * ReactMultiChild to make this easy, but for now React itself does not
-	   * directly have this concept of the union of prevChildren and nextChildren
-	   * so we implement it here.
-	   *
-	   * @param {object} prev prev children as returned from
-	   * `ReactTransitionChildMapping.getChildMapping()`.
-	   * @param {object} next next children as returned from
-	   * `ReactTransitionChildMapping.getChildMapping()`.
-	   * @return {object} a key set that contains all keys in `prev` and all keys
-	   * in `next` in a reasonable order.
-	   */
-	  mergeChildMappings: function (prev, next) {
-	    prev = prev || {};
-	    next = next || {};
-
-	    function getValueForKey(key) {
-	      if (next.hasOwnProperty(key)) {
-	        return next[key];
-	      } else {
-	        return prev[key];
-	      }
-	    }
-
-	    // For each key of `next`, the list of keys to insert before that key in
-	    // the combined list
-	    var nextKeysPending = {};
-
-	    var pendingKeys = [];
-	    for (var prevKey in prev) {
-	      if (next.hasOwnProperty(prevKey)) {
-	        if (pendingKeys.length) {
-	          nextKeysPending[prevKey] = pendingKeys;
-	          pendingKeys = [];
-	        }
-	      } else {
-	        pendingKeys.push(prevKey);
-	      }
-	    }
-
-	    var i;
-	    var childMapping = {};
-	    for (var nextKey in next) {
-	      if (nextKeysPending.hasOwnProperty(nextKey)) {
-	        for (i = 0; i < nextKeysPending[nextKey].length; i++) {
-	          var pendingNextKey = nextKeysPending[nextKey][i];
-	          childMapping[nextKeysPending[nextKey][i]] = getValueForKey(pendingNextKey);
-	        }
-	      }
-	      childMapping[nextKey] = getValueForKey(nextKey);
-	    }
-
-	    // Finally, add the keys which didn't appear before any key in `next`
-	    for (i = 0; i < pendingKeys.length; i++) {
-	      childMapping[pendingKeys[i]] = getValueForKey(pendingKeys[i]);
-	    }
-
-	    return childMapping;
-	  }
-	};
-
-	module.exports = ReactTransitionChildMapping;
-
-/***/ },
-/* 218 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Copyright 2013-2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @typechecks
-	 * @providesModule ReactCSSTransitionGroupChild
-	 */
-
-	'use strict';
-
-	var React = __webpack_require__(31);
-	var ReactDOM = __webpack_require__(32);
-
-	var CSSCore = __webpack_require__(219);
-	var ReactTransitionEvents = __webpack_require__(220);
-
-	var onlyChild = __webpack_require__(185);
-
-	// We don't remove the element from the DOM until we receive an animationend or
-	// transitionend event. If the user screws up and forgets to add an animation
-	// their node will be stuck in the DOM forever, so we detect if an animation
-	// does not start and if it doesn't, we just call the end listener immediately.
-	var TICK = 17;
-
-	var ReactCSSTransitionGroupChild = React.createClass({
-	  displayName: 'ReactCSSTransitionGroupChild',
-
-	  propTypes: {
-	    name: React.PropTypes.oneOfType([React.PropTypes.string, React.PropTypes.shape({
-	      enter: React.PropTypes.string,
-	      leave: React.PropTypes.string,
-	      active: React.PropTypes.string
-	    }), React.PropTypes.shape({
-	      enter: React.PropTypes.string,
-	      enterActive: React.PropTypes.string,
-	      leave: React.PropTypes.string,
-	      leaveActive: React.PropTypes.string,
-	      appear: React.PropTypes.string,
-	      appearActive: React.PropTypes.string
-	    })]).isRequired,
-
-	    // Once we require timeouts to be specified, we can remove the
-	    // boolean flags (appear etc.) and just accept a number
-	    // or a bool for the timeout flags (appearTimeout etc.)
-	    appear: React.PropTypes.bool,
-	    enter: React.PropTypes.bool,
-	    leave: React.PropTypes.bool,
-	    appearTimeout: React.PropTypes.number,
-	    enterTimeout: React.PropTypes.number,
-	    leaveTimeout: React.PropTypes.number
-	  },
-
-	  transition: function (animationType, finishCallback, userSpecifiedDelay) {
-	    var node = ReactDOM.findDOMNode(this);
-
-	    if (!node) {
-	      if (finishCallback) {
-	        finishCallback();
-	      }
-	      return;
-	    }
-
-	    var className = this.props.name[animationType] || this.props.name + '-' + animationType;
-	    var activeClassName = this.props.name[animationType + 'Active'] || className + '-active';
-	    var timeout = null;
-
-	    var endListener = function (e) {
-	      if (e && e.target !== node) {
-	        return;
-	      }
-
-	      clearTimeout(timeout);
-
-	      CSSCore.removeClass(node, className);
-	      CSSCore.removeClass(node, activeClassName);
-
-	      ReactTransitionEvents.removeEndEventListener(node, endListener);
-
-	      // Usually this optional callback is used for informing an owner of
-	      // a leave animation and telling it to remove the child.
-	      if (finishCallback) {
-	        finishCallback();
-	      }
-	    };
-
-	    CSSCore.addClass(node, className);
-
-	    // Need to do this to actually trigger a transition.
-	    this.queueClass(activeClassName);
-
-	    // If the user specified a timeout delay.
-	    if (userSpecifiedDelay) {
-	      // Clean-up the animation after the specified delay
-	      timeout = setTimeout(endListener, userSpecifiedDelay);
-	      this.transitionTimeouts.push(timeout);
-	    } else {
-	      // DEPRECATED: this listener will be removed in a future version of react
-	      ReactTransitionEvents.addEndEventListener(node, endListener);
-	    }
-	  },
-
-	  queueClass: function (className) {
-	    this.classNameQueue.push(className);
-
-	    if (!this.timeout) {
-	      this.timeout = setTimeout(this.flushClassNameQueue, TICK);
-	    }
-	  },
-
-	  flushClassNameQueue: function () {
-	    if (this.isMounted()) {
-	      this.classNameQueue.forEach(CSSCore.addClass.bind(CSSCore, ReactDOM.findDOMNode(this)));
-	    }
-	    this.classNameQueue.length = 0;
-	    this.timeout = null;
-	  },
-
-	  componentWillMount: function () {
-	    this.classNameQueue = [];
-	    this.transitionTimeouts = [];
-	  },
-
-	  componentWillUnmount: function () {
-	    if (this.timeout) {
-	      clearTimeout(this.timeout);
-	    }
-	    this.transitionTimeouts.forEach(function (timeout) {
-	      clearTimeout(timeout);
-	    });
-	  },
-
-	  componentWillAppear: function (done) {
-	    if (this.props.appear) {
-	      this.transition('appear', done, this.props.appearTimeout);
-	    } else {
-	      done();
-	    }
-	  },
-
-	  componentWillEnter: function (done) {
-	    if (this.props.enter) {
-	      this.transition('enter', done, this.props.enterTimeout);
-	    } else {
-	      done();
-	    }
-	  },
-
-	  componentWillLeave: function (done) {
-	    if (this.props.leave) {
-	      this.transition('leave', done, this.props.leaveTimeout);
-	    } else {
-	      done();
-	    }
-	  },
-
-	  render: function () {
-	    return onlyChild(this.props.children);
-	  }
-	});
-
-	module.exports = ReactCSSTransitionGroupChild;
-
-/***/ },
-/* 219 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(process) {/**
-	 * Copyright 2013-2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule CSSCore
-	 * @typechecks
-	 */
-
-	'use strict';
-
-	var invariant = __webpack_require__(42);
-
-	/**
-	 * The CSSCore module specifies the API (and implements most of the methods)
-	 * that should be used when dealing with the display of elements (via their
-	 * CSS classes and visibility on screen. It is an API focused on mutating the
-	 * display and not reading it as no logical state should be encoded in the
-	 * display of elements.
-	 */
-
-	var CSSCore = {
-
-	  /**
-	   * Adds the class passed in to the element if it doesn't already have it.
-	   *
-	   * @param {DOMElement} element the element to set the class on
-	   * @param {string} className the CSS className
-	   * @return {DOMElement} the element passed in
-	   */
-	  addClass: function (element, className) {
-	    !!/\s/.test(className) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'CSSCore.addClass takes only a single class name. "%s" contains ' + 'multiple classes.', className) : invariant(false) : undefined;
-
-	    if (className) {
-	      if (element.classList) {
-	        element.classList.add(className);
-	      } else if (!CSSCore.hasClass(element, className)) {
-	        element.className = element.className + ' ' + className;
-	      }
-	    }
-	    return element;
-	  },
-
-	  /**
-	   * Removes the class passed in from the element
-	   *
-	   * @param {DOMElement} element the element to set the class on
-	   * @param {string} className the CSS className
-	   * @return {DOMElement} the element passed in
-	   */
-	  removeClass: function (element, className) {
-	    !!/\s/.test(className) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'CSSCore.removeClass takes only a single class name. "%s" contains ' + 'multiple classes.', className) : invariant(false) : undefined;
-
-	    if (className) {
-	      if (element.classList) {
-	        element.classList.remove(className);
-	      } else if (CSSCore.hasClass(element, className)) {
-	        element.className = element.className.replace(new RegExp('(^|\\s)' + className + '(?:\\s|$)', 'g'), '$1').replace(/\s+/g, ' ') // multiple spaces to one
-	        .replace(/^\s*|\s*$/g, ''); // trim the ends
-	      }
-	    }
-	    return element;
-	  },
-
-	  /**
-	   * Helper to add or remove a class from an element based on a condition.
-	   *
-	   * @param {DOMElement} element the element to set the class on
-	   * @param {string} className the CSS className
-	   * @param {*} bool condition to whether to add or remove the class
-	   * @return {DOMElement} the element passed in
-	   */
-	  conditionClass: function (element, className, bool) {
-	    return (bool ? CSSCore.addClass : CSSCore.removeClass)(element, className);
-	  },
-
-	  /**
-	   * Tests whether the element has the class specified.
-	   *
-	   * @param {DOMNode|DOMWindow} element the element to set the class on
-	   * @param {string} className the CSS className
-	   * @return {boolean} true if the element has the class, false if not
-	   */
-	  hasClass: function (element, className) {
-	    !!/\s/.test(className) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'CSS.hasClass takes only a single class name.') : invariant(false) : undefined;
-	    if (element.classList) {
-	      return !!className && element.classList.contains(className);
-	    }
-	    return (' ' + element.className + ' ').indexOf(' ' + className + ' ') > -1;
-	  }
-
-	};
-
-	module.exports = CSSCore;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(33)))
-
-/***/ },
-/* 220 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Copyright 2013-2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule ReactTransitionEvents
-	 */
-
-	'use strict';
-
-	var ExecutionEnvironment = __webpack_require__(38);
-
-	/**
-	 * EVENT_NAME_MAP is used to determine which event fired when a
-	 * transition/animation ends, based on the style property used to
-	 * define that event.
-	 */
-	var EVENT_NAME_MAP = {
-	  transitionend: {
-	    'transition': 'transitionend',
-	    'WebkitTransition': 'webkitTransitionEnd',
-	    'MozTransition': 'mozTransitionEnd',
-	    'OTransition': 'oTransitionEnd',
-	    'msTransition': 'MSTransitionEnd'
-	  },
-
-	  animationend: {
-	    'animation': 'animationend',
-	    'WebkitAnimation': 'webkitAnimationEnd',
-	    'MozAnimation': 'mozAnimationEnd',
-	    'OAnimation': 'oAnimationEnd',
-	    'msAnimation': 'MSAnimationEnd'
-	  }
-	};
-
-	var endEvents = [];
-
-	function detectEvents() {
-	  var testEl = document.createElement('div');
-	  var style = testEl.style;
-
-	  // On some platforms, in particular some releases of Android 4.x,
-	  // the un-prefixed "animation" and "transition" properties are defined on the
-	  // style object but the events that fire will still be prefixed, so we need
-	  // to check if the un-prefixed events are useable, and if not remove them
-	  // from the map
-	  if (!('AnimationEvent' in window)) {
-	    delete EVENT_NAME_MAP.animationend.animation;
-	  }
-
-	  if (!('TransitionEvent' in window)) {
-	    delete EVENT_NAME_MAP.transitionend.transition;
-	  }
-
-	  for (var baseEventName in EVENT_NAME_MAP) {
-	    var baseEvents = EVENT_NAME_MAP[baseEventName];
-	    for (var styleName in baseEvents) {
-	      if (styleName in style) {
-	        endEvents.push(baseEvents[styleName]);
-	        break;
-	      }
-	    }
-	  }
-	}
-
-	if (ExecutionEnvironment.canUseDOM) {
-	  detectEvents();
-	}
-
-	// We use the raw {add|remove}EventListener() call because EventListener
-	// does not know how to remove event listeners and we really should
-	// clean up. Also, these events are not triggered in older browsers
-	// so we should be A-OK here.
-
-	function addEventListener(node, eventName, eventListener) {
-	  node.addEventListener(eventName, eventListener, false);
-	}
-
-	function removeEventListener(node, eventName, eventListener) {
-	  node.removeEventListener(eventName, eventListener, false);
-	}
-
-	var ReactTransitionEvents = {
-	  addEndEventListener: function (node, eventListener) {
-	    if (endEvents.length === 0) {
-	      // If CSS transitions are not supported, trigger an "end animation"
-	      // event immediately.
-	      window.setTimeout(eventListener, 0);
-	      return;
-	    }
-	    endEvents.forEach(function (endEvent) {
-	      addEventListener(node, endEvent, eventListener);
-	    });
-	  },
-
-	  removeEndEventListener: function (node, eventListener) {
-	    if (endEvents.length === 0) {
-	      return;
-	    }
-	    endEvents.forEach(function (endEvent) {
-	      removeEventListener(node, endEvent, eventListener);
-	    });
-	  }
-	};
-
-	module.exports = ReactTransitionEvents;
-
-/***/ },
-/* 221 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-
-	var _react = __webpack_require__(30);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _reactAddonsCssTransitionGroup = __webpack_require__(214);
-
-	var _reactAddonsCssTransitionGroup2 = _interopRequireDefault(_reactAddonsCssTransitionGroup);
-
-	var _reactRedux = __webpack_require__(188);
-
-	var _actions = __webpack_require__(212);
-
-	var _api = __webpack_require__(222);
-
-	var _listFooter = __webpack_require__(228);
-
-	var _listFooter2 = _interopRequireDefault(_listFooter);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var DELAY_BETWEEN_CARD = 50;
-	var CARDS_PER_PAGE = 10;
-	var TRANSITION_DURATION = 300;
-
-	var ShopCard = _react2.default.createClass({
-	    displayName: 'ShopCard',
-
-	    render: function render() {
-	        return _react2.default.createElement(
-	            'li',
-	            {
-	                className: 'shop-card delay-' + this.props.delay,
-	                onClick: this.props.onClick
-	            },
-	            _react2.default.createElement('img', { className: 'shop-photo', src: this.props.shop.photo, alt: this.props.shop.name }),
-	            _react2.default.createElement(
-	                'h3',
-	                { className: 'shop-name' },
-	                this.props.shop.name
-	            ),
-	            _react2.default.createElement(
-	                'p',
-	                { className: 'shop-phone' },
-	                this.props.shop.phone
-	            ),
-	            _react2.default.createElement(
-	                'p',
-	                { className: 'shop-address' },
-	                this.props.shop.address
-	            )
-	        );
-	    }
-	});
-
-	var ShopList = _react2.default.createClass({
-	    displayName: 'ShopList',
-
-	    render: function render() {
-	        var _this = this;
-
-	        return _react2.default.createElement(
-	            'ol',
-	            { id: 'shops', className: 'scene', ref: 'shops' },
-	            _react2.default.createElement(
-	                _reactAddonsCssTransitionGroup2.default,
-	                {
-	                    transitionName: 'shop-card',
-	                    transitionEnterTimeout: TRANSITION_DURATION + DELAY_BETWEEN_CARD * CARDS_PER_PAGE,
-	                    transitionLeaveTimeout: TRANSITION_DURATION + DELAY_BETWEEN_CARD * CARDS_PER_PAGE
-	                },
-	                this.state.shops.map(function (shop, index) {
-	                    return _react2.default.createElement(ShopCard, {
-	                        key: shop.id,
-	                        delay: index > _this.state.delayBase ? index - _this.state.delayBase : 0,
-	                        shop: shop,
-	                        onClick: _this.handleCardClick.bind(_this, shop.id)
-	                    });
-	                })
-	            ),
-	            _react2.default.createElement(_listFooter2.default, { fetching: this.props.shops.fetching, ended: this.props.shops.ended })
-	        );
-	    },
-	    getInitialState: function getInitialState() {
-	        var _this2 = this;
-
-	        return {
-	            shops: Object.getOwnPropertyNames(this.props.shops).filter(function (name) {
-	                return !isNaN(parseInt(name, 10));
-	            }).map(function (id) {
-	                return _this2.props.shops[id];
-	            }),
-	            delayBase: 0
-	        };
-	    },
-	    componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
-	        this.setState({
-	            shops: Object.getOwnPropertyNames(nextProps.shops).filter(function (name) {
-	                return !isNaN(parseInt(name, 10));
-	            }).map(function (id) {
-	                return nextProps.shops[id];
-	            }),
-	            delayBase: this.state.shops.length
-	        });
-	    },
-	    componentDidMount: function componentDidMount() {
-	        this.props.addScrollListener(this.handleScroll);
-	    },
-	    componentWillUnmount: function componentWillUnmount() {
-	        this.props.removeScrollListener(this.handleScroll);
-	    },
-	    handleCardClick: function handleCardClick(shop_id) {
-	        this.props.dispatch((0, _actions.selectShop)(shop_id));
-	    },
-	    handleScroll: function handleScroll(scrollTop) {
-	        if (scrollTop + window.innerHeight > this.refs.shops.clientHeight) {
-	            if (!this.props.shops.fetching && !this.props.shops.ended) {
-	                this.props.dispatch((0, _actions.pullShopListPage)((0, _api.fetchShopListPage)(this.props.shopLastId)));
-	            }
-	        }
-	    }
-	});
-
-	var mapStateToProps = function mapStateToProps(state) {
-	    return {
-	        shops: state.shops,
-	        shopLastId: state.shopLastId
-	    };
-	};
-
-	exports.default = (0, _reactRedux.connect)(mapStateToProps)(ShopList);
-
-/***/ },
-/* 222 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23267,14 +22281,15 @@
 	exports.fetchShopDetail = fetchShopDetail;
 	exports.fetchUserInfo = fetchUserInfo;
 	exports.doLogin = doLogin;
+	exports.doSearch = doSearch;
 
-	var _utils = __webpack_require__(223);
+	var _utils = __webpack_require__(214);
 
-	var _reactCookie = __webpack_require__(224);
+	var _reactCookie = __webpack_require__(215);
 
 	var _reactCookie2 = _interopRequireDefault(_reactCookie);
 
-	var _bluebird = __webpack_require__(226);
+	var _bluebird = __webpack_require__(217);
 
 	var _bluebird2 = _interopRequireDefault(_bluebird);
 
@@ -23335,8 +22350,14 @@
 	    });
 	}
 
+	function doSearch(q) {
+	    return fetch((0, _utils.queryUrl)('/search', { q: q })).then(function (result) {
+	        return result.json();
+	    });
+	}
+
 /***/ },
-/* 223 */
+/* 214 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -23364,10 +22385,10 @@
 	}
 
 /***/ },
-/* 224 */
+/* 215 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var cookie = __webpack_require__(225);
+	var cookie = __webpack_require__(216);
 
 	var _rawCookie = {};
 	var _res = undefined;
@@ -23461,7 +22482,7 @@
 
 
 /***/ },
-/* 225 */
+/* 216 */
 /***/ function(module, exports) {
 
 	/*!
@@ -23623,7 +22644,7 @@
 
 
 /***/ },
-/* 226 */
+/* 217 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process, global, setImmediate) {/* @preserve
@@ -29039,10 +28060,10 @@
 
 	},{"./es5":13}]},{},[4])(4)
 	});                    ;if (typeof window !== 'undefined' && window !== null) {                               window.P = window.Promise;                                                     } else if (typeof self !== 'undefined' && self !== null) {                             self.P = self.Promise;                                                         }
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(33), (function() { return this; }()), __webpack_require__(227).setImmediate))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(33), (function() { return this; }()), __webpack_require__(218).setImmediate))
 
 /***/ },
-/* 227 */
+/* 218 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(setImmediate, clearImmediate) {var nextTick = __webpack_require__(33).nextTick;
@@ -29121,7 +28142,1065 @@
 	exports.clearImmediate = typeof clearImmediate === "function" ? clearImmediate : function(id) {
 	  delete immediateIds[id];
 	};
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(227).setImmediate, __webpack_require__(227).clearImmediate))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(218).setImmediate, __webpack_require__(218).clearImmediate))
+
+/***/ },
+/* 219 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _react = __webpack_require__(30);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactAddonsCssTransitionGroup = __webpack_require__(220);
+
+	var _reactAddonsCssTransitionGroup2 = _interopRequireDefault(_reactAddonsCssTransitionGroup);
+
+	var _reactRedux = __webpack_require__(188);
+
+	var _shopList = __webpack_require__(227);
+
+	var _shopList2 = _interopRequireDefault(_shopList);
+
+	var _shop = __webpack_require__(229);
+
+	var _shop2 = _interopRequireDefault(_shop);
+
+	var _searchResult = __webpack_require__(231);
+
+	var _searchResult2 = _interopRequireDefault(_searchResult);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var TRANSITION_DURATION = 800;
+
+	var Scroller = _react2.default.createClass({
+	    displayName: 'Scroller',
+
+	    render: function render() {
+	        return _react2.default.createElement(
+	            'div',
+	            { className: 'scroller' },
+	            children
+	        );
+	    }
+	});
+
+	var Navigation = _react2.default.createClass({
+	    displayName: 'Navigation',
+
+	    render: function render() {
+	        var scene = void 0;
+	        var key = void 0;
+
+	        switch (this.props.presenting) {
+	            case 'ITEMS':
+	                key = 'ITEMS-' + this.props.currentShop;
+	                scene = _react2.default.createElement(_shop2.default, {
+	                    key: key,
+	                    addScrollListener: this.addScrollListener,
+	                    removeScrollListener: this.removeScrollListener
+	                });
+	                break;
+	            case 'SEARCH':
+	                key = 'SEARCH-' + this.props.query;
+	                scene = _react2.default.createElement(_searchResult2.default, { key: key });
+	                break;
+	            case 'SHOPS':
+	            default:
+	                key = 'SHOPS';
+	                scene = _react2.default.createElement(_shopList2.default, {
+	                    key: key,
+	                    addScrollListener: this.addScrollListener,
+	                    removeScrollListener: this.removeScrollListener
+	                });
+	        };
+
+	        return _react2.default.createElement(
+	            _reactAddonsCssTransitionGroup2.default,
+	            {
+	                transitionName: 'scene',
+	                transitionEnterTimeout: TRANSITION_DURATION,
+	                transitionLeaveTimeout: TRANSITION_DURATION
+	            },
+	            _react2.default.createElement(
+	                'div',
+	                { className: 'scroller', onScroll: this.handleScroll, key: key },
+	                scene
+	            )
+	        );
+	    },
+	    getInitialState: function getInitialState() {
+	        return {
+	            _scroll_handlers: []
+	        };
+	    },
+	    addScrollListener: function addScrollListener(listener) {
+	        this.state._scroll_handlers.push(listener);
+	    },
+	    removeScrollListener: function removeScrollListener(listener) {
+	        this.state._scroll_handlers = this.state._scroll_handlers.filter(function (handlers) {
+	            return handlers != listener;
+	        });
+	    },
+	    handleScroll: function handleScroll(evt) {
+	        var scrollTop = evt.target.scrollTop;
+	        this.state._scroll_handlers.forEach(function (handler) {
+	            handler(scrollTop);
+	        });
+	    }
+	});
+
+	var mapStateToProps = function mapStateToProps(state) {
+	    return {
+	        presenting: state.presenting,
+	        currentShop: state.currentShop,
+	        query: state.search.query
+	    };
+	};
+
+	exports.default = (0, _reactRedux.connect)(mapStateToProps)(Navigation);
+
+/***/ },
+/* 220 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(221);
+
+/***/ },
+/* 221 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @typechecks
+	 * @providesModule ReactCSSTransitionGroup
+	 */
+
+	'use strict';
+
+	var React = __webpack_require__(31);
+
+	var assign = __webpack_require__(68);
+
+	var ReactTransitionGroup = __webpack_require__(222);
+	var ReactCSSTransitionGroupChild = __webpack_require__(224);
+
+	function createTransitionTimeoutPropValidator(transitionType) {
+	  var timeoutPropName = 'transition' + transitionType + 'Timeout';
+	  var enabledPropName = 'transition' + transitionType;
+
+	  return function (props) {
+	    // If the transition is enabled
+	    if (props[enabledPropName]) {
+	      // If no timeout duration is provided
+	      if (props[timeoutPropName] == null) {
+	        return new Error(timeoutPropName + ' wasn\'t supplied to ReactCSSTransitionGroup: ' + 'this can cause unreliable animations and won\'t be supported in ' + 'a future version of React. See ' + 'https://fb.me/react-animation-transition-group-timeout for more ' + 'information.');
+
+	        // If the duration isn't a number
+	      } else if (typeof props[timeoutPropName] !== 'number') {
+	          return new Error(timeoutPropName + ' must be a number (in milliseconds)');
+	        }
+	    }
+	  };
+	}
+
+	var ReactCSSTransitionGroup = React.createClass({
+	  displayName: 'ReactCSSTransitionGroup',
+
+	  propTypes: {
+	    transitionName: ReactCSSTransitionGroupChild.propTypes.name,
+
+	    transitionAppear: React.PropTypes.bool,
+	    transitionEnter: React.PropTypes.bool,
+	    transitionLeave: React.PropTypes.bool,
+	    transitionAppearTimeout: createTransitionTimeoutPropValidator('Appear'),
+	    transitionEnterTimeout: createTransitionTimeoutPropValidator('Enter'),
+	    transitionLeaveTimeout: createTransitionTimeoutPropValidator('Leave')
+	  },
+
+	  getDefaultProps: function () {
+	    return {
+	      transitionAppear: false,
+	      transitionEnter: true,
+	      transitionLeave: true
+	    };
+	  },
+
+	  _wrapChild: function (child) {
+	    // We need to provide this childFactory so that
+	    // ReactCSSTransitionGroupChild can receive updates to name, enter, and
+	    // leave while it is leaving.
+	    return React.createElement(ReactCSSTransitionGroupChild, {
+	      name: this.props.transitionName,
+	      appear: this.props.transitionAppear,
+	      enter: this.props.transitionEnter,
+	      leave: this.props.transitionLeave,
+	      appearTimeout: this.props.transitionAppearTimeout,
+	      enterTimeout: this.props.transitionEnterTimeout,
+	      leaveTimeout: this.props.transitionLeaveTimeout
+	    }, child);
+	  },
+
+	  render: function () {
+	    return React.createElement(ReactTransitionGroup, assign({}, this.props, { childFactory: this._wrapChild }));
+	  }
+	});
+
+	module.exports = ReactCSSTransitionGroup;
+
+/***/ },
+/* 222 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule ReactTransitionGroup
+	 */
+
+	'use strict';
+
+	var React = __webpack_require__(31);
+	var ReactTransitionChildMapping = __webpack_require__(223);
+
+	var assign = __webpack_require__(68);
+	var emptyFunction = __webpack_require__(44);
+
+	var ReactTransitionGroup = React.createClass({
+	  displayName: 'ReactTransitionGroup',
+
+	  propTypes: {
+	    component: React.PropTypes.any,
+	    childFactory: React.PropTypes.func
+	  },
+
+	  getDefaultProps: function () {
+	    return {
+	      component: 'span',
+	      childFactory: emptyFunction.thatReturnsArgument
+	    };
+	  },
+
+	  getInitialState: function () {
+	    return {
+	      children: ReactTransitionChildMapping.getChildMapping(this.props.children)
+	    };
+	  },
+
+	  componentWillMount: function () {
+	    this.currentlyTransitioningKeys = {};
+	    this.keysToEnter = [];
+	    this.keysToLeave = [];
+	  },
+
+	  componentDidMount: function () {
+	    var initialChildMapping = this.state.children;
+	    for (var key in initialChildMapping) {
+	      if (initialChildMapping[key]) {
+	        this.performAppear(key);
+	      }
+	    }
+	  },
+
+	  componentWillReceiveProps: function (nextProps) {
+	    var nextChildMapping = ReactTransitionChildMapping.getChildMapping(nextProps.children);
+	    var prevChildMapping = this.state.children;
+
+	    this.setState({
+	      children: ReactTransitionChildMapping.mergeChildMappings(prevChildMapping, nextChildMapping)
+	    });
+
+	    var key;
+
+	    for (key in nextChildMapping) {
+	      var hasPrev = prevChildMapping && prevChildMapping.hasOwnProperty(key);
+	      if (nextChildMapping[key] && !hasPrev && !this.currentlyTransitioningKeys[key]) {
+	        this.keysToEnter.push(key);
+	      }
+	    }
+
+	    for (key in prevChildMapping) {
+	      var hasNext = nextChildMapping && nextChildMapping.hasOwnProperty(key);
+	      if (prevChildMapping[key] && !hasNext && !this.currentlyTransitioningKeys[key]) {
+	        this.keysToLeave.push(key);
+	      }
+	    }
+
+	    // If we want to someday check for reordering, we could do it here.
+	  },
+
+	  componentDidUpdate: function () {
+	    var keysToEnter = this.keysToEnter;
+	    this.keysToEnter = [];
+	    keysToEnter.forEach(this.performEnter);
+
+	    var keysToLeave = this.keysToLeave;
+	    this.keysToLeave = [];
+	    keysToLeave.forEach(this.performLeave);
+	  },
+
+	  performAppear: function (key) {
+	    this.currentlyTransitioningKeys[key] = true;
+
+	    var component = this.refs[key];
+
+	    if (component.componentWillAppear) {
+	      component.componentWillAppear(this._handleDoneAppearing.bind(this, key));
+	    } else {
+	      this._handleDoneAppearing(key);
+	    }
+	  },
+
+	  _handleDoneAppearing: function (key) {
+	    var component = this.refs[key];
+	    if (component.componentDidAppear) {
+	      component.componentDidAppear();
+	    }
+
+	    delete this.currentlyTransitioningKeys[key];
+
+	    var currentChildMapping = ReactTransitionChildMapping.getChildMapping(this.props.children);
+
+	    if (!currentChildMapping || !currentChildMapping.hasOwnProperty(key)) {
+	      // This was removed before it had fully appeared. Remove it.
+	      this.performLeave(key);
+	    }
+	  },
+
+	  performEnter: function (key) {
+	    this.currentlyTransitioningKeys[key] = true;
+
+	    var component = this.refs[key];
+
+	    if (component.componentWillEnter) {
+	      component.componentWillEnter(this._handleDoneEntering.bind(this, key));
+	    } else {
+	      this._handleDoneEntering(key);
+	    }
+	  },
+
+	  _handleDoneEntering: function (key) {
+	    var component = this.refs[key];
+	    if (component.componentDidEnter) {
+	      component.componentDidEnter();
+	    }
+
+	    delete this.currentlyTransitioningKeys[key];
+
+	    var currentChildMapping = ReactTransitionChildMapping.getChildMapping(this.props.children);
+
+	    if (!currentChildMapping || !currentChildMapping.hasOwnProperty(key)) {
+	      // This was removed before it had fully entered. Remove it.
+	      this.performLeave(key);
+	    }
+	  },
+
+	  performLeave: function (key) {
+	    this.currentlyTransitioningKeys[key] = true;
+
+	    var component = this.refs[key];
+	    if (component.componentWillLeave) {
+	      component.componentWillLeave(this._handleDoneLeaving.bind(this, key));
+	    } else {
+	      // Note that this is somewhat dangerous b/c it calls setState()
+	      // again, effectively mutating the component before all the work
+	      // is done.
+	      this._handleDoneLeaving(key);
+	    }
+	  },
+
+	  _handleDoneLeaving: function (key) {
+	    var component = this.refs[key];
+
+	    if (component.componentDidLeave) {
+	      component.componentDidLeave();
+	    }
+
+	    delete this.currentlyTransitioningKeys[key];
+
+	    var currentChildMapping = ReactTransitionChildMapping.getChildMapping(this.props.children);
+
+	    if (currentChildMapping && currentChildMapping.hasOwnProperty(key)) {
+	      // This entered again before it fully left. Add it again.
+	      this.performEnter(key);
+	    } else {
+	      this.setState(function (state) {
+	        var newChildren = assign({}, state.children);
+	        delete newChildren[key];
+	        return { children: newChildren };
+	      });
+	    }
+	  },
+
+	  render: function () {
+	    // TODO: we could get rid of the need for the wrapper node
+	    // by cloning a single child
+	    var childrenToRender = [];
+	    for (var key in this.state.children) {
+	      var child = this.state.children[key];
+	      if (child) {
+	        // You may need to apply reactive updates to a child as it is leaving.
+	        // The normal React way to do it won't work since the child will have
+	        // already been removed. In case you need this behavior you can provide
+	        // a childFactory function to wrap every child, even the ones that are
+	        // leaving.
+	        childrenToRender.push(React.cloneElement(this.props.childFactory(child), { ref: key, key: key }));
+	      }
+	    }
+	    return React.createElement(this.props.component, this.props, childrenToRender);
+	  }
+	});
+
+	module.exports = ReactTransitionGroup;
+
+/***/ },
+/* 223 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @typechecks static-only
+	 * @providesModule ReactTransitionChildMapping
+	 */
+
+	'use strict';
+
+	var flattenChildren = __webpack_require__(145);
+
+	var ReactTransitionChildMapping = {
+	  /**
+	   * Given `this.props.children`, return an object mapping key to child. Just
+	   * simple syntactic sugar around flattenChildren().
+	   *
+	   * @param {*} children `this.props.children`
+	   * @return {object} Mapping of key to child
+	   */
+	  getChildMapping: function (children) {
+	    if (!children) {
+	      return children;
+	    }
+	    return flattenChildren(children);
+	  },
+
+	  /**
+	   * When you're adding or removing children some may be added or removed in the
+	   * same render pass. We want to show *both* since we want to simultaneously
+	   * animate elements in and out. This function takes a previous set of keys
+	   * and a new set of keys and merges them with its best guess of the correct
+	   * ordering. In the future we may expose some of the utilities in
+	   * ReactMultiChild to make this easy, but for now React itself does not
+	   * directly have this concept of the union of prevChildren and nextChildren
+	   * so we implement it here.
+	   *
+	   * @param {object} prev prev children as returned from
+	   * `ReactTransitionChildMapping.getChildMapping()`.
+	   * @param {object} next next children as returned from
+	   * `ReactTransitionChildMapping.getChildMapping()`.
+	   * @return {object} a key set that contains all keys in `prev` and all keys
+	   * in `next` in a reasonable order.
+	   */
+	  mergeChildMappings: function (prev, next) {
+	    prev = prev || {};
+	    next = next || {};
+
+	    function getValueForKey(key) {
+	      if (next.hasOwnProperty(key)) {
+	        return next[key];
+	      } else {
+	        return prev[key];
+	      }
+	    }
+
+	    // For each key of `next`, the list of keys to insert before that key in
+	    // the combined list
+	    var nextKeysPending = {};
+
+	    var pendingKeys = [];
+	    for (var prevKey in prev) {
+	      if (next.hasOwnProperty(prevKey)) {
+	        if (pendingKeys.length) {
+	          nextKeysPending[prevKey] = pendingKeys;
+	          pendingKeys = [];
+	        }
+	      } else {
+	        pendingKeys.push(prevKey);
+	      }
+	    }
+
+	    var i;
+	    var childMapping = {};
+	    for (var nextKey in next) {
+	      if (nextKeysPending.hasOwnProperty(nextKey)) {
+	        for (i = 0; i < nextKeysPending[nextKey].length; i++) {
+	          var pendingNextKey = nextKeysPending[nextKey][i];
+	          childMapping[nextKeysPending[nextKey][i]] = getValueForKey(pendingNextKey);
+	        }
+	      }
+	      childMapping[nextKey] = getValueForKey(nextKey);
+	    }
+
+	    // Finally, add the keys which didn't appear before any key in `next`
+	    for (i = 0; i < pendingKeys.length; i++) {
+	      childMapping[pendingKeys[i]] = getValueForKey(pendingKeys[i]);
+	    }
+
+	    return childMapping;
+	  }
+	};
+
+	module.exports = ReactTransitionChildMapping;
+
+/***/ },
+/* 224 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @typechecks
+	 * @providesModule ReactCSSTransitionGroupChild
+	 */
+
+	'use strict';
+
+	var React = __webpack_require__(31);
+	var ReactDOM = __webpack_require__(32);
+
+	var CSSCore = __webpack_require__(225);
+	var ReactTransitionEvents = __webpack_require__(226);
+
+	var onlyChild = __webpack_require__(185);
+
+	// We don't remove the element from the DOM until we receive an animationend or
+	// transitionend event. If the user screws up and forgets to add an animation
+	// their node will be stuck in the DOM forever, so we detect if an animation
+	// does not start and if it doesn't, we just call the end listener immediately.
+	var TICK = 17;
+
+	var ReactCSSTransitionGroupChild = React.createClass({
+	  displayName: 'ReactCSSTransitionGroupChild',
+
+	  propTypes: {
+	    name: React.PropTypes.oneOfType([React.PropTypes.string, React.PropTypes.shape({
+	      enter: React.PropTypes.string,
+	      leave: React.PropTypes.string,
+	      active: React.PropTypes.string
+	    }), React.PropTypes.shape({
+	      enter: React.PropTypes.string,
+	      enterActive: React.PropTypes.string,
+	      leave: React.PropTypes.string,
+	      leaveActive: React.PropTypes.string,
+	      appear: React.PropTypes.string,
+	      appearActive: React.PropTypes.string
+	    })]).isRequired,
+
+	    // Once we require timeouts to be specified, we can remove the
+	    // boolean flags (appear etc.) and just accept a number
+	    // or a bool for the timeout flags (appearTimeout etc.)
+	    appear: React.PropTypes.bool,
+	    enter: React.PropTypes.bool,
+	    leave: React.PropTypes.bool,
+	    appearTimeout: React.PropTypes.number,
+	    enterTimeout: React.PropTypes.number,
+	    leaveTimeout: React.PropTypes.number
+	  },
+
+	  transition: function (animationType, finishCallback, userSpecifiedDelay) {
+	    var node = ReactDOM.findDOMNode(this);
+
+	    if (!node) {
+	      if (finishCallback) {
+	        finishCallback();
+	      }
+	      return;
+	    }
+
+	    var className = this.props.name[animationType] || this.props.name + '-' + animationType;
+	    var activeClassName = this.props.name[animationType + 'Active'] || className + '-active';
+	    var timeout = null;
+
+	    var endListener = function (e) {
+	      if (e && e.target !== node) {
+	        return;
+	      }
+
+	      clearTimeout(timeout);
+
+	      CSSCore.removeClass(node, className);
+	      CSSCore.removeClass(node, activeClassName);
+
+	      ReactTransitionEvents.removeEndEventListener(node, endListener);
+
+	      // Usually this optional callback is used for informing an owner of
+	      // a leave animation and telling it to remove the child.
+	      if (finishCallback) {
+	        finishCallback();
+	      }
+	    };
+
+	    CSSCore.addClass(node, className);
+
+	    // Need to do this to actually trigger a transition.
+	    this.queueClass(activeClassName);
+
+	    // If the user specified a timeout delay.
+	    if (userSpecifiedDelay) {
+	      // Clean-up the animation after the specified delay
+	      timeout = setTimeout(endListener, userSpecifiedDelay);
+	      this.transitionTimeouts.push(timeout);
+	    } else {
+	      // DEPRECATED: this listener will be removed in a future version of react
+	      ReactTransitionEvents.addEndEventListener(node, endListener);
+	    }
+	  },
+
+	  queueClass: function (className) {
+	    this.classNameQueue.push(className);
+
+	    if (!this.timeout) {
+	      this.timeout = setTimeout(this.flushClassNameQueue, TICK);
+	    }
+	  },
+
+	  flushClassNameQueue: function () {
+	    if (this.isMounted()) {
+	      this.classNameQueue.forEach(CSSCore.addClass.bind(CSSCore, ReactDOM.findDOMNode(this)));
+	    }
+	    this.classNameQueue.length = 0;
+	    this.timeout = null;
+	  },
+
+	  componentWillMount: function () {
+	    this.classNameQueue = [];
+	    this.transitionTimeouts = [];
+	  },
+
+	  componentWillUnmount: function () {
+	    if (this.timeout) {
+	      clearTimeout(this.timeout);
+	    }
+	    this.transitionTimeouts.forEach(function (timeout) {
+	      clearTimeout(timeout);
+	    });
+	  },
+
+	  componentWillAppear: function (done) {
+	    if (this.props.appear) {
+	      this.transition('appear', done, this.props.appearTimeout);
+	    } else {
+	      done();
+	    }
+	  },
+
+	  componentWillEnter: function (done) {
+	    if (this.props.enter) {
+	      this.transition('enter', done, this.props.enterTimeout);
+	    } else {
+	      done();
+	    }
+	  },
+
+	  componentWillLeave: function (done) {
+	    if (this.props.leave) {
+	      this.transition('leave', done, this.props.leaveTimeout);
+	    } else {
+	      done();
+	    }
+	  },
+
+	  render: function () {
+	    return onlyChild(this.props.children);
+	  }
+	});
+
+	module.exports = ReactCSSTransitionGroupChild;
+
+/***/ },
+/* 225 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule CSSCore
+	 * @typechecks
+	 */
+
+	'use strict';
+
+	var invariant = __webpack_require__(42);
+
+	/**
+	 * The CSSCore module specifies the API (and implements most of the methods)
+	 * that should be used when dealing with the display of elements (via their
+	 * CSS classes and visibility on screen. It is an API focused on mutating the
+	 * display and not reading it as no logical state should be encoded in the
+	 * display of elements.
+	 */
+
+	var CSSCore = {
+
+	  /**
+	   * Adds the class passed in to the element if it doesn't already have it.
+	   *
+	   * @param {DOMElement} element the element to set the class on
+	   * @param {string} className the CSS className
+	   * @return {DOMElement} the element passed in
+	   */
+	  addClass: function (element, className) {
+	    !!/\s/.test(className) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'CSSCore.addClass takes only a single class name. "%s" contains ' + 'multiple classes.', className) : invariant(false) : undefined;
+
+	    if (className) {
+	      if (element.classList) {
+	        element.classList.add(className);
+	      } else if (!CSSCore.hasClass(element, className)) {
+	        element.className = element.className + ' ' + className;
+	      }
+	    }
+	    return element;
+	  },
+
+	  /**
+	   * Removes the class passed in from the element
+	   *
+	   * @param {DOMElement} element the element to set the class on
+	   * @param {string} className the CSS className
+	   * @return {DOMElement} the element passed in
+	   */
+	  removeClass: function (element, className) {
+	    !!/\s/.test(className) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'CSSCore.removeClass takes only a single class name. "%s" contains ' + 'multiple classes.', className) : invariant(false) : undefined;
+
+	    if (className) {
+	      if (element.classList) {
+	        element.classList.remove(className);
+	      } else if (CSSCore.hasClass(element, className)) {
+	        element.className = element.className.replace(new RegExp('(^|\\s)' + className + '(?:\\s|$)', 'g'), '$1').replace(/\s+/g, ' ') // multiple spaces to one
+	        .replace(/^\s*|\s*$/g, ''); // trim the ends
+	      }
+	    }
+	    return element;
+	  },
+
+	  /**
+	   * Helper to add or remove a class from an element based on a condition.
+	   *
+	   * @param {DOMElement} element the element to set the class on
+	   * @param {string} className the CSS className
+	   * @param {*} bool condition to whether to add or remove the class
+	   * @return {DOMElement} the element passed in
+	   */
+	  conditionClass: function (element, className, bool) {
+	    return (bool ? CSSCore.addClass : CSSCore.removeClass)(element, className);
+	  },
+
+	  /**
+	   * Tests whether the element has the class specified.
+	   *
+	   * @param {DOMNode|DOMWindow} element the element to set the class on
+	   * @param {string} className the CSS className
+	   * @return {boolean} true if the element has the class, false if not
+	   */
+	  hasClass: function (element, className) {
+	    !!/\s/.test(className) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'CSS.hasClass takes only a single class name.') : invariant(false) : undefined;
+	    if (element.classList) {
+	      return !!className && element.classList.contains(className);
+	    }
+	    return (' ' + element.className + ' ').indexOf(' ' + className + ' ') > -1;
+	  }
+
+	};
+
+	module.exports = CSSCore;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(33)))
+
+/***/ },
+/* 226 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule ReactTransitionEvents
+	 */
+
+	'use strict';
+
+	var ExecutionEnvironment = __webpack_require__(38);
+
+	/**
+	 * EVENT_NAME_MAP is used to determine which event fired when a
+	 * transition/animation ends, based on the style property used to
+	 * define that event.
+	 */
+	var EVENT_NAME_MAP = {
+	  transitionend: {
+	    'transition': 'transitionend',
+	    'WebkitTransition': 'webkitTransitionEnd',
+	    'MozTransition': 'mozTransitionEnd',
+	    'OTransition': 'oTransitionEnd',
+	    'msTransition': 'MSTransitionEnd'
+	  },
+
+	  animationend: {
+	    'animation': 'animationend',
+	    'WebkitAnimation': 'webkitAnimationEnd',
+	    'MozAnimation': 'mozAnimationEnd',
+	    'OAnimation': 'oAnimationEnd',
+	    'msAnimation': 'MSAnimationEnd'
+	  }
+	};
+
+	var endEvents = [];
+
+	function detectEvents() {
+	  var testEl = document.createElement('div');
+	  var style = testEl.style;
+
+	  // On some platforms, in particular some releases of Android 4.x,
+	  // the un-prefixed "animation" and "transition" properties are defined on the
+	  // style object but the events that fire will still be prefixed, so we need
+	  // to check if the un-prefixed events are useable, and if not remove them
+	  // from the map
+	  if (!('AnimationEvent' in window)) {
+	    delete EVENT_NAME_MAP.animationend.animation;
+	  }
+
+	  if (!('TransitionEvent' in window)) {
+	    delete EVENT_NAME_MAP.transitionend.transition;
+	  }
+
+	  for (var baseEventName in EVENT_NAME_MAP) {
+	    var baseEvents = EVENT_NAME_MAP[baseEventName];
+	    for (var styleName in baseEvents) {
+	      if (styleName in style) {
+	        endEvents.push(baseEvents[styleName]);
+	        break;
+	      }
+	    }
+	  }
+	}
+
+	if (ExecutionEnvironment.canUseDOM) {
+	  detectEvents();
+	}
+
+	// We use the raw {add|remove}EventListener() call because EventListener
+	// does not know how to remove event listeners and we really should
+	// clean up. Also, these events are not triggered in older browsers
+	// so we should be A-OK here.
+
+	function addEventListener(node, eventName, eventListener) {
+	  node.addEventListener(eventName, eventListener, false);
+	}
+
+	function removeEventListener(node, eventName, eventListener) {
+	  node.removeEventListener(eventName, eventListener, false);
+	}
+
+	var ReactTransitionEvents = {
+	  addEndEventListener: function (node, eventListener) {
+	    if (endEvents.length === 0) {
+	      // If CSS transitions are not supported, trigger an "end animation"
+	      // event immediately.
+	      window.setTimeout(eventListener, 0);
+	      return;
+	    }
+	    endEvents.forEach(function (endEvent) {
+	      addEventListener(node, endEvent, eventListener);
+	    });
+	  },
+
+	  removeEndEventListener: function (node, eventListener) {
+	    if (endEvents.length === 0) {
+	      return;
+	    }
+	    endEvents.forEach(function (endEvent) {
+	      removeEventListener(node, endEvent, eventListener);
+	    });
+	  }
+	};
+
+	module.exports = ReactTransitionEvents;
+
+/***/ },
+/* 227 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _react = __webpack_require__(30);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactAddonsCssTransitionGroup = __webpack_require__(220);
+
+	var _reactAddonsCssTransitionGroup2 = _interopRequireDefault(_reactAddonsCssTransitionGroup);
+
+	var _reactRedux = __webpack_require__(188);
+
+	var _actions = __webpack_require__(212);
+
+	var _api = __webpack_require__(213);
+
+	var _listFooter = __webpack_require__(228);
+
+	var _listFooter2 = _interopRequireDefault(_listFooter);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var DELAY_BETWEEN_CARD = 50;
+	var CARDS_PER_PAGE = 10;
+	var TRANSITION_DURATION = 300;
+
+	var ShopCard = _react2.default.createClass({
+	    displayName: 'ShopCard',
+
+	    render: function render() {
+	        return _react2.default.createElement(
+	            'li',
+	            {
+	                className: 'shop-card delay-' + this.props.delay,
+	                onClick: this.props.onClick
+	            },
+	            _react2.default.createElement('img', { className: 'shop-photo', src: this.props.shop.photo, alt: this.props.shop.name }),
+	            _react2.default.createElement(
+	                'h3',
+	                { className: 'shop-name' },
+	                this.props.shop.name
+	            ),
+	            _react2.default.createElement(
+	                'p',
+	                { className: 'shop-phone' },
+	                this.props.shop.phone
+	            ),
+	            _react2.default.createElement(
+	                'p',
+	                { className: 'shop-address' },
+	                this.props.shop.address
+	            )
+	        );
+	    }
+	});
+
+	var ShopList = _react2.default.createClass({
+	    displayName: 'ShopList',
+
+	    render: function render() {
+	        var _this = this;
+
+	        return _react2.default.createElement(
+	            'ol',
+	            { id: 'shops', className: 'scene', ref: 'shops' },
+	            _react2.default.createElement(
+	                _reactAddonsCssTransitionGroup2.default,
+	                {
+	                    transitionName: 'shop-card',
+	                    transitionEnterTimeout: TRANSITION_DURATION + DELAY_BETWEEN_CARD * CARDS_PER_PAGE,
+	                    transitionLeaveTimeout: TRANSITION_DURATION + DELAY_BETWEEN_CARD * CARDS_PER_PAGE
+	                },
+	                this.state.shops.map(function (shop, index) {
+	                    return _react2.default.createElement(ShopCard, {
+	                        key: shop.id,
+	                        delay: index > _this.state.delayBase ? index - _this.state.delayBase : 0,
+	                        shop: shop,
+	                        onClick: _this.handleCardClick.bind(_this, shop.id)
+	                    });
+	                })
+	            ),
+	            _react2.default.createElement(_listFooter2.default, { fetching: this.props.shops.fetching, ended: this.props.shops.ended })
+	        );
+	    },
+	    getInitialState: function getInitialState() {
+	        var _this2 = this;
+
+	        return {
+	            shops: Object.getOwnPropertyNames(this.props.shops).filter(function (name) {
+	                return !isNaN(parseInt(name, 10));
+	            }).map(function (id) {
+	                return _this2.props.shops[id];
+	            }),
+	            delayBase: 0
+	        };
+	    },
+	    componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
+	        this.setState({
+	            shops: Object.getOwnPropertyNames(nextProps.shops).filter(function (name) {
+	                return !isNaN(parseInt(name, 10));
+	            }).map(function (id) {
+	                return nextProps.shops[id];
+	            }),
+	            delayBase: this.state.shops.length
+	        });
+	    },
+	    componentDidMount: function componentDidMount() {
+	        this.props.addScrollListener(this.handleScroll);
+	    },
+	    componentWillUnmount: function componentWillUnmount() {
+	        this.props.removeScrollListener(this.handleScroll);
+	    },
+	    handleCardClick: function handleCardClick(shop_id) {
+	        this.props.dispatch((0, _actions.selectShop)(shop_id));
+	    },
+	    handleScroll: function handleScroll(scrollTop) {
+	        if (scrollTop + window.innerHeight > this.refs.shops.clientHeight) {
+	            if (!this.props.shops.fetching && !this.props.shops.ended) {
+	                this.props.dispatch((0, _actions.pullShopListPage)((0, _api.fetchShopListPage)(this.props.shopLastId)));
+	            }
+	        }
+	    }
+	});
+
+	var mapStateToProps = function mapStateToProps(state) {
+	    return {
+	        shops: state.shops,
+	        shopLastId: state.shopLastId
+	    };
+	};
+
+	exports.default = (0, _reactRedux.connect)(mapStateToProps)(ShopList);
 
 /***/ },
 /* 228 */
@@ -29137,7 +29216,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactAddonsCssTransitionGroup = __webpack_require__(214);
+	var _reactAddonsCssTransitionGroup = __webpack_require__(220);
 
 	var _reactAddonsCssTransitionGroup2 = _interopRequireDefault(_reactAddonsCssTransitionGroup);
 
@@ -29183,7 +29262,7 @@
 
 	var _reactRedux = __webpack_require__(188);
 
-	var _api = __webpack_require__(222);
+	var _api = __webpack_require__(213);
 
 	var _actions = __webpack_require__(212);
 
@@ -29270,13 +29349,13 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactAddonsCssTransitionGroup = __webpack_require__(214);
+	var _reactAddonsCssTransitionGroup = __webpack_require__(220);
 
 	var _reactAddonsCssTransitionGroup2 = _interopRequireDefault(_reactAddonsCssTransitionGroup);
 
 	var _reactRedux = __webpack_require__(188);
 
-	var _api = __webpack_require__(222);
+	var _api = __webpack_require__(213);
 
 	var _actions = __webpack_require__(212);
 
@@ -29397,7 +29476,7 @@
 	    render: function render() {
 	        var _this = this;
 
-	        var ret = _react2.default.createElement(
+	        return _react2.default.createElement(
 	            'ol',
 	            { className: 'item-list ' + (this.props.cartFloat ? 'item-reserve-for-cart' : ''), ref: 'items' },
 	            _react2.default.createElement(
@@ -29419,8 +29498,6 @@
 	            ),
 	            _react2.default.createElement(_listFooter2.default, { fetching: this.props.fetching, ended: this.props.ended })
 	        );
-
-	        return ret;
 	    },
 	    getInitialState: function getInitialState() {
 	        return {
@@ -29500,7 +29577,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactAddonsCssTransitionGroup = __webpack_require__(214);
+	var _reactAddonsCssTransitionGroup = __webpack_require__(220);
 
 	var _reactAddonsCssTransitionGroup2 = _interopRequireDefault(_reactAddonsCssTransitionGroup);
 
@@ -29508,7 +29585,136 @@
 
 	var _actions = __webpack_require__(212);
 
-	var _api = __webpack_require__(222);
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var SearchShopCard = _react2.default.createClass({
+	    displayName: 'SearchShopCard',
+
+	    render: function render() {
+	        return _react2.default.createElement(
+	            'li',
+	            {
+	                className: 'shop-card',
+	                onClick: this.props.onClick
+	            },
+	            _react2.default.createElement('img', { className: 'shop-photo', src: this.props.shop.photo, alt: this.props.shop.name }),
+	            _react2.default.createElement(
+	                'h3',
+	                { className: 'shop-name' },
+	                this.props.shop.name
+	            ),
+	            _react2.default.createElement(
+	                'p',
+	                { className: 'shop-phone' },
+	                this.props.shop.phone
+	            ),
+	            _react2.default.createElement(
+	                'p',
+	                { className: 'shop-address' },
+	                this.props.shop.address
+	            )
+	        );
+	    }
+	});
+
+	var SearchItemCard = _react2.default.createClass({
+	    displayName: 'SearchItemCard',
+
+	    render: function render() {
+	        return _react2.default.createElement(
+	            'li',
+	            {
+	                className: 'item-card',
+	                onClick: this.props.onClick
+	            },
+	            _react2.default.createElement(
+	                'div',
+	                { className: 'item-card-inner' },
+	                _react2.default.createElement('img', { className: 'item-photo', src: this.props.item.photo, alt: this.props.item.name }),
+	                _react2.default.createElement(
+	                    'h4',
+	                    { className: 'item-name' },
+	                    this.props.item.name
+	                ),
+	                _react2.default.createElement(
+	                    'p',
+	                    { className: 'item-price' },
+	                    this.props.item.price
+	                )
+	            )
+	        );
+	    }
+	});
+
+	var SearchResult = _react2.default.createClass({
+	    displayName: 'SearchResult',
+
+	    render: function render() {
+	        var _this = this;
+
+	        console.log(this.props.result);
+	        return _react2.default.createElement(
+	            'ol',
+	            { id: 'search-result', className: 'scene' },
+	            this.props.result.shops.length ? _react2.default.createElement(
+	                'span',
+	                { key: 'label-shop', className: 'gap' },
+	                '商店'
+	            ) : [],
+	            this.props.result.shops.map(function (shop) {
+	                return _react2.default.createElement(SearchShopCard, { key: 'SHOP-' + shop.id, shop: shop, onClick: function onClick() {
+	                        return _this.handleClick(shop.id);
+	                    } });
+	            }),
+	            this.props.result.items.length ? _react2.default.createElement(
+	                'span',
+	                { key: 'label-item', className: 'gap' },
+	                '商品'
+	            ) : [],
+	            this.props.result.items.map(function (item) {
+	                return _react2.default.createElement(SearchItemCard, { key: 'ITEM-' + item.id, item: item, onClick: function onClick() {
+	                        return _this.handleClick(item.shop);
+	                    } });
+	            })
+	        );
+	    },
+	    handleClick: function handleClick(shop_id) {
+	        this.props.dispatch((0, _actions.selectShop)(shop_id));
+	    }
+	});
+
+	var mapStateToProps = function mapStateToProps(state) {
+	    return {
+	        query: state.search.query,
+	        result: state.search.result
+	    };
+	};
+
+	exports.default = (0, _reactRedux.connect)(mapStateToProps)(SearchResult);
+
+/***/ },
+/* 232 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _react = __webpack_require__(30);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactAddonsCssTransitionGroup = __webpack_require__(220);
+
+	var _reactAddonsCssTransitionGroup2 = _interopRequireDefault(_reactAddonsCssTransitionGroup);
+
+	var _reactRedux = __webpack_require__(188);
+
+	var _actions = __webpack_require__(212);
+
+	var _api = __webpack_require__(213);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29622,10 +29828,10 @@
 
 	        return _react2.default.createElement(
 	            'div',
-	            { className: 'cart-bottom-line cart-bottom-line-login' },
+	            { className: 'cart-bottom-line cart-bottom-line-login ' + (this.state.login_error ? 'login-error' : '') },
 	            _react2.default.createElement(
 	                'form',
-	                { className: 'cart-bottom-line-login-form', action: 'javascript:void(0)' },
+	                { className: 'cart-bottom-line-login-form', action: 'javascript:void(0)', onSubmit: this.handleLogin },
 	                _react2.default.createElement(
 	                    'div',
 	                    { className: 'cart-bottom-line-login-line' },
@@ -29641,7 +29847,7 @@
 	                        id: 'login-username',
 	                        placeholder: '用户名',
 	                        onChange: function onChange(evt) {
-	                            return _this.setState({ username: evt.target.value });
+	                            return _this.setState({ username: evt.target.value, login_error: false });
 	                        }
 	                    })
 	                ),
@@ -29660,7 +29866,7 @@
 	                        id: 'login-password',
 	                        placeholder: '密码',
 	                        onChange: function onChange(evt) {
-	                            return _this.setState({ password: evt.target.value });
+	                            return _this.setState({ password: evt.target.value, login_error: false });
 	                        }
 	                    })
 	                ),
@@ -29673,7 +29879,7 @@
 	                        '取消'
 	                    ),
 	                    _react2.default.createElement(
-	                        'span',
+	                        'button',
 	                        { className: 'cart-bottom-line-login-button', onClick: this.handleLogin },
 	                        '登录'
 	                    ),
@@ -29689,8 +29895,14 @@
 	    getInitialState: function getInitialState() {
 	        return {
 	            username: '',
-	            password: ''
+	            password: '',
+	            login_error: this.props.loginError
 	        };
+	    },
+	    componentWillReceiveProps: function componentWillReceiveProps(next_props) {
+	        this.setState({
+	            login_error: next_props.loginError
+	        });
 	    },
 	    handleLogin: function handleLogin() {
 	        this.props.onLogin(this.state.username, this.state.password);
@@ -29728,6 +29940,7 @@
 	                },
 	                this.props.login ? _react2.default.createElement(CartBottomLineLogin, {
 	                    key: 'login',
+	                    loginError: this.props.login_error,
 	                    onLogin: this.handleLogin,
 	                    onRegister: this.handleRegister,
 	                    onLoginCancel: this.handleLoginCancel }) : this.props.promote ? _react2.default.createElement(CartBottomLinePromote, {
@@ -29769,7 +29982,7 @@
 	        shop: state.cart.shop_id ? state.shops[state.cart.shop_id] : {},
 	        promote: state.cart.promote,
 	        login: state.cart.login,
-	        loginning: state.user,
+	        login_error: state.user.login_error,
 	        itemsList: itemsList, total: total
 	    };
 	};
@@ -29777,7 +29990,7 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps)(Cart);
 
 /***/ },
-/* 232 */
+/* 233 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29791,6 +30004,8 @@
 	var Actions = _interopRequireWildcard(_actions);
 
 	var _redux = __webpack_require__(194);
+
+	var _api = __webpack_require__(213);
 
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -29846,6 +30061,10 @@
 	 *          logining,
 	 *          logined,
 	 *          ...
+	 *      },
+	 *      search {
+	 *          query,
+	 *          result
 	 *      }
 	 *  }
 	 */
@@ -29858,6 +30077,10 @@
 	        case Actions.SELECT_SHOP:
 	            return 'ITEMS';
 	        case Actions.EXIT_SHOP_INSIST:
+	            return 'SHOPS';
+	        case Actions.SEARCH:
+	            return 'SEARCH';
+	        case Actions.EXIT_SEARCH:
 	            return 'SHOPS';
 	        default:
 	            return state;
@@ -29931,6 +30154,18 @@
 
 	                return _new_state;
 	            }
+	        case Actions.SELECT_SHOP:
+	            {
+	                if (!state[action.shop_id]) {
+	                    return Object.assign({}, state, _defineProperty({}, action.shop_id, {
+	                        detailFeching: false,
+	                        itemFetching: false,
+	                        itemError: false,
+	                        itemEnded: false,
+	                        itemLastId: 0
+	                    }));
+	                }
+	            }
 	        default:
 	            return state;
 	    }
@@ -29999,6 +30234,14 @@
 	            {
 	                return Object.assign({}, state, { login: false });
 	            }
+	        case Actions.VERIFY_LOGIN:
+	            {
+	                if (action.ready && action.result.code == 0) {
+	                    return Object.assign({}, state, { login: false });
+	                } else {
+	                    return state;
+	                }
+	            }
 	        default:
 	            return state;
 	    }
@@ -30013,15 +30256,35 @@
 	            {
 	                return Object.assign({}, state, {
 	                    validating: !action.ready,
-	                    validated: !action.error && action.ready && action.result.code == 0
+	                    validated: !action.error && action.ready && action.result.code == 0,
+	                    loginning: false,
+	                    logined: action.ready && action.result.code == 0,
+	                    login_error: false
 	                }, action.ready && action.result.code == 0 ? action.result.user : {});
 	            }
 	        case Actions.LOGIN:
 	            {
 	                return Object.assign({}, state, {
+	                    validating: false,
+	                    validated: false,
 	                    loginning: !action.ready,
-	                    logined: action.ready && !action.error && action.result.code == 0
+	                    logined: action.ready && !action.error && action.result.code == 0,
+	                    login_error: action.ready && action.result.code != 0
 	                });
+	            }
+	        default:
+	            return state;
+	    }
+	}
+
+	function search() {
+	    var state = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+	    var action = arguments[1];
+
+	    switch (action.type) {
+	        case Actions.SEARCH:
+	            {
+	                return Object.assign({}, state, { query: action.query }, action.ready ? { result: action.result } : { result: { items: [], shops: [] } });
 	            }
 	        default:
 	            return state;
@@ -30035,7 +30298,8 @@
 	    shops: shops,
 	    items: items,
 	    cart: cart,
-	    user: user
+	    user: user,
+	    search: search
 	});
 
 	var logger = function logger(store) {
@@ -30077,8 +30341,26 @@
 	var store = (0, _redux.createStore)(rootReducer, {
 	    presenting: 'SHOPS',
 	    cart: { shop_id: 0, promote: false, login: false },
-	    user: { validating: false, validated: false, loginning: false, logined: false }
+	    user: { validating: false, validated: false, loginning: false, logined: false },
+	    search: { query: '', result: { items: [], shops: [] } }
 	}, (0, _redux.applyMiddleware)(readyStatePromise, logger));
+
+	var logined = false;
+	function handleVerify() {
+	    console.log('handle verify');
+
+	    var previousLogined = logined;
+
+	    logined = store.getState().user.logined;
+
+	    if (previousLogined != logined && !store.getState().user.validated && !store.getState().user.validating) {
+	        setTimeout(function () {
+	            store.dispatch(Actions.verifyLogin((0, _api.fetchUserInfo)()));
+	        }, 100);
+	    }
+	}
+
+	store.subscribe(handleVerify);
 
 	exports.default = store;
 

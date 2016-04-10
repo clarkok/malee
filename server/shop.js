@@ -23,7 +23,7 @@ class Shop {
         page_count = page_count || DEFAULT_PAGE;
 
         return this.db(TABLE_NAME).select('id', 'name', 'photo', 'address')
-            .orderBy('id').where('id', '>', page_start).where('valid', 1).limit(page_count)
+            .orderBy('id').where('id', '>=', page_start).where('valid', 1).limit(page_count)
             .catch((err) => {
                 console.log(err);
                 return Promise.reject(new Exception(-1, 'Database Error'));

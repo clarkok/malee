@@ -70,8 +70,8 @@ let CartBottomLineConfirm = React.createClass({
 let CartBottomLineLogin = React.createClass({
     render: function () {
         return (
-            <div className="cart-bottom-line cart-bottom-line-login">
-                <form className="cart-bottom-line-login-form" action="javascript:void(0)">
+            <div className={`cart-bottom-line cart-bottom-line-login ${this.state.login_error ? 'login-error' : ''}`}>
+                <form className="cart-bottom-line-login-form" action="javascript:void(0)" onSubmit={this.handleLogin}>
                     <div className="cart-bottom-line-login-line">
                         <label htmlFor="login-username">用户名</label>
                         <input
@@ -80,7 +80,7 @@ let CartBottomLineLogin = React.createClass({
                             name="username"
                             id="login-username"
                             placeholder="用户名"
-                            onChange={(evt) => this.setState({username: evt.target.value})}
+                            onChange={(evt) => this.setState({username: evt.target.value, login_error: false})}
                         />
                     </div>
                     <div className="cart-bottom-line-login-line">
@@ -91,12 +91,12 @@ let CartBottomLineLogin = React.createClass({
                             name="password"
                             id="login-password"
                             placeholder="密码"
-                            onChange={(evt) => this.setState({password: evt.target.value})}
+                            onChange={(evt) => this.setState({password: evt.target.value, login_error: false})}
                         />
                     </div>
                     <div className="cart-bottom-line-login-line">
                         <span className="cart-bottom-line-login-button left" onClick={this.props.onLoginCancel}>取消</span>
-                        <span className="cart-bottom-line-login-button" onClick={this.handleLogin}>登录</span>
+                        <button className="cart-bottom-line-login-button" onClick={this.handleLogin}>登录</button>
                         <span className="cart-bottom-line-login-button" onClick={this.handleRegister}>注册</span>
                     </div>
                 </form>
@@ -106,8 +106,14 @@ let CartBottomLineLogin = React.createClass({
     getInitialState: function () {
         return {
             username: '',
-            password: ''
+            password: '',
+            login_error: this.props.loginError
         }
+    },
+    componentWillReceiveProps: function (next_props) {
+        this.setState({
+            login_error: next_props.loginError
+        });
     },
     handleLogin: function () {
         this.props.onLogin(this.state.username, this.state.password);
@@ -139,6 +145,7 @@ let Cart = React.createClass({
                     {
                         this.props.login    ? <CartBottomLineLogin
                                                 key="login"
+                                                loginError={this.props.login_error}
                                                 onLogin={this.handleLogin}
                                                 onRegister={this.handleRegister}
                                                 onLoginCancel={this.handleLoginCancel} /> :
@@ -182,7 +189,7 @@ const mapStateToProps = (state) => {
         shop: state.cart.shop_id ? state.shops[state.cart.shop_id] : {},
         promote: state.cart.promote,
         login: state.cart.login,
-        loginning: state.user,
+        login_error: state.user.login_error,
         itemsList, total
     };
 }

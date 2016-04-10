@@ -5,7 +5,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import SearchBox from './search-bar.jsx';
-import { exitShop, exitShopInsist, loginRequest } from './actions.js';
+import { exitShop, exitShopInsist, loginRequest, exitSearch } from './actions.js';
 
 let HeaderLoginning = React.createClass({
     render: function () {
@@ -43,7 +43,7 @@ let Header = React.createClass({
                 <h1 id="header-title" className="header-item">MALEE</h1>
                 <SearchBox />
                 {
-                    this.props.loginning || this.props.validating || this.props.loginned ? <HeaderLoginning />         :
+                    (this.props.loginning || this.props.validating) ? <HeaderLoginning />       :
                     this.props.validated ? <HeaderLogined nickname={this.props.nickname} />     :
                                            <HeaderLogin onClick={this.handleLogin} />
                 }
@@ -51,7 +51,13 @@ let Header = React.createClass({
         )
     },
     handleBack: function () {
-        this.props.dispatch( this.props.safeBack ? exitShopInsist() : exitShop() );
+        if (this.props.presenting == 'ITEMS') {
+            this.props.dispatch( this.props.safeBack ? exitShopInsist() : exitShop() );
+        }
+        else if (this.props.presenting == 'SEARCH') {
+            console.log("exit search");
+            this.props.dispatch(exitSearch());
+        }
     },
     handleLogin: function () {
         this.props.dispatch(loginRequest());
@@ -62,8 +68,8 @@ const mapStateToProps = (state) => {
     return {
         presenting: state.presenting,
         safeBack: !state.cart.shop_id,
-        validating: !state.user.validating,
-        validated: !state.user.validated,
+        validating: state.user.validating,
+        validated: state.user.validated,
         loginning: state.user.loginning,
         logined: state.user.logined,
         nickname: state.user.nickname || ''

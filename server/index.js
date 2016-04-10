@@ -270,7 +270,7 @@ app.post('/shop/:id/item', checkUser, checkShop, (req, res) => {
     }
 
     new_item.owner = req.user.id;
-    new_item.shop = req.params.shop;
+    new_item.shop = req.params.id;
 
     item.newItem(new_item)
         .then((item) => {

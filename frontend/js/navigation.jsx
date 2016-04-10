@@ -7,6 +7,7 @@ import { connect } from 'react-redux';
 
 import ShopList from './shop-list.jsx';
 import Shop from './shop.jsx';
+import SearchResult from './search-result.jsx';
 
 const TRANSITION_DURATION = 800;
 
@@ -29,6 +30,10 @@ let Navigation = React.createClass({
                             addScrollListener={this.addScrollListener}
                             removeScrollListener={this.removeScrollListener}
                          />;
+                break;
+            case 'SEARCH':
+                key = `SEARCH-${this.props.query}`;
+                scene = <SearchResult key={key} />
                 break;
             case 'SHOPS':
             default:
@@ -72,7 +77,8 @@ let Navigation = React.createClass({
 const mapStateToProps = (state) => {
     return {
         presenting: state.presenting,
-        currentShop: state.currentShop
+        currentShop: state.currentShop,
+        query: state.search.query
     };
 }
 

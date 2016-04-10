@@ -25,7 +25,7 @@ class Item {
         page_count = page_count || DEFAULT_PAGE;
 
         return this.db(TABLE_NAME).select('id', 'name', 'photo', 'price', 'shop')
-            .orderBy('id').where('id', '>', page_start).where({valid: 1, shop: shop_id}).limit(page_count)
+            .orderBy('id').where('id', '>=', page_start).where({valid: 1, shop: shop_id}).limit(page_count)
             .then((items) => Promise.resolve(items.map((item) => { item.price /= 100.0; return item; })))
             .catch((err) => {
                 console.log(err);

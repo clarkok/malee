@@ -87,7 +87,7 @@ let Item = React.createClass({
 
 let ItemList = React.createClass({
     render: function () {
-        let ret = (
+        return (
             <ol className={`item-list ${this.props.cartFloat ? 'item-reserve-for-cart' : ''}`} ref="items">
                 <ReactCSSTransitionGroup
                     transitionName="item-card"
@@ -110,8 +110,6 @@ let ItemList = React.createClass({
                 <ListFooter fetching={this.props.fetching} ended={this.props.ended} />
             </ol>
         );
-
-        return ret;
     },
     getInitialState: function () {
         return {

@@ -96,7 +96,7 @@ export function login(promise) {
     return {
         type: LOGIN,
         promise
-    }
+    };
 }
 
 export const REGISTER               = 'REGISTER';
@@ -104,5 +104,20 @@ export function register(promise) {
     return {
         type: REGISTER,
         promise
-    }
+    };
+}
+
+export const SEARCH                 = 'SEARCH';
+export function search(query, promise) {
+    return {
+        type: SEARCH,
+        query, promise
+    };
+}
+
+export const EXIT_SEARCH            = 'EXIT_SEARCH';
+export function exitSearch() {
+    return {
+        type: EXIT_SEARCH
+    };
 }
