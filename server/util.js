@@ -2,15 +2,23 @@
 
 let sha1 = require('sha1');
 
-function randomString(length) {
-    const ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-
+function _randomString(length, ALPHABET) {
     let ret = '';
     while (length --) {
         ret += ALPHABET[(Math.random() * ALPHABET.length) | 0];
     }
 
     return ret;
+}
+
+function randomString(length) {
+    const ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    return _randomString(length, ALPHABET);
+}
+
+function randomNumberString(length) {
+    const ALPHABET = '0123456789';
+    return _randomString(length, ALPHABET);
 }
 
 function chineseCut(str, sp) {
@@ -34,6 +42,7 @@ function chineseCutObject(obj) {
 }
 
 exports.randomString = randomString;
+exports.randomNumberString = randomNumberString;
 exports.sha1 = sha1;
 exports.chineseCut = chineseCut;
 exports.chineseCutObject = chineseCutObject;

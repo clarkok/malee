@@ -30,6 +30,14 @@ class Shop {
             });
     }
 
+    queryShopIdByOwner(uid) {
+        return this.db(TABLE_NAME).select('id').where('owner', uid)
+            .catch((err) => {
+                console.log(err);
+                return Promise.reject(new Exception(-1, 'Database Error'));
+            });
+    }
+
     /**
      * @param sid shop id
      *

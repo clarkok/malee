@@ -23,6 +23,9 @@ let shop = new Shop(db);
 let Item = require('./item.js');
 let item = new Item(db);
 
+let Order = require('./order.js');
+let order = new Order(db, user, shop, item);
+
 let search = require('./search.js');
 
 let Util = require('./util.js');
@@ -317,6 +320,82 @@ app.delete('/item/:id', checkUser, checkItem, (req, res) => {
             search.removeItem(req.params.id).catch((err) => {
                 console.log('Remove item error', err);
             });
+        })
+        .catch((e) => res.send(e));
+});
+
+app.post('/shop/:id/order', checkUser, (req, res) => {
+    order.newOrder(req.user.id, req.params.id, JSON.parse(req.body.item_list))
+        .then((order) => {
+            return res.send({code: 0, order});
+        })
+        .catch((e) => res.send(e));
+});
+
+app.get('/order', checkUser, (req, res) => {
+    (req.user.role == 'customer' ? order.listCustomerOrder(req.user.id) : order.listSellerOrder(req.user.id))
+        .then((orders) => {
+            return res.send({code: 0, orders});
+        })
+        .catch((e) => res.send(e));
+});
+
+function checkOrderCustomer(req, res, next) {
+    order.queryOrder(req.params.id)
+        .then((order) => {
+            if (order.uid != req.user.id) {
+                return Promise.reject(new Exception(-1, 'Not the customer'));
+            }
+            req.order = order;
+            next();
+        })
+        .catch((e) => res.send(e));
+}
+
+function checkOrderSeller(req, res, next) {
+    order.queryOrder(req.params.id)
+        .then((order) => {
+            if (order.shop.owner != req.user.id) {
+                return Promise.reject(new Exception(-1, 'Not the seller'));
+            }
+            req.order = order;
+            next();
+        })
+        .catch((e) => res.send(e));
+}
+
+app.get('/order/:id', checkUser, checkOrderCustomer, (req, res) => {
+    res.send({code: 0, order: req.order});
+});
+
+app.post('/order/:id/cancel', checkUser, checkOrderCustomer, (req, res) => {
+    order.cancelOrder(req.order.id)
+        .then((order) => {
+            res.send({ code: 0, order });
+        })
+        .catch((e) => res.send(e));
+});
+
+app.post('/order/:id/pay', checkUser, checkOrderCustomer, (req, res) => {
+    order.payOrder(req.order.id)
+        .then((order) => {
+            res.send({ code: 0, order });
+        })
+        .catch((e) => res.send(e));
+});
+
+app.post('/order/:id/confirm', checkUser, checkOrderSeller, (req, res) => {
+    order.confirmOrder(req.order.id)
+        .then((order) => {
+            res.send({ code: 0, order });
+        })
+        .catch((e) => res.send(e));
+});
+
+app.post('/order/:id/deliver', checkUser, checkOrderSeller, (req, res) => {
+    order.deliverOrder(req.order.id, req.body.secret)
+        .then((order) => {
+            res.send({ code: 0, order });
         })
         .catch((e) => res.send(e));
 });

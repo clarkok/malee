@@ -170,6 +170,22 @@ class User {
             return Promise.reject(new Exception(-8, 'Database Error'));
         });
     }
+
+    checkoutMoney(uid, balance) {
+        balance = (balance * 100) | 0;
+        return this.getUser(uid)
+            .then((user) => {
+                if (user.balance < balance) {
+                    return Promise.reject(new Exception(-7, 'No enough money'))
+                }
+                return this.db(TABLE_NAME).update({balance: user.balance - balance}).where('id', uid);
+            });
+    }
+
+    checkinMoney(uid, balance) {
+        balance = (balance * 100) | 0;
+        return this.db(TABLE_NAME).where('id', uid).increment('balance', balance);
+    }
 }
 
 module.exports = User;

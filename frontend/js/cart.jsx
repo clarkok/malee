@@ -5,7 +5,7 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 import { connect } from 'react-redux';
 
-import { exitShopInsist, exitShopCancel, loginCancel, login } from './actions.js';
+import { exitShopInsist, exitShopCancel, loginCancel, login, loginRequest } from './actions.js';
 import { doLogin } from './api.js';
 
 const TRANSITION_DURATION = 300;
@@ -168,6 +168,11 @@ let Cart = React.createClass({
         this.props.dispatch(exitShopInsist());
     },
     handleSubmit: function () {
+        if (!this.props.logined) {
+            this.props.dispatch(loginRequest());
+        }
+        else {
+        }
     },
     handleLoginCancel: function () {
         this.props.dispatch(loginCancel());
@@ -190,6 +195,7 @@ const mapStateToProps = (state) => {
         promote: state.cart.promote,
         login: state.cart.login,
         login_error: state.user.login_error,
+        logined: state.user.logined,
         itemsList, total
     };
 }

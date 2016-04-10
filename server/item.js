@@ -106,6 +106,20 @@ class Item {
                 return Promise.reject(new Exception(-7, 'Database Error'));
             });
     }
+
+    /**
+     * @param shop_id
+     * @param item_list
+     */
+    calculateTotal(shop_id, item_list) {
+        return Promise.all(Object.getOwnPropertyNames(item_list).map((item_id) => this.queryItem(item_id)))
+            .then((items) => {
+                if (items.some((item) => item.shop != shop_id)) {
+                    return Promise.reject(new Exception(-8, 'Not all items in this shop'));
+                }
+                return Promise.resolve(100 * items.reduce((prev, item) => {return prev + item.price * item_list[item.id]}, 0) | 0);
+            });
+    }
 }
 
 module.exports = Item;
