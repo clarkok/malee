@@ -1,3 +1,7 @@
+'use strict';
+
+let webpack = require('webpack');
+
 module.exports = {
     entry: "./js/entry.js",
     output: {
@@ -27,5 +31,11 @@ module.exports = {
                 loader: "file-loader"
             }
         ]
-    }
+    },
+    plugins: [
+        new webpack.optimize.UglifyJsPlugin({
+            sourceMap: false,
+            mangle: false
+        })
+    ]
 }
