@@ -121,3 +121,27 @@ export function exitSearch() {
         type: EXIT_SEARCH
     };
 }
+
+export const NEW_ORDER              = 'NEW_ORDER';
+export function newOrder(promise) {
+    return {
+        type: NEW_ORDER,
+        promise
+    };
+}
+
+export const PAY_ORDER              = 'PAY_ORDER';
+export function payOrder(promise) {
+    return {
+        type: PAY_ORDER,
+        promise
+    };
+}
+
+export const CANCEL_ORDER           = 'CANCEL_ORDER';
+export function cancelOrder(promise) {
+    return {
+        type: CANCEL_ORDER,
+        promise
+    };
+}

@@ -5,8 +5,8 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 import { connect } from 'react-redux';
 
-import { exitShopInsist, exitShopCancel, loginCancel, login, loginRequest } from './actions.js';
-import { doLogin } from './api.js';
+import { exitShopInsist, exitShopCancel, loginCancel, login, loginRequest, newOrder, payOrder, cancelOrder } from './actions.js';
+import { doLogin, submitOrder, pay, cancel } from './api.js';
 
 const TRANSITION_DURATION = 300;
 
@@ -61,7 +61,11 @@ let CartBottomLineConfirm = React.createClass({
     render: function () {
         return (
             <div className="cart-bottom-line">
-                <span onClick={this.props.onSubmit} className="cart-button">立即下单</span>
+                {
+                    this.props.submittingOrder
+                    ? <span className="cart-button-working"><i className="fa fa-circle-o-notch" /></span>
+                    : <span onClick={this.props.onSubmit} className="cart-button">立即下单</span>
+                }
             </div>
         );
     }
@@ -123,12 +127,45 @@ let CartBottomLineLogin = React.createClass({
     }
 });
 
+let CartBottomLineOrder = React.createClass({
+    render: function () {
+        return (
+            <div className='cart-bottom-line cart-bottom-line-order'>
+                <div className='cart-bottom-line-order-line'>
+                    <span className="label">昵称</span>
+                    <span>{this.props.user.nickname}</span>
+                    <span className="label">电话</span>
+                    <span>{this.props.user.phone}</span>
+                </div>
+                <div className='cart-bottom-line-order-line'>
+                    <span className="label">地址</span>
+                    <span>{this.props.user.address}</span>
+                </div>
+                {
+                    (this.props.state == 1) ?
+                        <div className='cart-bottom-line-order-line'>
+                            <span onClick={this.props.onPay} className="cart-button">支付</span>
+                            <span onClick={this.props.onCancel} className="cart-button">取消</span>
+                        </div>
+                    :
+                        <div className='cart-bottom-line-order-line'>
+                            <span className="label">{
+                                (this.props.state == 0) ? '已取消' : (this.props.state == 2) ? '已支付' : '已配送'
+                            }</span>
+                        </div>
+                }
+            </div>
+        );
+    }
+});
+
 let Cart = React.createClass({
     render: function () {
         let extra_state = 
-                        this.props.login   ?    'login'     :
-                        this.props.promote ?    'promote'   :
-                        this.props.shop_id ?    'show'      :
+                        this.props.login    ?   'login'     :
+                        this.props.order    ?   'order'     :
+                        this.props.promote  ?   'promote'   :
+                        this.props.shop_id  ?   'show'      :
                                                 'hidden';
         return (
             <div id="cart" className={`${extra_state}-cart`}>
@@ -152,9 +189,17 @@ let Cart = React.createClass({
                         this.props.promote  ? <CartBottomLinePromote
                                                 key="promote"
                                                 onInsistExit={this.handleInsist}
-                                                onCancelExit={this.handleCancel} />
+                                                onCancelExit={this.handleCancel} /> :
+                        this.props.order    ? <CartBottomLineOrder
+                                                key="order"
+                                                user={this.props.user}
+                                                state={this.props.orderContent.state}
+                                                onPay={this.handlePay}
+                                                onCancel={this.handleCancelOrder}
+                                                />
                                             : <CartBottomLineConfirm
                                                 key="confirm"
+                                                submittingOrder={this.props.submitting_order}
                                                 onSubmit={this.handleSubmit} />
                     }
                 </ReactCSSTransitionGroup>
@@ -172,6 +217,11 @@ let Cart = React.createClass({
             this.props.dispatch(loginRequest());
         }
         else {
+            let item_list = this.props.itemsList.reduce(
+                (prev, list_item) => { prev[list_item.item.id] = list_item.number; return prev },
+                {}
+            );
+            this.props.dispatch(newOrder(submitOrder(this.props.shop_id, item_list)));
         }
     },
     handleLoginCancel: function () {
@@ -179,6 +229,12 @@ let Cart = React.createClass({
     },
     handleLogin: function (username, password) {
         this.props.dispatch(login(doLogin(username, password)));
+    },
+    handlePay: function () {
+        this.props.dispatch(payOrder(pay(this.props.orderContent.id)));
+    },
+    handleCancelOrder: function () {
+        this.props.dispatch(cancelOrder(cancel(this.props.orderContent.id)));
     },
     handleRegister: function (username, password) {
     }
@@ -196,7 +252,11 @@ const mapStateToProps = (state) => {
         login: state.cart.login,
         login_error: state.user.login_error,
         logined: state.user.logined,
-        itemsList, total
+        order: state.presenting == 'ORDER',
+        orderContent: state.order.current,
+        itemsList, total,
+        submitting_order: state.order.fetching,
+        user: state.user
     };
 }
 

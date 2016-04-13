@@ -472,7 +472,7 @@
 
 
 	// module
-	exports.push([module.id, "html,\nbody {\n  margin: 0;\n  padding: 0;\n  background: #eee;\n  width: 100%;\n  height: 100%;\n  position: relative;\n  overflow: hidden;\n}\nh3,\nh4 {\n  margin: 0;\n}\nheader {\n  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);\n  background: #e67e22;\n  height: 75px;\n  left: 0;\n  line-height: 75px;\n  position: fixed;\n  top: 0;\n  width: 100%;\n  z-index: 10;\n}\nheader #header-back {\n  border-radius: 1em;\n  color: #808080;\n  cursor: pointer;\n  display: block;\n  font-size: 2rem;\n  height: 2em;\n  left: -2em;\n  line-height: 2em;\n  position: absolute;\n  text-align: center;\n  top: calc(100% + 1em);\n  transition: all 500ms cubic-bezier(0.215, 0.61, 0.355, 1);\n  width: 2em;\n}\nheader #header-back:hover {\n  transition-duration: 300ms;\n  background: #fff;\n}\nheader #header-back:active {\n  transition-duration: 0;\n  background: #808080;\n}\nheader.subheader #header-back {\n  left: 1em;\n}\nheader .header-right {\n  color: #fff;\n  position: absolute;\n  right: 1.5em;\n  top: 0;\n}\nheader .header-right.header-login {\n  cursor: pointer;\n}\nheader .header-right.header-loginning {\n  animation: 1s linear spin infinite;\n}\nheader .header-item {\n  margin: 0;\n  position: relative;\n  height: 75px;\n  line-height: 75px;\n}\nheader .header-item#header-title {\n  color: #fff;\n  position: absolute;\n  left: 0;\n  font-size: 2rem;\n  font-weight: 700;\n  margin-left: 1em;\n}\nheader .header-item#search-bar {\n  display: block;\n  margin: 0 auto;\n  min-width: 300px;\n  position: relative;\n  width: 50%;\n}\nheader .header-item#search-bar .search-input {\n  background: #f39c12;\n  border: 0;\n  border-radius: 1rem;\n  box-sizing: border-box;\n  color: #fff;\n  display: block;\n  font-size: 1rem;\n  height: 2rem;\n  margin: 0;\n  outline: 0;\n  padding: 1em;\n  position: absolute;\n  top: calc((75px - 2rem) / 2);\n  width: 100%;\n}\nheader .header-item#search-bar .search-button {\n  background: transparent;\n  border: 0;\n  border-radius: 1rem;\n  color: #fff;\n  display: block;\n  height: 2rem;\n  line-height: 2rem;\n  margin: 0;\n  outline: 0;\n  padding: 0;\n  position: absolute;\n  right: 0;\n  text-align: center;\n  top: calc((75px - 2rem) / 2);\n  transition: all 0.3s;\n  width: 2rem;\n}\nheader .header-item#search-bar .search-button:hover {\n  background: #fff;\n  color: #e67e22;\n}\n.scroller {\n  margin-top: 75px;\n  height: calc(100vh - 75px);\n  width: 100vw;\n  overflow: auto;\n  position: absolute;\n  top: 0;\n  left: 0;\n}\n.scene {\n  width: 960px;\n  margin: auto;\n  position: relative;\n}\nol.scene {\n  list-style: none;\n  padding: 0;\n}\n.scroller.scene-enter #shops,\n.scroller.scene-enter #search-result {\n  opacity: 0;\n}\n.scroller.scene-enter-active #shops,\n.scroller.scene-enter-active #search-result {\n  opacity: 1;\n  transition: all 500ms cubic-bezier(0.55, 0.055, 0.675, 0.19);\n}\n.scroller.scene-leave #shops,\n.scroller.scene-leave #search-result {\n  opacity: 1;\n}\n.scroller.scene-leave-active #shops,\n.scroller.scene-leave-active #search-result {\n  opacity: 0;\n  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);\n}\n.list-footer {\n  width: 50%;\n  height: 3em;\n  line-height: 3em;\n  text-align: center;\n  position: absolute;\n  left: 50%;\n  bottom: 40px;\n  margin-left: -25%;\n  transition: all 500ms cubic-bezier(0.215, 0.61, 0.355, 1);\n}\n.list-footer.list-footer-enter {\n  margin-top: 3em;\n  opacity: 0;\n}\n.list-footer.list-footer-enter-active {\n  margin-top: 0;\n  opacity: 1;\n  transition: all 500ms cubic-bezier(0.215, 0.61, 0.355, 1);\n}\n.list-footer.list-footer-leave {\n  margin-top: 0;\n  opacity: 1;\n}\n.list-footer.list-footer-leave-active {\n  margin-top: -3em;\n  opacity: 0;\n  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);\n}\n.list-fetching {\n  color: rgba(0,0,0,0.3);\n  animation: 1s linear spin infinite;\n}\n.list-ended {\n  background: rgba(0,0,0,0.3);\n  color: #eee;\n  border-radius: 3px;\n}\n.list-ended:after {\n  content: \"\\4E0B\\9762\\6CA1\\6709\\4E86\";\n}\n#shops {\n  z-index: 1;\n  padding-bottom: calc(3em + 60px);\n  margin-top: 20px;\n}\n.shop-card {\n  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);\n  background: #f8f8f8;\n  border-radius: 3px;\n  box-sizing: border-box;\n  cursor: pointer;\n  display: inline-block;\n  height: 200px;\n  margin: 0 20px 40px 20px;\n  overflow: hidden;\n  padding: 20px;\n  padding-left: 220px;\n  position: relative;\n  transition-property: all;\n  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);\n  transition-duration: 300ms;\n  user-select: none;\n  width: 440px;\n}\n.shop-card:hover {\n  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);\n  background: #fff;\n}\n.shop-card:active {\n  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.25);\n  background: #eee;\n}\n.shop-card.shop-card-enter {\n  top: 100px;\n  opacity: 0;\n}\n.shop-card.shop-card-enter.shop-card-enter-active {\n  top: 0;\n  opacity: 1;\n}\n.shop-card.shop-card-enter.shop-card-enter-active.delay-1 {\n  transition-delay: 50ms;\n}\n.shop-card.shop-card-enter.shop-card-enter-active.delay-2 {\n  transition-delay: 100ms;\n}\n.shop-card.shop-card-enter.shop-card-enter-active.delay-3 {\n  transition-delay: 150ms;\n}\n.shop-card.shop-card-enter.shop-card-enter-active.delay-4 {\n  transition-delay: 200ms;\n}\n.shop-card.shop-card-enter.shop-card-enter-active.delay-5 {\n  transition-delay: 250ms;\n}\n.shop-card.shop-card-enter.shop-card-enter-active.delay-6 {\n  transition-delay: 300ms;\n}\n.shop-card.shop-card-enter.shop-card-enter-active.delay-7 {\n  transition-delay: 350ms;\n}\n.shop-card.shop-card-enter.shop-card-enter-active.delay-8 {\n  transition-delay: 400ms;\n}\n.shop-card.shop-card-enter.shop-card-enter-active.delay-9 {\n  transition-delay: 450ms;\n}\n.shop-card .shop-photo {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 200px;\n  height: 200px;\n}\n.shop-info {\n  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);\n  position: relative;\n  margin: 0 20px 20px 20px;\n  background: #fff;\n  height: 300px;\n  padding: 20px;\n  padding-left: 320px;\n  box-sizing: border-box;\n}\n.shop-info .shop-photo {\n  position: absolute;\n  top: 0;\n  left: 0;\n  height: 300px;\n  width: 300px;\n}\nol.item-list {\n  list-style: none;\n  padding: 0;\n  padding-bottom: calc(3em + 40px);\n  margin-top: 40px;\n  user-select: none;\n  -webkit-user-select: none;\n  position: relative;\n  transition: all 500ms cubic-bezier(0.215, 0.61, 0.355, 1);\n}\nol.item-list.item-reserve-for-cart {\n  padding-bottom: calc(20px * 3 + 13em);\n}\nol.item-list.item-reserve-for-cart .list-footer {\n  bottom: calc(20px * 1.5 + 13em);\n}\nol.item-list .item-card-inner {\n  cursor: default;\n}\nol.item-list .item-card-inner:hover,\nol.item-list .item-card-inner:focus,\nol.item-list .item-card-inner.selected {\n  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.25);\n  background: #fff;\n  top: -15px;\n  height: 352.5px;\n}\nol.item-list .item-card-inner:hover .item-number,\nol.item-list .item-card-inner:focus .item-number,\nol.item-list .item-card-inner.selected .item-number {\n  bottom: 0;\n}\nol.item-list .item-card-inner:hover {\n  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);\n}\nol.item-list .item-card.item-card-enter {\n  top: 300px;\n  opacity: 0;\n}\nol.item-list .item-card.item-card-enter.item-card-enter-active {\n  top: 0;\n  opacity: 1;\n}\nol.item-list .item-card.item-card-enter.item-card-enter-active.delay-1 {\n  transition-delay: 100ms;\n}\nol.item-list .item-card.item-card-enter.item-card-enter-active.delay-2 {\n  transition-delay: 200ms;\n}\nol.item-list .item-card.item-card-enter.item-card-enter-active.delay-3 {\n  transition-delay: 300ms;\n}\nol.item-list .item-card.item-card-enter.item-card-enter-active.delay-4 {\n  transition-delay: 400ms;\n}\nol.item-list .item-card.item-card-enter.item-card-enter-active.delay-5 {\n  transition-delay: 500ms;\n}\nol.item-list .item-card.item-card-enter.item-card-enter-active.delay-6 {\n  transition-delay: 600ms;\n}\nol.item-list .item-card.item-card-enter.item-card-enter-active.delay-7 {\n  transition-delay: 700ms;\n}\n.item-card {\n  display: inline-block;\n  width: 215px;\n  height: 322.5px;\n  margin-left: 20px;\n  margin-bottom: 40px;\n  position: relative;\n  box-sizing: border-box;\n  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);\n}\n.item-card .item-card-inner {\n  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);\n  background: #f8f8f8;\n  position: absolute;\n  top: 0;\n  width: 100%;\n  height: 322.5px;\n  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);\n  padding: 20px;\n  padding-top: 235px;\n  box-sizing: border-box;\n  overflow: hidden;\n  cursor: pointer;\n}\n.item-card .item-card-inner .item-photo {\n  position: absolute;\n  width: 215px;\n  height: 215px;\n  top: 0;\n  left: 0;\n}\n.item-card .item-card-inner .item-number {\n  display: block;\n  position: absolute;\n  width: 100%;\n  height: 30px;\n  left: 0;\n  bottom: -30px;\n  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);\n}\n.item-card .item-card-inner .item-number .item-number-button,\n.item-card .item-card-inner .item-number .item-number-input {\n  display: inline-block;\n  height: 30px;\n  box-sizing: border-box;\n  font-size: 1.5rem;\n  text-align: center;\n  background: #f39c12;\n  color: #fff;\n}\n.item-card .item-card-inner .item-number .item-number-button {\n  width: 30%;\n  line-height: 30px;\n  cursor: pointer;\n}\n.item-card .item-card-inner .item-number .item-number-input {\n  width: 40%;\n  border: none;\n  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);\n  font-size: 1em;\n  padding: 0;\n  vertical-align: bottom;\n}\n.item-card .item-card-inner .item-number .item-number-input:hover,\n.item-card .item-card-inner .item-number .item-number-input:focus,\n.item-card .item-card-inner .item-number .item-number-input:active {\n  box-shadow: inset 0 2px 2px rgba(0,0,0,0.5);\n  outline: 0;\n}\n.item-card .item-card-inner:hover {\n  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);\n  background: #fff;\n}\n.scroller.scene-enter .shop-info {\n  top: -300px;\n  opacity: 0;\n}\n.scroller.scene-enter-active .shop-info {\n  top: 0;\n  opacity: 1;\n  transition: all 500ms cubic-bezier(0.215, 0.61, 0.355, 1);\n}\n.scroller.scene-leave .shop-info {\n  top: 0;\n  opacity: 1;\n}\n.scroller.scene-leave .item-list {\n  top: 0;\n  opacity: 1;\n}\n.scroller.scene-leave-active .shop-info {\n  top: -300px;\n  opacity: 0;\n  transition: all 300ms cubic-bezier(0.55, 0.055, 0.675, 0.19);\n}\n.scroller.scene-leave-active .item-list {\n  top: 300px;\n  opacity: 0;\n  transition: all 300ms cubic-bezier(0.55, 0.055, 0.675, 0.19);\n}\n#shop {\n  z-index: 2;\n}\n#cart {\n  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.25);\n  position: absolute;\n  width: 920px;\n  height: 13em;\n  background: #fff;\n  z-index: 8;\n  box-sizing: border-box;\n  padding: 20px;\n  left: 50%;\n  margin-left: -460px;\n  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);\n  overflow: hidden;\n}\n#cart.hidden-cart {\n  opacity: 0;\n  top: 110vh;\n  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);\n}\n#cart.show-cart {\n  opacity: 1;\n  top: calc(100vh - 13em);\n}\n#cart.show-cart:hover,\n#cart.promote-cart,\n#cart.login-cart {\n  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);\n  height: 16em;\n  top: calc(100vh - 16em);\n}\n#cart h3 {\n  color: #e67e22;\n}\n#cart .cart-total {\n  float: right;\n}\n#cart .cart-total:before {\n  content: \"\\603B\\8BA1\\FF1A\";\n  color: #808080;\n}\n#cart .cart-bottom-line {\n  height: 3em;\n  width: 100%;\n  line-height: 3em;\n  padding: 0 1em;\n  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);\n  position: absolute;\n  bottom: -3em;\n  left: 0;\n  box-sizing: border-box;\n  background: #f39c12;\n  color: #fff;\n  overflow: hidden;\n}\n#cart .cart-bottom-line .cart-button {\n  display: inline-block;\n  float: right;\n  margin-left: 1em;\n  cursor: pointer;\n  line-height: 1em;\n  height: 1em;\n  margin-top: 0.5em;\n  padding: 0.5em;\n}\n#cart .cart-bottom-line .cart-button:hover {\n  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);\n  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);\n}\n#cart .cart-bottom-line .cart-button:active {\n  box-shadow: inset 0 2px 2px rgba(0,0,0,0.5);\n}\n#cart .cart-bottom-line.cart-bottom-line-login {\n  height: 16em;\n  bottom: 0;\n  background: #e67e22;\n  color: #fff;\n  padding: 2em;\n}\n#cart .cart-bottom-line.cart-bottom-line-login h3 {\n  color: #fff;\n}\n#cart .cart-bottom-line.cart-bottom-line-login .cart-bottom-line-login-form {\n  display: block;\n  width: 50%;\n  margin: auto;\n  position: relative;\n  padding: 1em;\n}\n#cart .cart-bottom-line.cart-bottom-line-login .cart-bottom-line-login-line {\n  display: block;\n  margin: 0;\n  margin-bottom: 0.5em;\n  width: 100%;\n  position: relative;\n}\n#cart .cart-bottom-line.cart-bottom-line-login label {\n  display: inline-block;\n  width: 20%;\n}\n#cart .cart-bottom-line.cart-bottom-line-login label:after {\n  content: \"\\FF1A\";\n}\n#cart .cart-bottom-line.cart-bottom-line-login .cart-bottom-line-login-input {\n  display: inline-block;\n  border: 0;\n  padding: 0.5em;\n  background: #f39c12;\n  box-sizing: border-box;\n  color: #fff;\n  width: 80%;\n  font-size: 1rem;\n  transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);\n}\n#cart .cart-bottom-line.cart-bottom-line-login .cart-bottom-line-login-button {\n  background: transparent;\n  border: none;\n  color: inherit;\n  cursor: pointer;\n  display: inline-block;\n  float: right;\n  font-size: inherit;\n  height: inherit;\n  line-height: inherit;\n  margin-left: 1em;\n  padding: 0;\n}\n#cart .cart-bottom-line.cart-bottom-line-login .cart-bottom-line-login-button.left {\n  float: left;\n  margin-left: 0;\n}\n#cart .cart-bottom-line.cart-bottom-line-login.login-error .cart-bottom-line-login-input {\n  background: #f20;\n}\n#cart .cart-bottom-line.cart-bottom-line-enter {\n  height: 0;\n  bottom: 0;\n}\n#cart .cart-bottom-line.cart-bottom-line-enter-active {\n  height: 3em;\n}\n#cart .cart-bottom-line.cart-bottom-line-leave {\n  height: 3em;\n  bottom: 0;\n}\n#cart .cart-bottom-line.cart-bottom-line-leave-active {\n  height: 0;\n  bottom: 3em;\n}\n#cart.show-cart:hover .cart-bottom-line,\n#cart.promote-cart .cart-bottom-line {\n  bottom: 0;\n}\n#cart.show-cart:hover .cart-list,\n#cart.promote-cart .cart-list {\n  height: calc(100% - 5em);\n}\n.cart-list {\n  list-style: none;\n  padding: 0;\n  height: calc(100% - 2em);\n  overflow: auto;\n  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);\n}\n.cart-list .cart-item {\n  display: block;\n  height: 2em;\n  line-height: 2em;\n  position: relative;\n  overflow: hidden;\n}\n.cart-list .cart-item.cart-list-enter {\n  height: 0;\n  opacity: 0;\n}\n.cart-list .cart-item.cart-list-enter-active {\n  height: 2em;\n  opacity: 1;\n  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);\n}\n.cart-list .cart-item.cart-list-leave {\n  height: 2em;\n  opacity: 1;\n}\n.cart-list .cart-item.cart-list-leave-active {\n  height: 0;\n  opacity: 0;\n  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);\n}\n.cart-list .cart-item-column {\n  display: inline-block;\n}\n.cart-list .cart-item-column:before,\n.cart-list .cart-item-column:after {\n  color: #808080;\n}\n.cart-list .cart-item-name {\n  width: 50%;\n}\n.cart-list .cart-item-price {\n  width: 20%;\n  text-align: right;\n}\n.cart-list .cart-item-price:after {\n  content: \" \\8F6F\\59B9\\5E01   \";\n}\n.cart-list .cart-item-number {\n  width: 10%;\n}\n.cart-list .cart-item-number:before {\n  content: \" x \";\n}\n.cart-list .cart-item-equal {\n  width: 5%;\n  text-align: right;\n}\n.cart-list .cart-item-total {\n  width: 15%;\n  text-align: right;\n}\n.cart-list .cart-item-total:after {\n  content: \" \\8F6F\\59B9\\5E01\";\n}\n#search-result {\n  margin-top: 20px;\n  z-index: 9;\n}\n.gap {\n  display: block;\n  clear: both;\n  margin: 0 20px 20px 20px;\n  color: #808080;\n}\n@-moz-keyframes spin {\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n}\n@-webkit-keyframes spin {\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n}\n@-o-keyframes spin {\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n}\n@keyframes spin {\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n}\n", ""]);
+	exports.push([module.id, "html,\nbody {\n  margin: 0;\n  padding: 0;\n  background: #eee;\n  width: 100%;\n  height: 100%;\n  position: relative;\n  overflow: hidden;\n  font-family: 'Microsoft Yahei';\n}\nh3,\nh4 {\n  margin: 0;\n}\nheader {\n  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);\n  background: #e67e22;\n  height: 75px;\n  left: 0;\n  line-height: 75px;\n  position: fixed;\n  top: 0;\n  width: 100%;\n  z-index: 10;\n}\nheader #header-back {\n  border-radius: 1em;\n  color: #808080;\n  cursor: pointer;\n  display: block;\n  font-size: 2rem;\n  height: 2em;\n  left: -2em;\n  line-height: 2em;\n  position: absolute;\n  text-align: center;\n  top: calc(100% + 1em);\n  transition: all 500ms cubic-bezier(0.215, 0.61, 0.355, 1);\n  width: 2em;\n}\nheader #header-back:hover {\n  transition-duration: 300ms;\n  background: #fff;\n}\nheader #header-back:active {\n  transition-duration: 0;\n  background: #808080;\n}\nheader.subheader #header-back {\n  left: 1em;\n}\nheader .header-right {\n  color: #fff;\n  position: absolute;\n  right: 1.5em;\n  top: 0;\n}\nheader .header-right.header-login {\n  cursor: pointer;\n}\nheader .header-right.header-loginning {\n  animation: 1s linear spin infinite;\n}\nheader .header-item {\n  margin: 0;\n  position: relative;\n  height: 75px;\n  line-height: 75px;\n}\nheader .header-item#header-title {\n  color: #fff;\n  position: absolute;\n  left: 0;\n  font-size: 2rem;\n  font-weight: 700;\n  margin-left: 1em;\n}\nheader .header-item#search-bar {\n  display: block;\n  margin: 0 auto;\n  min-width: 300px;\n  position: relative;\n  width: 50%;\n}\nheader .header-item#search-bar .search-input {\n  background: #f39c12;\n  border: 0;\n  border-radius: 1rem;\n  box-sizing: border-box;\n  color: #fff;\n  display: block;\n  font-size: 1rem;\n  height: 2rem;\n  margin: 0;\n  outline: 0;\n  padding: 1em;\n  position: absolute;\n  top: calc((75px - 2rem) / 2);\n  width: 100%;\n}\nheader .header-item#search-bar .search-button {\n  background: transparent;\n  border: 0;\n  border-radius: 1rem;\n  color: #fff;\n  display: block;\n  height: 2rem;\n  line-height: 2rem;\n  margin: 0;\n  outline: 0;\n  padding: 0;\n  position: absolute;\n  right: 0;\n  text-align: center;\n  top: calc((75px - 2rem) / 2);\n  transition: all 0.3s;\n  width: 2rem;\n}\nheader .header-item#search-bar .search-button:hover {\n  background: #fff;\n  color: #e67e22;\n}\n.scroller {\n  margin-top: 75px;\n  height: calc(100vh - 75px);\n  width: 100vw;\n  overflow: auto;\n  position: absolute;\n  top: 0;\n  left: 0;\n}\n.scene {\n  width: 960px;\n  margin: auto;\n  position: relative;\n}\nol.scene {\n  list-style: none;\n  padding: 0;\n}\n.scroller.scene-enter #shops,\n.scroller.scene-enter #search-result {\n  opacity: 0;\n}\n.scroller.scene-enter-active #shops,\n.scroller.scene-enter-active #search-result {\n  opacity: 1;\n  transition: all 500ms cubic-bezier(0.55, 0.055, 0.675, 0.19);\n}\n.scroller.scene-leave #shops,\n.scroller.scene-leave #search-result {\n  opacity: 1;\n}\n.scroller.scene-leave-active #shops,\n.scroller.scene-leave-active #search-result {\n  opacity: 0;\n  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);\n}\n.list-footer {\n  width: 50%;\n  height: 3em;\n  line-height: 3em;\n  text-align: center;\n  position: absolute;\n  left: 50%;\n  bottom: 40px;\n  margin-left: -25%;\n  transition: all 500ms cubic-bezier(0.215, 0.61, 0.355, 1);\n}\n.list-footer.list-footer-enter {\n  margin-top: 3em;\n  opacity: 0;\n}\n.list-footer.list-footer-enter-active {\n  margin-top: 0;\n  opacity: 1;\n  transition: all 500ms cubic-bezier(0.215, 0.61, 0.355, 1);\n}\n.list-footer.list-footer-leave {\n  margin-top: 0;\n  opacity: 1;\n}\n.list-footer.list-footer-leave-active {\n  margin-top: -3em;\n  opacity: 0;\n  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);\n}\n.list-fetching {\n  color: rgba(0,0,0,0.3);\n  animation: 1s linear spin infinite;\n}\n.list-ended {\n  background: rgba(0,0,0,0.3);\n  color: #eee;\n  border-radius: 3px;\n}\n.list-ended:after {\n  content: \"\\4E0B\\9762\\6CA1\\6709\\4E86\";\n}\n#shops {\n  z-index: 1;\n  padding-bottom: calc(3em + 60px);\n  margin-top: 20px;\n}\n.shop-card {\n  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);\n  background: #f8f8f8;\n  border-radius: 3px;\n  box-sizing: border-box;\n  cursor: pointer;\n  display: inline-block;\n  height: 200px;\n  margin: 0 20px 40px 20px;\n  overflow: hidden;\n  padding: 20px;\n  padding-left: 220px;\n  position: relative;\n  transition-property: all;\n  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);\n  transition-duration: 300ms;\n  user-select: none;\n  width: 440px;\n}\n.shop-card:hover {\n  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);\n  background: #fff;\n}\n.shop-card:active {\n  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.25);\n  background: #eee;\n}\n.shop-card.shop-card-enter {\n  top: 100px;\n  opacity: 0;\n}\n.shop-card.shop-card-enter.shop-card-enter-active {\n  top: 0;\n  opacity: 1;\n}\n.shop-card.shop-card-enter.shop-card-enter-active.delay-1 {\n  transition-delay: 50ms;\n}\n.shop-card.shop-card-enter.shop-card-enter-active.delay-2 {\n  transition-delay: 100ms;\n}\n.shop-card.shop-card-enter.shop-card-enter-active.delay-3 {\n  transition-delay: 150ms;\n}\n.shop-card.shop-card-enter.shop-card-enter-active.delay-4 {\n  transition-delay: 200ms;\n}\n.shop-card.shop-card-enter.shop-card-enter-active.delay-5 {\n  transition-delay: 250ms;\n}\n.shop-card.shop-card-enter.shop-card-enter-active.delay-6 {\n  transition-delay: 300ms;\n}\n.shop-card.shop-card-enter.shop-card-enter-active.delay-7 {\n  transition-delay: 350ms;\n}\n.shop-card.shop-card-enter.shop-card-enter-active.delay-8 {\n  transition-delay: 400ms;\n}\n.shop-card.shop-card-enter.shop-card-enter-active.delay-9 {\n  transition-delay: 450ms;\n}\n.shop-card .shop-photo {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 200px;\n  height: 200px;\n}\n.shop-info {\n  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);\n  position: relative;\n  margin: 0 20px 20px 20px;\n  background: #fff;\n  height: 300px;\n  padding: 20px;\n  padding-left: 320px;\n  box-sizing: border-box;\n}\n.shop-info .shop-photo {\n  position: absolute;\n  top: 0;\n  left: 0;\n  height: 300px;\n  width: 300px;\n}\nol.item-list {\n  list-style: none;\n  padding: 0;\n  padding-bottom: calc(3em + 40px);\n  margin-top: 40px;\n  user-select: none;\n  -webkit-user-select: none;\n  position: relative;\n  transition: all 500ms cubic-bezier(0.215, 0.61, 0.355, 1);\n}\nol.item-list.item-reserve-for-cart {\n  padding-bottom: calc(20px * 3 + 13em);\n}\nol.item-list.item-reserve-for-cart .list-footer {\n  bottom: calc(20px * 1.5 + 13em);\n}\nol.item-list .item-card-inner {\n  cursor: default;\n}\nol.item-list .item-card-inner:hover,\nol.item-list .item-card-inner:focus,\nol.item-list .item-card-inner.selected {\n  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.25);\n  background: #fff;\n  top: -15px;\n  height: 352.5px;\n}\nol.item-list .item-card-inner:hover .item-number,\nol.item-list .item-card-inner:focus .item-number,\nol.item-list .item-card-inner.selected .item-number {\n  bottom: 0;\n}\nol.item-list .item-card-inner:hover {\n  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);\n}\nol.item-list .item-card.item-card-enter {\n  top: 300px;\n  opacity: 0;\n}\nol.item-list .item-card.item-card-enter.item-card-enter-active {\n  top: 0;\n  opacity: 1;\n}\nol.item-list .item-card.item-card-enter.item-card-enter-active.delay-1 {\n  transition-delay: 100ms;\n}\nol.item-list .item-card.item-card-enter.item-card-enter-active.delay-2 {\n  transition-delay: 200ms;\n}\nol.item-list .item-card.item-card-enter.item-card-enter-active.delay-3 {\n  transition-delay: 300ms;\n}\nol.item-list .item-card.item-card-enter.item-card-enter-active.delay-4 {\n  transition-delay: 400ms;\n}\nol.item-list .item-card.item-card-enter.item-card-enter-active.delay-5 {\n  transition-delay: 500ms;\n}\nol.item-list .item-card.item-card-enter.item-card-enter-active.delay-6 {\n  transition-delay: 600ms;\n}\nol.item-list .item-card.item-card-enter.item-card-enter-active.delay-7 {\n  transition-delay: 700ms;\n}\n.item-card {\n  display: inline-block;\n  width: 215px;\n  height: 322.5px;\n  margin-left: 20px;\n  margin-bottom: 40px;\n  position: relative;\n  box-sizing: border-box;\n  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);\n}\n.item-card .item-card-inner {\n  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);\n  background: #f8f8f8;\n  position: absolute;\n  top: 0;\n  width: 100%;\n  height: 322.5px;\n  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);\n  padding: 20px;\n  padding-top: 235px;\n  box-sizing: border-box;\n  overflow: hidden;\n  cursor: pointer;\n}\n.item-card .item-card-inner .item-photo {\n  position: absolute;\n  width: 215px;\n  height: 215px;\n  top: 0;\n  left: 0;\n}\n.item-card .item-card-inner .item-number {\n  display: block;\n  position: absolute;\n  width: 100%;\n  height: 30px;\n  left: 0;\n  bottom: -30px;\n  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);\n}\n.item-card .item-card-inner .item-number .item-number-button,\n.item-card .item-card-inner .item-number .item-number-input {\n  display: inline-block;\n  height: 30px;\n  box-sizing: border-box;\n  font-size: 1.5rem;\n  text-align: center;\n  background: #f39c12;\n  color: #fff;\n}\n.item-card .item-card-inner .item-number .item-number-button {\n  width: 30%;\n  line-height: 30px;\n  cursor: pointer;\n}\n.item-card .item-card-inner .item-number .item-number-input {\n  width: 40%;\n  border: none;\n  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);\n  font-size: 1em;\n  padding: 0;\n  vertical-align: bottom;\n}\n.item-card .item-card-inner .item-number .item-number-input:hover,\n.item-card .item-card-inner .item-number .item-number-input:focus,\n.item-card .item-card-inner .item-number .item-number-input:active {\n  box-shadow: inset 0 2px 2px rgba(0,0,0,0.5);\n  outline: 0;\n}\n.item-card .item-card-inner:hover {\n  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);\n  background: #fff;\n}\n.scroller.scene-enter .shop-info {\n  top: -300px;\n  opacity: 0;\n}\n.scroller.scene-enter-active .shop-info {\n  top: 0;\n  opacity: 1;\n  transition: all 500ms cubic-bezier(0.215, 0.61, 0.355, 1);\n}\n.scroller.scene-leave .shop-info {\n  top: 0;\n  opacity: 1;\n}\n.scroller.scene-leave .item-list {\n  top: 0;\n  opacity: 1;\n}\n.scroller.scene-leave-active .shop-info {\n  top: -300px;\n  opacity: 0;\n  transition: all 300ms cubic-bezier(0.55, 0.055, 0.675, 0.19);\n}\n.scroller.scene-leave-active .item-list {\n  top: 300px;\n  opacity: 0;\n  transition: all 300ms cubic-bezier(0.55, 0.055, 0.675, 0.19);\n}\n#shop {\n  z-index: 2;\n}\n#cart {\n  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.25);\n  position: absolute;\n  width: 576px;\n  height: 13em;\n  background: #fff;\n  z-index: 8;\n  box-sizing: border-box;\n  padding: 20px;\n  left: 50%;\n  margin-left: -288px;\n  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);\n  overflow: hidden;\n}\n#cart.hidden-cart {\n  opacity: 0;\n  top: 110vh;\n  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);\n}\n#cart.show-cart {\n  opacity: 1;\n  top: calc(100vh - 13em);\n}\n#cart.show-cart:hover,\n#cart.promote-cart,\n#cart.login-cart {\n  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);\n  height: 16em;\n  top: calc(100vh - 16em);\n}\n#cart.order-cart {\n  top: 95px;\n  width: 960px;\n  margin-left: -480px;\n  height: calc(100vh - 75px - 2 * 20px);\n  transition: all 500ms cubic-bezier(0.215, 0.61, 0.355, 1);\n}\n#cart h3 {\n  color: #e67e22;\n}\n#cart .cart-total {\n  float: right;\n}\n#cart .cart-total:before {\n  content: \"\\603B\\8BA1\\FF1A\";\n  color: #808080;\n}\n#cart .cart-bottom-line {\n  height: 3em;\n  width: 100%;\n  line-height: 3em;\n  padding: 0 1em;\n  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);\n  position: absolute;\n  bottom: -3em;\n  left: 0;\n  box-sizing: border-box;\n  background: #f39c12;\n  color: #fff;\n  overflow: hidden;\n}\n#cart .cart-bottom-line .cart-button {\n  display: inline-block;\n  float: right;\n  margin-left: 1em;\n  cursor: pointer;\n  line-height: 1em;\n  height: 1em;\n  margin-top: 0.5em;\n  padding: 0.5em;\n}\n#cart .cart-bottom-line .cart-button:hover {\n  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);\n  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);\n}\n#cart .cart-bottom-line .cart-button:active {\n  box-shadow: inset 0 2px 2px rgba(0,0,0,0.5);\n}\n#cart .cart-bottom-line.cart-bottom-line-order {\n  height: 9em;\n  padding: 1em;\n  bottom: 0;\n}\n#cart .cart-bottom-line.cart-bottom-line-order .cart-bottom-line-order-line {\n  line-height: 2em;\n  height: 2em;\n  margin: 0;\n}\n#cart .cart-bottom-line.cart-bottom-line-order .cart-bottom-line-order-line:last-child {\n  margin-top: 1em;\n}\n#cart .cart-bottom-line.cart-bottom-line-login {\n  height: 16em;\n  bottom: 0;\n  background: #e67e22;\n  color: #fff;\n  padding: 2em;\n}\n#cart .cart-bottom-line.cart-bottom-line-login h3 {\n  color: #fff;\n}\n#cart .cart-bottom-line.cart-bottom-line-login .cart-bottom-line-login-form {\n  display: block;\n  width: 70%;\n  margin: auto;\n  position: relative;\n  padding: 1em;\n}\n#cart .cart-bottom-line.cart-bottom-line-login .cart-bottom-line-login-line {\n  display: block;\n  margin: 0;\n  margin-bottom: 0.5em;\n  width: 100%;\n  position: relative;\n}\n#cart .cart-bottom-line.cart-bottom-line-login label {\n  display: inline-block;\n  width: 20%;\n}\n#cart .cart-bottom-line.cart-bottom-line-login label:after {\n  content: \"\\FF1A\";\n}\n#cart .cart-bottom-line.cart-bottom-line-login .cart-bottom-line-login-input {\n  display: inline-block;\n  border: 0;\n  padding: 0.5em;\n  background: #f39c12;\n  box-sizing: border-box;\n  color: #fff;\n  width: 80%;\n  font-size: 1rem;\n  transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);\n}\n#cart .cart-bottom-line.cart-bottom-line-login .cart-bottom-line-login-button {\n  background: transparent;\n  border: none;\n  color: inherit;\n  cursor: pointer;\n  display: inline-block;\n  float: right;\n  font-size: inherit;\n  height: inherit;\n  line-height: inherit;\n  margin-left: 1em;\n  padding: 0;\n}\n#cart .cart-bottom-line.cart-bottom-line-login .cart-bottom-line-login-button.left {\n  float: left;\n  margin-left: 0;\n}\n#cart .cart-bottom-line.cart-bottom-line-login.login-error .cart-bottom-line-login-input {\n  background: #f20;\n}\n#cart .cart-bottom-line.cart-bottom-line-enter {\n  height: 0;\n  bottom: 0;\n}\n#cart .cart-bottom-line.cart-bottom-line-enter-active {\n  height: 3em;\n}\n#cart .cart-bottom-line.cart-bottom-line-leave {\n  height: 3em;\n  bottom: 0;\n}\n#cart .cart-bottom-line.cart-bottom-line-leave-active {\n  height: 0;\n  bottom: 3em;\n}\n#cart.show-cart:hover .cart-bottom-line,\n#cart.promote-cart .cart-bottom-line {\n  bottom: 0;\n}\n#cart.show-cart:hover .cart-list,\n#cart.promote-cart .cart-list {\n  height: calc(100% - 5em);\n}\n.cart-list {\n  list-style: none;\n  padding: 0;\n  height: calc(100% - 2em);\n  overflow: auto;\n  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);\n}\n.cart-list .cart-item {\n  display: block;\n  height: 2em;\n  line-height: 2em;\n  position: relative;\n  overflow: hidden;\n}\n.cart-list .cart-item.cart-list-enter {\n  height: 0;\n  opacity: 0;\n}\n.cart-list .cart-item.cart-list-enter-active {\n  height: 2em;\n  opacity: 1;\n  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);\n}\n.cart-list .cart-item.cart-list-leave {\n  height: 2em;\n  opacity: 1;\n}\n.cart-list .cart-item.cart-list-leave-active {\n  height: 0;\n  opacity: 0;\n  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);\n}\n.cart-list .cart-item-column {\n  display: inline-block;\n}\n.cart-list .cart-item-column:before,\n.cart-list .cart-item-column:after {\n  color: #808080;\n}\n.cart-list .cart-item-name {\n  width: 50%;\n}\n.cart-list .cart-item-price {\n  width: 20%;\n  text-align: right;\n}\n.cart-list .cart-item-price:after {\n  content: \" \\8F6F\\59B9\\5E01   \";\n}\n.cart-list .cart-item-number {\n  width: 10%;\n}\n.cart-list .cart-item-number:before {\n  content: \" x \";\n}\n.cart-list .cart-item-equal {\n  width: 5%;\n  text-align: right;\n}\n.cart-list .cart-item-total {\n  width: 15%;\n  text-align: right;\n}\n.cart-list .cart-item-total:after {\n  content: \" \\8F6F\\59B9\\5E01\";\n}\n#search-result {\n  margin-top: 20px;\n  z-index: 9;\n}\n.gap {\n  display: block;\n  clear: both;\n  margin: 0 20px 20px 20px;\n  color: #808080;\n}\n@-moz-keyframes spin {\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n}\n@-webkit-keyframes spin {\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n}\n@-o-keyframes spin {\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n}\n@keyframes spin {\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n}\n", ""]);
 
 	// exports
 
@@ -22002,7 +22002,7 @@
 	    render: function render() {
 	        return _react2.default.createElement(
 	            'header',
-	            { className: '' + (this.props.presenting == 'SHOPS' ? '' : 'subheader') },
+	            { className: '' + (this.props.presenting == 'SHOPS' || this.props.presenting == 'ORDER' ? '' : 'subheader') },
 	            _react2.default.createElement('i', {
 	                id: 'header-back',
 	                className: 'fa fa-angle-left',
@@ -22145,6 +22145,9 @@
 	exports.register = register;
 	exports.search = search;
 	exports.exitSearch = exitSearch;
+	exports.newOrder = newOrder;
+	exports.payOrder = payOrder;
+	exports.cancelOrder = cancelOrder;
 	var VALIDATE_LOGIN = exports.VALIDATE_LOGIN = 'VALIDATE_LOGIN';
 	function validateLogin(promise) {
 	    return {
@@ -22267,6 +22270,30 @@
 	    };
 	}
 
+	var NEW_ORDER = exports.NEW_ORDER = 'NEW_ORDER';
+	function newOrder(promise) {
+	    return {
+	        type: NEW_ORDER,
+	        promise: promise
+	    };
+	}
+
+	var PAY_ORDER = exports.PAY_ORDER = 'PAY_ORDER';
+	function payOrder(promise) {
+	    return {
+	        type: PAY_ORDER,
+	        promise: promise
+	    };
+	}
+
+	var CANCEL_ORDER = exports.CANCEL_ORDER = 'CANCEL_ORDER';
+	function cancelOrder(promise) {
+	    return {
+	        type: CANCEL_ORDER,
+	        promise: promise
+	    };
+	}
+
 /***/ },
 /* 213 */
 /***/ function(module, exports, __webpack_require__) {
@@ -22282,6 +22309,9 @@
 	exports.fetchUserInfo = fetchUserInfo;
 	exports.doLogin = doLogin;
 	exports.doSearch = doSearch;
+	exports.submitOrder = submitOrder;
+	exports.pay = pay;
+	exports.cancel = cancel;
 
 	var _utils = __webpack_require__(214);
 
@@ -22299,42 +22329,26 @@
 	    page_start = page_start || 0;
 	    page_count = page_count || 10;
 
-	    return fetch((0, _utils.queryUrl)('/shop', { page_start: page_start, page_count: page_count })).then(function (result) {
-	        return result.json();
-	    });
+	    return (0, _utils.get)((0, _utils.queryUrl)('/shop', { page_start: page_start, page_count: page_count }));
 	}
 
 	function fetchItemListPage(shop_id, page_start, page_count) {
 	    page_start = page_start || 0;
 	    page_count = page_count || 8;
 
-	    return fetch((0, _utils.queryUrl)('/shop/' + shop_id + '/items', { page_start: page_start, page_count: page_count })).then(function (result) {
-	        return result.json();
-	    });
+	    return (0, _utils.get)((0, _utils.queryUrl)('/shop/' + shop_id + '/items', { page_start: page_start, page_count: page_count }));
 	}
 
 	function fetchShopDetail(shop_id) {
-	    return fetch('/shop/' + shop_id).then(function (result) {
-	        return result.json();
-	    });
+	    return (0, _utils.get)('/shop/' + shop_id);
 	}
 
 	function fetchUserInfo() {
-	    return fetch('/user', { credentials: 'include' }).then(function (result) {
-	        return result.json();
-	    });
+	    return (0, _utils.get)('/user');
 	}
 
 	function doLogin(username, password) {
-	    return fetch('/user/login', {
-	        method: 'POST',
-	        headers: {
-	            'Content-type': 'application/x-www-form-urlencoded; charset=UTF-8'
-	        },
-	        body: (0, _utils.obj2query)({ username: username, password: password })
-	    }).then(function (res) {
-	        return res.json();
-	    }).then(function (data) {
+	    return (0, _utils.post)('/user/login', { username: username, password: password }).then(function (data) {
 	        if (data.code == 0) {
 	            _reactCookie2.default.save('token', data.token, {
 	                path: '/',
@@ -22351,9 +22365,19 @@
 	}
 
 	function doSearch(q) {
-	    return fetch((0, _utils.queryUrl)('/search', { q: q })).then(function (result) {
-	        return result.json();
-	    });
+	    return (0, _utils.get)((0, _utils.queryUrl)('/search', { q: q }));
+	}
+
+	function submitOrder(shop_id, item_list) {
+	    return (0, _utils.post)('/shop/' + shop_id + '/order', { item_list: JSON.stringify(item_list) });
+	}
+
+	function pay(order_id) {
+	    return (0, _utils.post)('/order/' + order_id + '/pay');
+	}
+
+	function cancel(order_id) {
+	    return (0, _utils.post)('/order/' + order_id + '/cancel');
 	}
 
 /***/ },
@@ -22368,6 +22392,8 @@
 	exports.obj2form = obj2form;
 	exports.obj2query = obj2query;
 	exports.queryUrl = queryUrl;
+	exports.get = get;
+	exports.post = post;
 	function obj2form(obj) {
 	    return Object.getOwnPropertyNames(obj).reduce(function (form, key) {
 	        form.append(key, obj[key]);return form;
@@ -22382,6 +22408,25 @@
 
 	function queryUrl(base, queries) {
 	    return base + '?' + obj2query(queries);
+	}
+
+	function get(url) {
+	    return fetch(url, { credentials: 'include' }).then(function (res) {
+	        return res.json();
+	    });
+	}
+
+	function post(url, data) {
+	    return fetch(url, {
+	        method: 'POST',
+	        credentials: 'include',
+	        headers: {
+	            'Content-type': 'application/x-www-form-urlencoded; charset=UTF-8'
+	        },
+	        body: obj2query(data || {})
+	    }).then(function (res) {
+	        return res.json();
+	    });
 	}
 
 /***/ },
@@ -28212,6 +28257,10 @@
 	                key = 'SEARCH-' + this.props.query;
 	                scene = _react2.default.createElement(_searchResult2.default, { key: key });
 	                break;
+	            case 'ORDER':
+	                key = 'ORDER';
+	                scene = [];
+	                break;
 	            case 'SHOPS':
 	            default:
 	                key = 'SHOPS';
@@ -29811,7 +29860,11 @@
 	        return _react2.default.createElement(
 	            'div',
 	            { className: 'cart-bottom-line' },
-	            _react2.default.createElement(
+	            this.props.submittingOrder ? _react2.default.createElement(
+	                'span',
+	                { className: 'cart-button-working' },
+	                _react2.default.createElement('i', { className: 'fa fa-circle-o-notch' })
+	            ) : _react2.default.createElement(
 	                'span',
 	                { onClick: this.props.onSubmit, className: 'cart-button' },
 	                '立即下单'
@@ -29912,11 +29965,82 @@
 	    }
 	});
 
+	var CartBottomLineOrder = _react2.default.createClass({
+	    displayName: 'CartBottomLineOrder',
+
+	    render: function render() {
+	        return _react2.default.createElement(
+	            'div',
+	            { className: 'cart-bottom-line cart-bottom-line-order' },
+	            _react2.default.createElement(
+	                'div',
+	                { className: 'cart-bottom-line-order-line' },
+	                _react2.default.createElement(
+	                    'span',
+	                    { className: 'label' },
+	                    '昵称'
+	                ),
+	                _react2.default.createElement(
+	                    'span',
+	                    null,
+	                    this.props.user.nickname
+	                ),
+	                _react2.default.createElement(
+	                    'span',
+	                    { className: 'label' },
+	                    '电话'
+	                ),
+	                _react2.default.createElement(
+	                    'span',
+	                    null,
+	                    this.props.user.phone
+	                )
+	            ),
+	            _react2.default.createElement(
+	                'div',
+	                { className: 'cart-bottom-line-order-line' },
+	                _react2.default.createElement(
+	                    'span',
+	                    { className: 'label' },
+	                    '地址'
+	                ),
+	                _react2.default.createElement(
+	                    'span',
+	                    null,
+	                    this.props.user.address
+	                )
+	            ),
+	            this.props.state == 1 ? _react2.default.createElement(
+	                'div',
+	                { className: 'cart-bottom-line-order-line' },
+	                _react2.default.createElement(
+	                    'span',
+	                    { onClick: this.props.onPay, className: 'cart-button' },
+	                    '支付'
+	                ),
+	                _react2.default.createElement(
+	                    'span',
+	                    { onClick: this.props.onCancel, className: 'cart-button' },
+	                    '取消'
+	                )
+	            ) : _react2.default.createElement(
+	                'div',
+	                { className: 'cart-bottom-line-order-line' },
+	                _react2.default.createElement(
+	                    'span',
+	                    { className: 'label' },
+	                    this.props.state == 0 ? '已取消' : this.props.state == 2 ? '已支付' : '已配送'
+	                )
+	            )
+	        );
+	    }
+	});
+
 	var Cart = _react2.default.createClass({
 	    displayName: 'Cart',
 
 	    render: function render() {
-	        var extra_state = this.props.login ? 'login' : this.props.promote ? 'promote' : this.props.shop_id ? 'show' : 'hidden';
+	        var extra_state = this.props.login ? 'login' : this.props.order ? 'order' : this.props.promote ? 'promote' : this.props.shop_id ? 'show' : 'hidden';
 	        return _react2.default.createElement(
 	            'div',
 	            { id: 'cart', className: extra_state + '-cart' },
@@ -29946,8 +30070,15 @@
 	                    onLoginCancel: this.handleLoginCancel }) : this.props.promote ? _react2.default.createElement(CartBottomLinePromote, {
 	                    key: 'promote',
 	                    onInsistExit: this.handleInsist,
-	                    onCancelExit: this.handleCancel }) : _react2.default.createElement(CartBottomLineConfirm, {
+	                    onCancelExit: this.handleCancel }) : this.props.order ? _react2.default.createElement(CartBottomLineOrder, {
+	                    key: 'order',
+	                    user: this.props.user,
+	                    state: this.props.orderContent.state,
+	                    onPay: this.handlePay,
+	                    onCancel: this.handleCancelOrder
+	                }) : _react2.default.createElement(CartBottomLineConfirm, {
 	                    key: 'confirm',
+	                    submittingOrder: this.props.submitting_order,
 	                    onSubmit: this.handleSubmit })
 	            )
 	        );
@@ -29961,13 +30092,24 @@
 	    handleSubmit: function handleSubmit() {
 	        if (!this.props.logined) {
 	            this.props.dispatch((0, _actions.loginRequest)());
-	        } else {}
+	        } else {
+	            var item_list = this.props.itemsList.reduce(function (prev, list_item) {
+	                prev[list_item.item.id] = list_item.number;return prev;
+	            }, {});
+	            this.props.dispatch((0, _actions.newOrder)((0, _api.submitOrder)(this.props.shop_id, item_list)));
+	        }
 	    },
 	    handleLoginCancel: function handleLoginCancel() {
 	        this.props.dispatch((0, _actions.loginCancel)());
 	    },
 	    handleLogin: function handleLogin(username, password) {
 	        this.props.dispatch((0, _actions.login)((0, _api.doLogin)(username, password)));
+	    },
+	    handlePay: function handlePay() {
+	        this.props.dispatch((0, _actions.payOrder)((0, _api.pay)(this.props.orderContent.id)));
+	    },
+	    handleCancelOrder: function handleCancelOrder() {
+	        this.props.dispatch((0, _actions.cancelOrder)((0, _api.cancel)(this.props.orderContent.id)));
 	    },
 	    handleRegister: function handleRegister(username, password) {}
 	});
@@ -29988,7 +30130,11 @@
 	        login: state.cart.login,
 	        login_error: state.user.login_error,
 	        logined: state.user.logined,
-	        itemsList: itemsList, total: total
+	        order: state.presenting == 'ORDER',
+	        orderContent: state.order.current,
+	        itemsList: itemsList, total: total,
+	        submitting_order: state.order.fetching,
+	        user: state.user
 	    };
 	};
 
@@ -30070,6 +30216,9 @@
 	 *      search {
 	 *          query,
 	 *          result
+	 *      },
+	 *      order {
+	 *          fetching,
 	 *      }
 	 *  }
 	 */
@@ -30086,6 +30235,10 @@
 	        case Actions.SEARCH:
 	            return 'SEARCH';
 	        case Actions.EXIT_SEARCH:
+	            return 'SHOPS';
+	        case Actions.NEW_ORDER:
+	            return 'ORDER';
+	        case Actions.CANCEL_ORDER:
 	            return 'SHOPS';
 	        default:
 	            return state;
@@ -30296,6 +30449,30 @@
 	    }
 	}
 
+	function order() {
+	    var state = arguments.length <= 0 || arguments[0] === undefined ? { fetching: false } : arguments[0];
+	    var action = arguments[1];
+
+	    switch (action.type) {
+	        case Actions.NEW_ORDER:
+	            {
+	                return Object.assign({}, state, {
+	                    fetching: !action.ready,
+	                    current: action.ready && action.result.order
+	                });
+	            }
+	        case Actions.PAY_ORDER:
+	            {
+	                return Object.assign({}, state, {
+	                    fetching: !action.ready,
+	                    current: action.ready && action.result.order
+	                });
+	            }
+	        default:
+	            return state;
+	    }
+	}
+
 	var rootReducer = (0, _redux.combineReducers)({
 	    presenting: presenting,
 	    currentShop: currentShop,
@@ -30304,7 +30481,8 @@
 	    items: items,
 	    cart: cart,
 	    user: user,
-	    search: search
+	    search: search,
+	    order: order
 	});
 
 	var logger = function logger(store) {
@@ -30347,7 +30525,8 @@
 	    presenting: 'SHOPS',
 	    cart: { shop_id: 0, promote: false, login: false },
 	    user: { validating: false, validated: false, loginning: false, logined: false },
-	    search: { query: '', result: { items: [], shops: [] } }
+	    search: { query: '', result: { items: [], shops: [] } },
+	    order: { fetching: false, current: {} }
 	}, (0, _redux.applyMiddleware)(readyStatePromise, logger));
 
 	var logined = false;

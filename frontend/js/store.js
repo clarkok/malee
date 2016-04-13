@@ -58,6 +58,9 @@ import { fetchUserInfo } from './api.js';
  *      search {
  *          query,
  *          result
+ *      },
+ *      order {
+ *          fetching,
  *      }
  *  }
  */
@@ -71,6 +74,10 @@ function presenting(state = 'SHOPS', action) {
         case Actions.SEARCH:
             return 'SEARCH';
         case Actions.EXIT_SEARCH:
+            return 'SHOPS';
+        case Actions.NEW_ORDER:
+            return 'ORDER';
+        case Actions.CANCEL_ORDER:
             return 'SHOPS';
         default:
             return state;
@@ -334,6 +341,35 @@ function search(state={}, action) {
     }
 }
 
+function order(state={fetching: false}, action) {
+    switch (action.type) {
+        case Actions.NEW_ORDER:
+            {
+                return Object.assign(
+                    {},
+                    state,
+                    {
+                        fetching: !action.ready,
+                        current: action.ready && action.result.order
+                    }
+                );
+            }
+        case Actions.PAY_ORDER:
+            {
+                return Object.assign(
+                    {},
+                    state,
+                    {
+                        fetching: !action.ready,
+                        current: action.ready && action.result.order
+                    }
+                );
+            }
+        default:
+            return state;
+    }
+}
+
 const rootReducer = combineReducers({
     presenting,
     currentShop,
@@ -342,7 +378,8 @@ const rootReducer = combineReducers({
     items,
     cart,
     user,
-    search
+    search,
+    order
 });
 
 const logger = store => next => action => {
@@ -377,7 +414,8 @@ let store = createStore(
         presenting: 'SHOPS',
         cart: { shop_id: 0, promote: false, login: false },
         user: { validating: false, validated: false, loginning: false, logined: false },
-        search: { query: '', result: { items: [], shops: [] } }
+        search: { query: '', result: { items: [], shops: [] } },
+        order: { fetching: false, current: {} }
     },
     applyMiddleware(
         readyStatePromise,

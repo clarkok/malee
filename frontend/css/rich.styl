@@ -50,6 +50,7 @@ html, body {
     height 100%
     position relative
     overflow hidden
+    font-family 'Microsoft Yahei'
 }
 
 h3, h4 {
@@ -571,7 +572,7 @@ ol.item-list {
 }
 
 #cart {
-    $cart_width = ($container_width - 2 * $global_margin)
+    $cart_width = ($container_width * 0.6)
     $cart_hover_height = $cart_normal_height + 3em
 
     hover-shadow-2();
@@ -604,6 +605,14 @@ ol.item-list {
 
         height $cart_hover_height
         top "calc(100vh - %s)" % $cart_hover_height
+    }
+
+    &.order-cart {
+        top $global_margin + $header_height
+        width $container_width
+        margin-left (- $container_width / 2)
+        height 'calc(100vh - %s - 2 * %s)' % ($header_height $global_margin)
+        transition all 500ms $global_easing_enter
     }
 
     h3 {
@@ -653,6 +662,22 @@ ol.item-list {
             }
         }
 
+        &.cart-bottom-line-order {
+            height 9em
+            padding 1em
+            bottom 0
+
+            .cart-bottom-line-order-line {
+                line-height 2em
+                height 2em
+                margin 0
+
+                &:last-child {
+                    margin-top 1em
+                }
+            }
+        }
+
         &.cart-bottom-line-login {
             height $cart_hover_height
             bottom 0
@@ -666,7 +691,7 @@ ol.item-list {
 
             .cart-bottom-line-login-form {
                 display block
-                width 50%
+                width 70%
                 margin auto
                 position relative
                 padding 1em

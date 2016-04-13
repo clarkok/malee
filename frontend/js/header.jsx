@@ -34,7 +34,7 @@ let HeaderLogin = React.createClass({
 let Header = React.createClass({
     render: function () {
         return (
-            <header className={`${this.props.presenting == 'SHOPS' ? '' : 'subheader'}`}>
+            <header className={`${(this.props.presenting == 'SHOPS' || this.props.presenting == 'ORDER') ? '' : 'subheader'}`}>
                 <i
                     id="header-back"
                     className="fa fa-angle-left"

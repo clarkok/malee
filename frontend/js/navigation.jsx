@@ -35,6 +35,10 @@ let Navigation = React.createClass({
                 key = `SEARCH-${this.props.query}`;
                 scene = <SearchResult key={key} />
                 break;
+            case 'ORDER':
+                key = `ORDER`;
+                scene = [];
+                break;
             case 'SHOPS':
             default:
                 key = 'SHOPS';
