@@ -284,6 +284,13 @@ function cart(state={}, action) {
                     return state;
                 }
             }
+        case Actions.CANCEL_ORDER:
+            {
+                return {
+                    shop_id: 0,
+                    promote: false
+                }
+            }
         default:
             return state;
     }
